@@ -1,20 +1,19 @@
-### Resume
+# Resume
 
-Pavlo Polyak
-Web-designer
+### Pavlo Polyak
+ Web-designer
 
 ```
-Resume
-
-I believe that having such important qualities as responsibility, purposefulness, diligence and perseverance will help me to prove myself successfully in work. The main thing is to have the opportunity for development and career growth
-
+I believe that having such important qualities as 
+responsibility, purposefulness, diligence and perseverance 
+will help me to prove myself successfully in work. 
+The main thing is to have the opportunity 
+for development and career growth
 ```
 
 Pavlo Polyak 
-fghjkl11@gmail.com
-Pavlo Polyak
-+38 (099) 0913677
-Pavlo Polyak
+(poliakpavlo@gmail.com)
+(+38 (099) 09 13 677)
 
 ### Languages
 - 🇺🇦 УКРАЇНСЬКА
@@ -34,10 +33,13 @@ Pavlo Polyak
 - MICROSOFT OFFICE
 - LINUX
 - WINDOWS
-
+```
 ### Character
-Brave, positive, savvy guy. Full of energy and strength to accomplish great things there is a sense of justice, virtue, rigor. Faithful and honest friend
-
+Brave, positive, savvy guy. 
+Full of energy and strength to accomplish 
+great things there is a sense of justice, 
+virtue, rigor. Faithful and honest friend
+```
 ### Likes😃
 - Music
 - Mountain
