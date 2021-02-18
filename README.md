@@ -1,16 +1,3 @@
-
-# [📖 Docs](https://emotion.sh/docs/introduction)
-
-Frequently viewed docs:
-
-- [Introduction](https://emotion.sh/docs/introduction)
-- [Install](https://emotion.sh/docs/install)
-- [CSS Prop](https://emotion.sh/docs/css-prop)
-- [Styled Components](https://emotion.sh/docs/styled)
-- [Composition](https://emotion.sh/docs/composition)
-- [Nested Selectors](https://emotion.sh/docs/nested)
-- [Media Queries](https://emotion.sh/docs/media-queries)
-
 ### Quick Start
 
 Get up and running with a single import.
