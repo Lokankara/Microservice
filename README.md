@@ -1,30 +1,62 @@
-### Quick Start
+### Resume
 
-Get up and running with a single import.
+Pavlo Polyak
+Web-designer
 
-```bash
-npm install --save @emotion/react
+```
+Resume
+
+I believe that having such important qualities as responsibility, purposefulness, diligence and perseverance will help me to prove myself successfully in work. The main thing is to have the opportunity for development and career growth
+
 ```
 
-```jsx
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
+Pavlo Polyak 
+fghjkl11@gmail.com
+Pavlo Polyak
++38 (099) 0913677
+Pavlo Polyak
 
-let SomeComponent = props => {
-  return (
-    <div
-      css={{
-        color: 'hotpink'
-      }}
-      {...props}
-    />
-  )
-}
-```
+### Languages
+- 🇺🇦 УКРАЇНСЬКА
+- 🇷🇺 РУССКИЙ
+- 🇺🇸 ENGLISH
 
-### Do I Need To Use the Babel Plugin?
+### Skills
+- HTML
+- CSS
+- JS
+- Python
+- GIT
+- Photoshop
+- Illustrator
+- Indesign
+- Nose.js
+- MICROSOFT OFFICE
+- LINUX
+- WINDOWS
 
-The babel plugin is not required, but enables some optimizations and customizations that could be beneficial for your project.
+### Character
+Brave, positive, savvy guy. Full of energy and strength to accomplish great things there is a sense of justice, virtue, rigor. Faithful and honest friend
+
+### Likes😃
+- Music
+- Mountain
+- Book
+
+### Dislikes😞
+- Lazy
+
+### Wants🥺
+- TO BE CLEVER AND HEALTHY 
+- TO READ MORE
+
+### Education
+    Every free times
+
+### Experience
+- 2002-2008 newpaper "MB"
+- 2008-2018 newpaper "Pogliad"
+- 2018-until newpaper "MB"
 
 Look here 👉 _[emotion babel plugin feature table and documentation](https://github.com/emotion-js/emotion/tree/master/packages/babel-plugin)_
 
