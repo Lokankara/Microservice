@@ -1,7 +1,7 @@
 # Resume
 
 ### Pavlo Polyak
- Web-designer
+## Web-designer
 
 ```
 I believe that having such important qualities as 
@@ -22,13 +22,12 @@ for development and career growth
 - Node.js (Mongodb,Express,React,Node)
    
 - Python
-  - ddos(https://github.com/PolyakPavlo/DevOps/blob/dev/py/run.py)
-  - web spider(https://github.com/PolyakPavlo/DevOps/blob/dev/py/thread.py)
-- API(https://github.com/PolyakPavlo/DevOps/blob/dev/py/API.py)
-  - csv-req-res-parse-json-csv-diff
-- Webdriver
-  - Selenium (https://github.com/PolyakPavlo/DevOps/dev/py/selenium.py)
-
+  - [Webdriver](https://github.com/PolyakPavlo/DevOps/blob/dev/py/olx_spider.py)
+  - [Selenium](https://github.com/PolyakPavlo/DevOps/dev/py/selenium.py)
+  - [API](https://github.com/PolyakPavlo/DevOps/blob/dev/py/API.py)
+  - [Ddos](https://github.com/PolyakPavlo/DevOps/blob/dev/py/run.py)
+  - [Web spider](https://github.com/PolyakPavlo/DevOps/blob/dev/py/thread.py)
+  
 - Adobe
   - Indesign
   - Photoshop
