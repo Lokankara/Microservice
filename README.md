@@ -38,9 +38,8 @@ telega
 -  VBA
   -  automation procces (tv,news adobe)
    
-
 - Python
-```  - ddos
+  - ddos
   - web spider
 - API
   - csv-req-res-parse-
@@ -48,7 +47,7 @@ telega
   - autotesting
 - Webdriver
 - Selenium
-- auto test```
+- auto test
 
 - GIT
 - LINUX
@@ -62,6 +61,7 @@ telega
 #task3 - bash sftp
 
 ### Character
+
 ```
 Brave, positive, savvy guy. 
 Full of energy and strength to accomplish 
