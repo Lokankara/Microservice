@@ -11,7 +11,8 @@ The main thing is to have the opportunity
 for development and career growth
 ```
 
-Pavlo Polyak 
+Pavlo Polyak
+telega
 (poliakpavlo@gmail.com)
 (+38 (099) 09 13 677)
 
@@ -21,19 +22,35 @@ Pavlo Polyak
 - 🇺🇸 ENGLISH
 
 ### Skills
-- HTML
+- JAVA (qa)
+- HTML(tiger,perev)
+  -  React (sample)
+-  vba
+  -  heroku ()
+  -  ads
+  -  automation procces (tv,news adobe)
+  -  animation (git, html)
 - CSS
-- JS
+- JS(jquery)
 - Python
+  - ddos
+  - web spider
+  - api
+  - csv-req-res-parse-json-csv-diff API
+  - autotesting
+- Webdriver
+- Selenium
+- auto test
 - GIT
 - Photoshop
 - Illustrator
 - Indesign
-- Nose.js
+- Nose.js (MERN)
 - MICROSOFT OFFICE
 - LINUX
 - WINDOWS
 ```
+#task3 - bash sftp
 ### Character
 Brave, positive, savvy guy. 
 Full of energy and strength to accomplish 
@@ -44,6 +61,7 @@ virtue, rigor. Faithful and honest friend
 - Music
 - Mountain
 - Book
+- cooking
 
 ### Dislikes😞
 - Lazy
@@ -60,11 +78,11 @@ virtue, rigor. Faithful and honest friend
 - 2008-2018 newpaper "Pogliad"
 - 2018-until newpaper "MB"
 
-Look here 👉 _[emotion babel plugin feature table and documentation](https://github.com/emotion-js/emotion/tree/master/packages/babel-plugin)_
+Look here 👉 _[emotion babel plugin feature table and documentation](https://github.com/)_
 
 ### Demo Sandbox
 
-[Demo Code Sandbox](https://codesandbox.io/s/pk1qjqpw67)
+[Demo Code Sandbox](https://codesandbox.io/s/)
 
 ### Examples
 
