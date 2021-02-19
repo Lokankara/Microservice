@@ -19,16 +19,18 @@ for development and career growth
 - 🇺🇸 ENGLISH
 
 ### Skills
-- [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/) (perev)
-  -  ads
-    -  animation (git, html)
-- JAVA (qa)
-- Jquery
-- Nose.js (MERN)
--  React (sample)
-  
--  heroku ()
+- Adobe
+  - Indesign
+  - Photoshop
+  - Illustrator
 
+- [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)
+- [HTML-Jquery-git-json](https://deathbarmaglot.github.io/perevez/)
+- [Nose.js](MERN)
+  - [React](sample)
+    - [heroku]()
+
+- JAVA (qa)
 -  VBA
   -  automation procces (tv,news adobe)
    
@@ -48,10 +50,6 @@ for development and career growth
 - WINDOWS
   - MICROSOFT OFFICE
 
-- Adobe
-  - Photoshop
-  - Illustrator
-  - Indesign
 
 #task3 - bash sftp
 
