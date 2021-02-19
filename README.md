@@ -18,8 +18,8 @@ for development and career growth
 
 ### Skills
 - [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)
-- [HTML-Jquery-git-json](https://deathbarmaglot.github.io/perevez/)
-- Node.js (Mongodb,Express,React,Node)
+- [HTML-JQuery-Git-Json](https://deathbarmaglot.github.io/perevez/)
+- NODE.js (Mongodb,Express,React,Node)
    
 - Python
   - [Webdriver](https://github.com/PolyakPavlo/DevOps/blob/dev/py/olx_spider.py)
@@ -29,7 +29,7 @@ for development and career growth
   - [Web spider](https://github.com/PolyakPavlo/DevOps/blob/dev/py/thread.py)
   
 - Adobe
-  - Indesign
+  - InDesign
   - Photoshop
   - Illustrator
 
@@ -68,7 +68,7 @@ virtue, rigor. Faithful and honest friend
 - 2008-2018 newpaper "Pogliad"
 - 2018-until newpaper "MB"
 
-##### Contacts
+### Contacts
 - 099 091 36 77
 - https://t.me/PashaPolyak
 - poliakpavlo@gmail.com
