@@ -10,11 +10,8 @@ will help me to prove myself successfully in work.
 The main thing is to have the opportunity 
 for development and career growth
 ```
-
-Pavlo Polyak
-telega
 (poliakpavlo@gmail.com)
-(+38 (099) 09 13 677)
+(+38(099)0913677)
 
 ### Languages
 - 🇺🇦 УКРАЇНСЬКА
@@ -22,21 +19,13 @@ telega
 - 🇺🇸 ENGLISH
 
 ### Skills
-- JAVA (qa)
-- HTML(tiger,perev)
-- CSS
-- JS(jquery)
-  -  ads
-    -  animation (git, html)
-- Nose.js (MERN)
-  -  React (sample)
-  -  M
-  -  E
-  -  N
--  heroku ()
+- [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)
+- [HTML-Jquery-git-json](https://deathbarmaglot.github.io/perevez/)
+- Node.js
+  - [React](sample)
+    
 
--  VBA
-  -  automation procces (tv,news adobe)
+- JAVA (qa)
    
 - Python
   - ddos
@@ -49,16 +38,15 @@ telega
 - Selenium
 - auto test
 
+- Adobe
+  - Indesign
+  - Photoshop
+  - Illustrator
+
 - GIT
 - LINUX
 - WINDOWS
   - MICROSOFT OFFICE
-- Adobe
-  - Photoshop
-  - Illustrator
-  - Indesign
-
-#task3 - bash sftp
 
 ### Character
 
@@ -73,7 +61,7 @@ virtue, rigor. Faithful and honest friend
 - Music
 - Mountain
 - Book
-- cooking
+- Cooking
 
 ### Dislikes😞
 - Lazy
@@ -89,19 +77,3 @@ virtue, rigor. Faithful and honest friend
 - 2002-2008 newpaper "MB"
 - 2008-2018 newpaper "Pogliad"
 - 2018-until newpaper "MB"
-
-Look here 👉 _[plugin feature table and documentation](https://github.com/)_
-
-### Demo Sandbox
-
-[Demo Code Sandbox](https://codesandbox.io/s/)
-
-### Examples
-
-- [Introduction](https://emotion.sh/docs/introduction)
-- [Install](https://emotion.sh/docs/install)
-- [CSS Prop](https://emotion.sh/docs/css-prop)
-- [Styled Components](https://emotion.sh/docs/styled)
-- [Composition](https://emotion.sh/docs/composition)
-- [Nested Selectors](https://emotion.sh/docs/nested)
-- [Media Queries](https://emotion.sh/docs/media-queries)
