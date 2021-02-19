@@ -10,9 +10,6 @@ will help me to prove myself successfully in work.
 The main thing is to have the opportunity 
 for development and career growth
 ```
-
-Pavlo Polyak
-telega
 (poliakpavlo@gmail.com)
 (+38 (099) 09 13 677)
 
@@ -29,10 +26,8 @@ telega
   -  ads
     -  animation (git, html)
 - Nose.js (MERN)
-  -  React (sample)
-  -  M
-  -  E
-  -  N
+-  React (sample)
+  
 -  heroku ()
 
 -  VBA
@@ -73,7 +68,7 @@ virtue, rigor. Faithful and honest friend
 - Music
 - Mountain
 - Book
-- cooking
+- Cooking
 
 ### Dislikes😞
 - Lazy
