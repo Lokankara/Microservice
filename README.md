@@ -17,13 +17,13 @@ for development and career growth
 - 🇺🇸 ENGLISH
 
 ### Skills
-- [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)
-- [HTML-JQuery-Git-Json](https://deathbarmaglot.github.io/perevez/)
+- [HTML-CSS-JS](https://raw.githack.com/PolyakPavlo/MERN/main/barmaglot/index.html)
+- [HTML-JQuery-Git-Json](https://raw.githack.com/PolyakPavlo/MERN/main/barmaglot/trans.html)
 - NODE.js (Mongodb,Express,React,Node)
    
 - Python
   - [Webdriver](https://github.com/PolyakPavlo/DevOps/blob/dev/py/olx_spider.py)
-  - [Selenium](https://github.com/PolyakPavlo/DevOps/dev/py/selenium.py)
+  - [Selenium](https://github.com/PolyakPavlo/DevOps/blob/dev/py/selenium.py)
   - [API](https://github.com/PolyakPavlo/DevOps/blob/dev/py/API.py)
   - [Ddos](https://github.com/PolyakPavlo/DevOps/blob/dev/py/run.py)
   - [Web spider](https://github.com/PolyakPavlo/DevOps/blob/dev/py/thread.py)
