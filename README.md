@@ -10,8 +10,6 @@ will help me to prove myself successfully in work.
 The main thing is to have the opportunity 
 for development and career growth
 ```
-(poliakpavlo@gmail.com)
-phone(+380990913677)
 
 ### Languages
 - 🇺🇦 УКРАЇНСЬКА
@@ -70,3 +68,4 @@ virtue, rigor. Faithful and honest friend
 - 2002-2008 newpaper "MB"
 - 2008-2018 newpaper "Pogliad"
 - 2018-until newpaper "MB"
+(poliakpavlo@gmail.com)
