@@ -11,7 +11,7 @@ The main thing is to have the opportunity
 for development and career growth
 ```
 (poliakpavlo@gmail.com)
-(+38 (099) 09 13 677)
+(+38(099)0913677)
 
 ### Languages
 - 🇺🇦 УКРАЇНСЬКА
@@ -19,9 +19,9 @@ for development and career growth
 - 🇺🇸 ENGLISH
 
 ### Skills
-Look here 👉 - _[HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)_
+- [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)
 - [HTML-Jquery-git-json](https://deathbarmaglot.github.io/perevez/)
-- [Node.js](MERN)
+- Node.js
   - [React](sample)
     
 
