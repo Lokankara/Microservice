@@ -41,15 +41,5 @@ put local-file.name
 bye
 END_SCRIPT
 
-chmod +x test_script.sh 
+chmod +x test_script.sh
 ./test_script.sh
-
-echo "
-  ascii
-  cd pub
-  lcd dir_name
-  put filename
-  close
-  quit
-    "
-) | sftp --password="password" "user"@"servername"

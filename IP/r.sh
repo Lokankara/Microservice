@@ -9,7 +9,7 @@ ifdown enp42
 ifup enp42
 sudo echo"
 DEVICE=enp42
-ONBOOT=yes
+ONBOOT=no
 DHCP=yes" >> /etc/sysconfig/network-scripts/ifcfg-enp42
 ifdown enp42
 ifup enp42

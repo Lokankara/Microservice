@@ -2,7 +2,7 @@ ssh-copy-id
 ssh-keygen
 ssh-keygen
 ifconfig
-sudo echo 'crash ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/user
+sudo echo 'user ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/user
 vi /etc/sysconfig/network-scripts/ifcfg-eth0
 nmcli d
 ifdown enp0s3
