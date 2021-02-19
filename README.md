@@ -67,4 +67,7 @@ virtue, rigor. Faithful and honest friend
 - 2002-2008 newpaper "MB"
 - 2008-2018 newpaper "Pogliad"
 - 2018-until newpaper "MB"
-(poliakpavlo@gmail.com)
+
+##### Contacts
+- (poliakpavlo@gmail.com)
+- 099 091 36 77
