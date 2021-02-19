@@ -19,12 +19,11 @@ for development and career growth
 - 🇺🇸 ENGLISH
 
 ### Skills
-- JAVA (qa)
-- HTML(tiger,perev)
-- CSS
-- JS(jquery)
+- [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/) (perev)
   -  ads
     -  animation (git, html)
+- JAVA (qa)
+- Jquery
 - Nose.js (MERN)
 -  React (sample)
   
@@ -48,6 +47,7 @@ for development and career growth
 - LINUX
 - WINDOWS
   - MICROSOFT OFFICE
+
 - Adobe
   - Photoshop
   - Illustrator
