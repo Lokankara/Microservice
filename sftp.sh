@@ -25,6 +25,12 @@ sshpass -e sftp -oBatchMode=no -b - sftp-user@remote-host << !
 #lftp -e 'mirror -R /local/log/path/ /remote/path/' --env-password -u user sftp.foo.com
 lftp --env-password sftp://user@host  -e "put local-file.name; bye"
 
+#!/bin/bash
+
+sftp -oPort=21 user@192.168.0.130:/home/user/test/update <<EOF
+put /home/user/.m2/repository/com/pasha/TestPlugin/0.0.1-SNAPSHOT/TestPlugin-0.0.1-SNAPSHOT.jar 
+exit
+EOF
 
 vi test_script.sh
 #!/bin/sh
