@@ -24,39 +24,51 @@ telega
 ### Skills
 - JAVA (qa)
 - HTML(tiger,perev)
-  -  React (sample)
--  vba
-  -  heroku ()
-  -  ads
-  -  automation procces (tv,news adobe)
-  -  animation (git, html)
 - CSS
 - JS(jquery)
+  -  ads
+    -  animation (git, html)
+- Nose.js (MERN)
+  -  React (sample)
+  -  M
+  -  E
+  -  N
+-  heroku ()
+
+-  VBA
+  -  automation procces (tv,news adobe)
+   
+
 - Python
-  - ddos
+```  - ddos
   - web spider
-  - api
-  - csv-req-res-parse-json-csv-diff API
+- API
+  - csv-req-res-parse-
+  - json-csv-diff
   - autotesting
 - Webdriver
 - Selenium
-- auto test
+- auto test```
+
 - GIT
-- Photoshop
-- Illustrator
-- Indesign
-- Nose.js (MERN)
-- MICROSOFT OFFICE
 - LINUX
 - WINDOWS
-```
+  - MICROSOFT OFFICE
+- Adobe
+  - Photoshop
+  - Illustrator
+  - Indesign
+
 #task3 - bash sftp
+
 ### Character
+```
 Brave, positive, savvy guy. 
 Full of energy and strength to accomplish 
 great things there is a sense of justice, 
 virtue, rigor. Faithful and honest friend
 ```
+
 ### Likes😃
 - Music
 - Mountain
@@ -78,7 +90,7 @@ virtue, rigor. Faithful and honest friend
 - 2008-2018 newpaper "Pogliad"
 - 2018-until newpaper "MB"
 
-Look here 👉 _[emotion babel plugin feature table and documentation](https://github.com/)_
+Look here 👉 _[plugin feature table and documentation](https://github.com/)_
 
 ### Demo Sandbox
 
