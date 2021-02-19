@@ -11,7 +11,7 @@ The main thing is to have the opportunity
 for development and career growth
 ```
 (poliakpavlo@gmail.com)
-phone(+38 099 091 36 77)
+phone(+380990913677)
 
 ### Languages
 - 🇺🇦 УКРАЇНСЬКА
