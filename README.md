@@ -1,7 +1,7 @@
 # Resume
 
 ### Pavlo Polyak
-## Web-designer
+Web-designer
 
 ```
 I believe that having such important qualities as 
