@@ -19,7 +19,6 @@ for development and career growth
 ### Skills
 - [HTML-CSS-JS](https://raw.githack.com/PolyakPavlo/MERN/main/barmaglot/index.html)
 - [HTML-JQuery-Git-Json](https://raw.githack.com/PolyakPavlo/MERN/main/barmaglot/trans.html)
-- NODE.js (Mongodb,Express,React,Node)
    
 - Python
   - [Webdriver](https://github.com/PolyakPavlo/DevOps/blob/dev/py/olx_spider.py)
@@ -28,6 +27,10 @@ for development and career growth
   - [Ddos](https://github.com/PolyakPavlo/DevOps/blob/dev/py/run.py)
   - [Web spider](https://github.com/PolyakPavlo/DevOps/blob/dev/py/thread.py)
   
+- NODE.js (Mongodb,Express,React,Node)
+
+- JAVA
+
 - Adobe
   - InDesign
   - Photoshop
