@@ -19,20 +19,13 @@ for development and career growth
 - 🇺🇸 ENGLISH
 
 ### Skills
-- Adobe
-  - Indesign
-  - Photoshop
-  - Illustrator
-
-- [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)
+Look here 👉 - _[HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)_
 - [HTML-Jquery-git-json](https://deathbarmaglot.github.io/perevez/)
-- [Nose.js](MERN)
+- [Node.js](MERN)
   - [React](sample)
-    - [heroku]()
+    
 
 - JAVA (qa)
--  VBA
-  -  automation procces (tv,news adobe)
    
 - Python
   - ddos
@@ -45,13 +38,15 @@ for development and career growth
 - Selenium
 - auto test
 
+- Adobe
+  - Indesign
+  - Photoshop
+  - Illustrator
+
 - GIT
 - LINUX
 - WINDOWS
   - MICROSOFT OFFICE
-
-
-#task3 - bash sftp
 
 ### Character
 
@@ -82,19 +77,3 @@ virtue, rigor. Faithful and honest friend
 - 2002-2008 newpaper "MB"
 - 2008-2018 newpaper "Pogliad"
 - 2018-until newpaper "MB"
-
-Look here 👉 _[plugin feature table and documentation](https://github.com/)_
-
-### Demo Sandbox
-
-[Demo Code Sandbox](https://codesandbox.io/s/)
-
-### Examples
-
-- [Introduction](https://emotion.sh/docs/introduction)
-- [Install](https://emotion.sh/docs/install)
-- [CSS Prop](https://emotion.sh/docs/css-prop)
-- [Styled Components](https://emotion.sh/docs/styled)
-- [Composition](https://emotion.sh/docs/composition)
-- [Nested Selectors](https://emotion.sh/docs/nested)
-- [Media Queries](https://emotion.sh/docs/media-queries)
