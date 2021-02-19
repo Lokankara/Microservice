@@ -11,7 +11,7 @@ The main thing is to have the opportunity
 for development and career growth
 ```
 (poliakpavlo@gmail.com)
-(+38(099)0913677)
+phone(+38 099 091 36 77)
 
 ### Languages
 - 🇺🇦 УКРАЇНСЬКА
@@ -21,22 +21,15 @@ for development and career growth
 ### Skills
 - [HTML-CSS-JS](https://deathbarmaglot.github.io/tigr/)
 - [HTML-Jquery-git-json](https://deathbarmaglot.github.io/perevez/)
-- Node.js
-  - [React](sample)
-    
-
-- JAVA (qa)
+- Node.js (Mongodb,Express,React,Node)
    
 - Python
-  - ddos
-  - web spider
-- API
-  - csv-req-res-parse-
-  - json-csv-diff
-  - autotesting
+  - ddos(https://github.com/PolyakPavlo/DevOps/blob/dev/py/run.py)
+  - web spider(https://github.com/PolyakPavlo/DevOps/blob/dev/py/thread.py)
+- API(https://github.com/PolyakPavlo/DevOps/blob/dev/py/API.py)
+  - csv-req-res-parse-json-csv-diff
 - Webdriver
-- Selenium
-- auto test
+  - Selenium (https://github.com/PolyakPavlo/DevOps/dev/py/selenium.py)
 
 - Adobe
   - Indesign
