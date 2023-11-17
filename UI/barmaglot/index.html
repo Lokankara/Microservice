@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<title>tiger</title>
+<style>
+	body, html { margin: 0; padding: 0;	background-color: #FFF;}
+#wrap {width: 300px; height: 180px;position: relative;overflow: hidden;}
+@keyframes ck {
+0% {transform: scale3d(0.1, 0.1, 0.1) rotateY(-180deg); opacity: 0;}
+3% {transform: scale3d(1, 1, 1) rotateY(0deg); opacity: 1; }
+32% {transform: scale3d(1, 1, 1) rotateY(0deg); opacity: 1;}
+33%, 100% {transform: scale3d(0.1, 0.1, 0.1) rotateY(-180deg); opacity: 0;}}
+
+@keyframes iWan {
+0% {transform: scale3d(0.1, 0.1, 0.1) rotateY(-180deg); opacity: 0;}
+3% {transform: scale3d(1, 1, 1) rotateY(0deg); opacity: 1;}
+32% {transform: scale3d(1, 1, 1)rotateY(0deg); opacity: 1;}
+34%,100% {transform: scale3d(0.1, 0.1, 0.1) rotateY(-180deg); opacity: 0;}}
+
+@keyframes heart {  
+0% {transform: scale(0.1); top: 100%; opacity: 0;}
+3% {transform: scale(1); top: 87%; opacity: 1;}
+32% {transform: scale(1); top: 87%; opacity: 1;}
+34%, 100% {transform: scale(0.1); top: 100%; opacity: 0;}}
+
+
+@keyframes lo {  
+0% {transform: scale(0) rotateX(180deg); top: 0%; left: 10%; opacity: 0;}
+3% {transform: scale(1) rotateX(0deg); top: 40%; left: 65%; opacity: 1;}
+32% {transform: scale(1) rotateX(0deg); top: 40%; left: 65%; opacity: 1;}
+34% {transform: scale(0) rotateX(-180deg);top: 40%; left: 65%; opacity: 0;}
+65% {transform: scale(0)  rotateX(-180deg); top: 40%; left: 10%; opacity: 0;}
+68% {transform: scale(1) rotateX(0deg); top: 20%; left: 10%; opacity: 1;}
+97% {transform: scale(1) rotateX(0deg); top: 20%; left: 10%; opacity: 1;}
+100% {transform: scale(0) rotateX(180deg);top: 0%; left: 10%; opacity: 0;}}
+
+
+@keyframes l {  
+0% {transform: scale(0); left: 100%;}
+3% {transform: scale(1); left: 64%;}
+32% {transform: scale(1); left: 64%;}
+34%, 100% {transform: scale(0); left: 100%;}}
+
+
+@keyframes in {  
+0%, 32% {transform: scale(0); opacity: 0;}
+34% {transform: scale(1);  opacity: 1}
+65% {transform: scale(1); opacity: 1}
+67%, 100% {transform: scale(0); opacity: 0}}
+
+</style>
+<!-- <link href="css.css" rel="stylesheet"> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	var arr = [
+{"id":"m","a":"iWan","s":"15","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/fo.jpg","t":"0","l":"0","r":""},
+{"id":"mm","a":"iWan","s":"15","r":"reverse","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/f.jpg","t":"0","l":"0"},
+{"id":"b","a":"ck","s":"15","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/e.png","t":"17","l":"24","r":""},
+{"id":"a","a":"ck","s":"15","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/a1.svg","l":"5","t":"5","r":""},
+{"id":"ab","a":"heart","s":"15","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/a2.svg","l":"23","t":"0","r":""},
+{"id":"ba","a":"l","s":"15","r":"reverse","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/b1.svg","l":"20","t":"4"},
+{"id":"bb","a":"iWan","s":"15","r":"reverse","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/b2.svg","l":"55","t":"80"},
+{"id":"l","a":"lo","s":"15","r":"reverse","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/l.png","t":"15","l":"5"},
+{"id":"mc","a":"in","s":"15","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/i.jpg","t":"0","l":"0","r":""},
+{"id":"c","a":"in","s":"15","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/c.svg","t":"32","l":"5","r":""},
+{"id":"lo","a":"in","s":"15","u":"https://raw.githubusercontent.com/DeathBarmaglot/tigr/main/lo.png","t":"0","l":"0","r":""}
+]
+
+
+window.onload=function(){for (i of arr) 
+	{$("<div id='"+i['id']+"'> </div>").appendTo( "#wrap" ).attr("style","top:"+i['t']+"%;width:100%;height:100%;position:absolute;left:"+i['l']+"%;background: url("+i['u']+") no-repeat;animation: "+i['a']+" "+i['s']+"s ease-in-out infinite "+i['r']+";");
+}};
+</script>
+</head><body><div id = 'wrap'></div></body>
+</html>

@@ -1,0 +1,34 @@
+FROM alpine:3.6
+
+# - Install packages
+# - Fix default group (1000 does not exist)
+# - OpenSSH needs /var/run/sshd to run
+# - Remove generic host keys, entrypoint generates unique keys
+RUN echo "@community http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    apk add --no-cache bash shadow@community openssh openssh-sftp-server && \
+    sed -i 's/GROUP=1000/GROUP=100/' /etc/default/useradd && \
+    mkdir -p /var/run/sshd && \
+    rm -f /etc/ssh/ssh_host_*key*
+
+COPY sshd_config /etc/ssh/sshd_config
+COPY entrypoint /
+COPY README.md /
+
+EXPOSE 223
+
+ENTRYPOINT ["/entrypoint"]
+
+# FROM ubuntu
+
+# COPY ftp.sh .
+# RUN ls -la
+
+# RUN apt-get update -y && apt-get install -y sshpass
+
+
+# # RUN sshpass -p '*,<R#!$(2udw{Zgz' sftp testuser@207.244.229.74:/opt/testuser/logfile.log
+
+# EXPOSE 223
+# # CMD ["apt-get update -y && apt-get install ftp -y && apt-get install systemd && apt-get install vsftpd -y && apt-get install bind-utils -y && apt-get install net-tools -y && apt-get install network-scripts -y && apt-get install epel-release -y && apt-get install wget -y && apt-get install htop -y"]
+# # CMD ["sshpass -p '*,<R#!$(2udw{Zgz' sftp testuser@207.244.229.74:/opt/testuser/logfile.log"]
+# # RUN bash ftp.sh testuser user

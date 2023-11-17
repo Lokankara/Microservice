@@ -1,0 +1,28 @@
+
+
+# # SFTP using port 223 for public access
+# # - mount folder with logs
+# # - mount folder with result
+# # PYTHON without public access
+# # - mount folder with result
+# # -mount folder withindex.html
+# # - health check for result
+# # NGINX with public access using port 883
+# # -mount folder with index.hml
+
+# SFTP
+# 1. Логи скачати на свій SFTP
+# url:@207.244.229.74:/opt/testuser/logfile.log port:22
+# username:testuser
+# pass: *,<R#!$(2udw{Zgz
+# 2. Логи потрібні розміщуватись в змонтованій папці
+# 3. Примонтувати папку в якій буде зберігатися результат(.xlsx)
+# Папка повинна мати доступ на скачування зовні
+ PYTHON 369
+# 1. Розгорнути проект
+# 2. Встановити всі залежності
+# 3. Примонтувати спільну з SFTP папку з результатом(.xlsx)
+  NGINX:
+# 1. Розгорнути контейнер з веб сторінкою в якій буде інструкція на скачування файлу та посилання на
+# самий файл.
+# 2. Контейнер повинен розгортатись тоді коли результат завантажений на SFTP
