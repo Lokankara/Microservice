@@ -1,9 +1,9 @@
 package com.stack.image.service.controller;
 
-import com.image.service.model.ImageFilter;
-import com.image.service.model.PagedData;
-import com.image.service.model.Thumbnail;
-import com.image.service.service.ImageService;
+import com.stack.image.service.model.ImageFilter;
+import com.stack.image.service.model.PagedData;
+import com.stack.image.service.model.Thumbnail;
+import com.stack.image.service.service.ImageService;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
@@ -36,7 +36,7 @@ public class ImageController {
     }
 
     @Post(value = "/metadata", consumes = MediaType.MULTIPART_FORM_DATA)
-    public void processImageMetadata(CompletedFileUpload file) {
+    void  processImageMetadata(CompletedFileUpload file) {
         imageService.loadMetadata(file);
     }
 }

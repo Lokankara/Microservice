@@ -1,19 +1,13 @@
 package com.stack.image.service.service;
 
-import com.image.service.dao.ImageRepository;
-import com.image.service.model.ImageEntity;
-import com.image.service.model.ImageFilter;
-import com.image.service.model.PagedData;
-import com.image.service.model.Thumbnail;
-import com.image.service.model.ThumbnailEntity;
-import io.micronaut.data.model.Page;
+import com.stack.image.service.dao.ImageRepository;
+import com.stack.image.service.model.ImageFilter;
+import com.stack.image.service.model.PagedData;
+import com.stack.image.service.model.Thumbnail;
 import io.micronaut.http.multipart.CompletedFileUpload;
 
-import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class ImageService {
 

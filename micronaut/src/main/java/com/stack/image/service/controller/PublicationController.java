@@ -1,7 +1,7 @@
 package com.stack.image.service.controller;
 
-import com.image.service.model.PublicationEntity;
-import com.image.service.service.PublicationService;
+import com.stack.image.service.model.PublicationEntity;
+import com.stack.image.service.service.PublicationService;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 

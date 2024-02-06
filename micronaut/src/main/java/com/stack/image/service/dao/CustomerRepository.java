@@ -1,6 +1,6 @@
 package com.stack.image.service.dao;
 
-import com.image.service.model.Customer;
+import com.stack.image.service.model.Customer;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.simple.JdbcClient;

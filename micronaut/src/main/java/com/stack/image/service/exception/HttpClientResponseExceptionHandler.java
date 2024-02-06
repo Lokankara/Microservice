@@ -18,7 +18,7 @@ public class HttpClientResponseExceptionHandler{}
 //    }
 //
 //    @Override
-//    public void handle(HttpClientResponseException exception) {
+//    void  handle(HttpClientResponseException exception) {
 //
 //    }
 //}

@@ -1,6 +1,7 @@
-package com.image.service.service;
+package com.stack.service;
 
-import com.image.service.model.PublicationEntity;
+import com.stack.image.service.model.PublicationEntity;
+import com.stack.image.service.service.PublicationService;
 import io.micronaut.core.type.Argument;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
@@ -10,8 +11,6 @@ import io.micronaut.http.client.annotation.Client;
 import io.micronaut.test.annotation.MockBean;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
-import org.junit.jupiter.api.Test;
-
 
 import java.util.Collections;
 import java.util.List;
@@ -22,7 +21,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @MicronautTest
-class PublicationControllerTest {
+class PublicationServiceTest {
 
     @Inject
     private PublicationService publicationService;

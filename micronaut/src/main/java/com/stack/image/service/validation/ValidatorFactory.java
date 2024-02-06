@@ -1,6 +1,6 @@
 package com.stack.image.service.validation;
 
-import com.image.service.model.ImageFilter;
+import com.stack.image.service.model.ImageFilter;
 import io.micronaut.context.annotation.Factory;
 import io.micronaut.context.annotation.Replaces;
 import io.micronaut.core.util.StringUtils;

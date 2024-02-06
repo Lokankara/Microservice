@@ -124,22 +124,18 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <source>19</source>
-          <target>19</target>
-          <annotationProcessorPaths>
-            <path>
-              <groupId>io.micronaut</groupId>
-              <artifactId>micronaut-inject-java</artifactId>
-              <version>4.2.0</version>
-            </path>
-          </annotationProcessorPaths>
-          <compilerArgs>--enable-preview</compilerArgs>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
 </project>

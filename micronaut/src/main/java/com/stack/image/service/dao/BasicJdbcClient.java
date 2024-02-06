@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 //    }
 //
 //    @Override
-//    public void sql(String sql) {
+//    void  sql(String sql) {
 //        jdbcTemplate.execute(sql);
 //    }
 //}

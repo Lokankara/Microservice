@@ -17,7 +17,7 @@
     <module>micronaut</module>
     <module>devops</module>
     <module>kafka</module>
-    <module>shpp</module>
     <module>ship</module>
+    <module>rover</module>
   </modules>
 </project>
