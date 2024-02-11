@@ -10,16 +10,6 @@ public class Multiply {
         return multiples;
     }
 
-    public int[] multiBy(int start, int end, int step) {
-        int mod = start + (step - start % step) % step;
-        int iterations = (end - mod + step - 1) / step;
-        int[] arr = new int[iterations];
-        for (int i = 0; i < iterations; i++) {
-            arr[i] = mod + i * step;
-        }
-        return arr;
-    }
-
     public int[] multiByThreeWhile() {
         int[] multiples = new int[33];
         int i = 1;
@@ -29,5 +19,15 @@ public class Multiply {
             i++;
         }
         return multiples;
+    }
+
+    public int[] multiBy(int start, int end, int step) {
+        int mod = start + (step - start % step) % step;
+        int iterations = (end - mod + step - 1) / step;
+        int[] arr = new int[iterations];
+        for (int i = 0; i < iterations; i++) {
+            arr[i] = mod + i * step;
+        }
+        return arr;
     }
 }

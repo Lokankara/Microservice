@@ -14,7 +14,6 @@ public class Loop {
         task62();
     }
 
-
     static void task1() {
         for (int number : array) {
             if (number % 2 != 0) {

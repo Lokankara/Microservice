@@ -1,20 +1,34 @@
 package com.stack.condition;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 
+@Slf4j
 public class Conditions {
 
     private static final Random rnd = new Random();
 
     public static void main(String[] args) {
-
+        input();
         task1();
         task2();
         task3();
-        guess();
+        guess(5);
         game();
+    }
+
+    private static void input() {
+        log.info("Enter '0' to quit.");
+        Scanner scanner = new Scanner(System.in);
+        String input = "";
+        while (!input.equals("0")) {
+            input = scanner.nextLine();
+            log.info("You entered: " + input);
+        }
+        scanner.close();
     }
 
     public static void task1() {
@@ -25,11 +39,11 @@ public class Conditions {
         display(a, b, "task 1");
 
         if (a == b) {
-            System.out.println("a == b");
+            log.info("a == b");
         } else if (a < b) {
-            System.out.println("a < b");
+            log.info("a < b");
         } else {
-            System.out.println("a > b");
+            log.info("a > b");
         }
     }
 
@@ -39,30 +53,27 @@ public class Conditions {
 
         display(a, b, "task 2");
 
-        System.out.printf("%s%n",
-                          (a + b) % 2 == 0
-                          ? "maybe a and b are even"
-                          : "some variable is odd");
+        log.info((a + b) % 2 == 0
+                 ? "maybe a and b are even"
+                 : "some variable is odd");
     }
 
     public static void task3() {
-        System.out.printf("%n--------------- %s ---------------%n", "task 3");
-
+        log.info("--------------- task 3 ---------------");
         int a = rnd.nextInt(101);
-
         if (a > 10) {
-            System.out.printf("%s - %s%n", a, " > 10");
+            log.info("{} = > 10", a);
         }
         if (a < 100) {
-            System.out.printf("%s - %s%n", a, " < 100");
+            log.info("{} = < 100", a);
         }
         if (a * 1.0 / 2 > 20) {
-            System.out.printf("%s - %s%n", a, " a / 2 > 20");
+            log.info("{} = a / 2 > 20", a);
         }
         if (a > 4 && a < 41) {
-            System.out.printf("%s - %s%n", a, "a > 4 && a < 41");
+            log.info("{} = a > 4 && a < 41", a);
         } else {
-            System.out.printf("%s - %s%n", a, "a < 5 || a > 40");
+            log.info("{} = a < 5 || a > 40", a);
         }
     }
 
@@ -70,9 +81,9 @@ public class Conditions {
             int a,
             int b,
             String task) {
-        System.out.printf("--------------- %s ---------------%n", task);
-        System.out.printf("a = %s%n", a);
-        System.out.printf("b = %s%n", b);
+        log.info( "--------------- {} ---------------", task);
+        log.info("a = {}", a);
+        log.info("b = {}", b);
     }
 
     public static void game() {
@@ -85,56 +96,46 @@ public class Conditions {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("--------------- guess --------------");
-        System.out.println("Try to guess the number between 1 and 100.");
+        log.info("--------------- guess --------------");
+        log.info("Try to guess the number between 1 and 100.");
 
         while (attempts < maxAttempts && !isGuessed) {
-            System.out.print("Enter your guess: ");
+            log.info("Enter your guess: ");
             int userGuess = scanner.nextInt();
-
             if (userGuess == targetNumber) {
-                System.out.println(
-                        "Congratulations! You guessed the correct number.");
+                log.info("Congratulations! You guessed the correct number.");
                 isGuessed = true;
             } else {
-                System.out.println("Incorrect. The correct number is " + (userGuess < targetNumber
-                                                                          ? "greater"
-                                                                          : "less") + " than your guess.");
+                log.info("Incorrect. The correct number is {} than your guess",
+                         (userGuess < targetNumber ? "greater" : "less"));
             }
 
             attempts++;
             int remainingAttempts = maxAttempts - attempts;
-            System.out.println("Attempts remaining: " + remainingAttempts);
+            log.info("Attempts remaining: " + remainingAttempts);
         }
 
         if (!isGuessed) {
-            System.out.println(
-                    "Sorry, you've run out of attempts. The correct number was: " + targetNumber);
+            log.info("You've run out of attempts. The correct number was: {}",
+                     targetNumber);
         }
-
         scanner.close();
     }
 
-    public static void guess() {
+    public static void guess(int max) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("--------------- guess v.2 --------------");
-        System.out.println(
-                "Think of a number between 1 and 100, and I'll try to guess it.");
+        log.info("--------------- guess v.2 --------------");
+        log.info("Think of a number between 1 and 100, and I'll try to guess it.");
         int attempts = 0;
         int lowerBound = 1;
         int upperBound = 100;
         boolean isGuessed = false;
-        int MAX_ATTEMPTS = 5;
 
 
-        while (!isGuessed && attempts < MAX_ATTEMPTS) {
+        while (!isGuessed && attempts < max) {
             int guess = (lowerBound + upperBound) / 2;
-
-            System.out.println("Is your number " + guess + "?");
-            System.out.println(
-                    "Enter '+' if your number is higher, '-' if lower, or '0' if correct:");
-
+            log.info("Is your number {} ?", guess);
+            log.info("Enter '+' if your number is higher, '-' if lower, or '0' if correct:");
             char userResponse;
             while (true) {
                 try {
@@ -146,35 +147,26 @@ public class Conditions {
                         throw new NoSuchElementException();
                     }
                 } catch (NoSuchElementException e) {
-                    System.out.println(
-                            "Invalid input. Please enter '+', '-', or '0'.");
+                    log.info("Invalid input. Please enter '+', '-', or '0'.");
                     scanner.nextLine();
                 }
             }
 
             switch (userResponse) {
-                case '+':
-                    lowerBound = guess + 1;
-                    break;
-                case '-':
-                    upperBound = guess - 1;
-                    break;
-                case '0':
-                    System.out.println("Yay! I guessed your number.");
+                case '+' -> lowerBound = guess + 1;
+                case '-' -> upperBound = guess - 1;
+                case '0' -> {
+                    log.info("Yay! I guessed your number.");
                     isGuessed = true;
-                    break;
-                default:
-                    System.out.println(
-                            "Invalid input. Please enter '+', '-', or '0'.");
-                    break;
+                }
+                default -> log.info("Invalid input. Please enter '+', '-', or '0'.");
             }
 
             attempts++;
         }
 
         if (!isGuessed) {
-            System.out.println(
-                    "Sorry, you've reached the maximum number of attempts. The correct number was not guessed.");
+            log.info("Sorry, you've reached the maximum number of attempts");
             return;
         }
 

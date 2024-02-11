@@ -3,12 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ua</groupId>
+    <groupId>com.stack</groupId>
     <artifactId>lection</artifactId>
     <version>1.0</version>
   </parent>
 
-  <groupId>com.stack</groupId>
   <artifactId>rover</artifactId>
   <packaging>jar</packaging>
 
@@ -20,10 +19,14 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.8.1</version>
-      <scope>test</scope>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-core</artifactId>
+      <version>1.32</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjdk.jmh</groupId>
+      <artifactId>jmh-generator-annprocess</artifactId>
+      <version>1.32</version>
     </dependency>
   </dependencies>
   <build>
@@ -34,6 +37,9 @@
         <configuration>
           <source>17</source>
           <target>17</target>
+          <compilerArgs>
+            <arg>-parameters</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
     </plugins>
