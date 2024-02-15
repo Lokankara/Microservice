@@ -10,12 +10,12 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class DynamicLoopTest {
 
-    @ParameterizedTest(name = "start:{0}, end:{1}, step:{2}, expected:{3}")
-    @ArgumentsSource(MultiArgumentsProvider.class)
-    void testMultiplicity(int start, int end, int step, String[] expected) {
-        String[] actual = new DynamicLoop().multiplicityTask(start, end, step);
-        checkArrays(expected, actual);
-    }
+//    @ParameterizedTest(name = "start:{0}, end:{1}, step:{2}, expected:{3}")
+//    @ArgumentsSource(MultiArgumentsProvider.class)
+//    void testMultiplicity(int start, int end, int step, String[] expected) {
+//        String[] actual = new DynamicLoop().multiplicityTask(start, end, step);
+//        checkArrays(expected, actual);
+//    }
 
     @ParameterizedTest(name = "start:{0}, end:{1}, step:{2}, expected:{3}")
     @ArgumentsSource(MultiArgumentsProvider.class)

@@ -54,8 +54,6 @@ Create 3 arrays:
 - array of cat color colors
 - array of cat ages
 
-
-
 Perform the tests:
 2.1 If the lengths of all arrays are equal, print "Pass", otherwise print "Fail"
 2.2 If box number 4 contains a ginger-colored cat with the name ginger and age 3 years, then print "Pass", otherwise print "Fail".
