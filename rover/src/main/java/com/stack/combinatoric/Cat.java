@@ -1,11 +1,14 @@
 package com.stack.combinatoric;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+@Slf4j
 public class Cat {
 
     public String[] findBy(
@@ -25,8 +28,7 @@ public class Cat {
     }
 
     public int getCurrentHour() {
-        return LocalTime.now()
-                        .getHour();
+        return LocalTime.now().getHour();
     }
 
     public String feed(
@@ -72,7 +74,7 @@ public class Cat {
         int count = 0;
         for (String c : colors) {
             if (color.equals(c)) {
-                System.out.println("There are " + count + " " + color + " cats.");
+                log.info("There are " + count + " " + color + " cats.");
                 count++;
             }
         }
@@ -87,7 +89,7 @@ public class Cat {
         boolean[][] feed = new boolean[catSize][hourSize];
 
         for (int j = 0; j < hourSize; j++) {
-            if (hours[j] == 11) {
+            if (hours[j] == 11.0) {
                 for (int i = 0; i < catSize; i++) {
                     if ("Red".equalsIgnoreCase(catNames[i])) {
                         feed[i][j] = true;
@@ -103,8 +105,7 @@ public class Cat {
             String[] colors,
             String[] names) {
         if (colors == null || names == null || colors.length != names.length) {
-            throw new IllegalArgumentException(
-                    "Input arrays must not be null and must have the same length.");
+            throw new IllegalArgumentException("Input arrays must not be null and must have the same length.");
         }
 
         Integer[] indices = new Integer[colors.length];
@@ -121,74 +122,75 @@ public class Cat {
         return sortedNames;
     }
 
-    public void sortCatsByColorCount() {
-    }
-
-    public void checkResults() {
-    }
-
     public String combineNamesOfEvenCats(String[] names) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < names.length; i += 2) {
-            sb.append(names[i])
-              .append(" ");
+            sb.append(names[i]).append(" ");
         }
-        return sb.toString()
-                 .trim();
+        return sb.toString().trim();
     }
 
 
-    //    public void printEvenBoxes() {
-    //        for (int i = 0; i < NAMES.length; i += 2) {
-    //            System.out.println("Box " + i + ": " + NAMES[i] + ", " + COLORS[i] + ", " + AGES[i]);
-    //        }
-    //    }
+    public void printEvenBoxes(
+            String[] names,
+            String[] colors,
+            int[] ages) {
+        for (int i = 0; i < names.length; i += 2) {
+            log.info("The Box#{}: name: {}, color:{}, age:{}",
+                     i, names[i], colors[i], ages[i]);
+        }
+    }
 
-    //    public void feedGrayCatsAt11() {
-    //        for (int i = 0; i < NAMES.length; i++) {
-    //            if ("gray".equals(COLORS[i])) {
-    //                System.out.println("Cat " + NAMES[i] + " fed at 11am");
-    //            } else {
-    //                System.out.println("Something went wrong...");
-    //            }
-    //        }
-    //    }
+    public String[] feedGrayCatsAt11(
+            String[] names,
+            String[] colors,
+            double[] hours) {
+        String[] messages = new String[hours.length];
+        for (int i = 0; i < hours.length; i++) {
+            messages[i] = "Something went wrong...";
+            if (hours[i] == 11.0) {
+                for (int j = 0; j < colors.length; j++) {
+                    if ("gray".equals(colors[j])) {
+                        messages[i] = "Cat %s fed at 11am".formatted(names[j]);
+                    }
+                }
+            }
+        }
+        return messages;
+    }
 
-    //    public void printBlackCats() {
-    //        for (int i = 0; i < NAMES.length; i++) {
-    //            if ("black".equals(COLORS[i])) {
-    //                System.out.println("Box " + i + ": " + NAMES[i]);
-    //            }
-    //        }
-    //    }
+    public void printYoungerThanFour(String[] names, int[] ages) {
+        for (int i = 0; i < ages.length; i++) {
+            if (ages.length < 4){
+                log.info("The Box#{}: name: {}, age:{}",
+                         i, names[i], ages[i]);
+            }
+        }
+    }
 
-    //    public void printAndSwapCats() {
-    //        printCats();
-    //        swapCats(2, 6);
-    //        printCats();
-    //    }
-    //
-    //    public void printCats() {
-    //        for (int i = 0; i < NAMES.length; i++) {
-    //            System.out.println("Box " + i + ": " + NAMES[i] + ", " + COLORS[i] + ", " + AGES[i]);
-    //        }
-    //    }
-    //
-    //    public void swapCats(
-    //            int i,
-    //            int j) {
-    //        String tempName = NAMES[i];
-    //        String tempColor = COLORS[i];
-    //        int tempAge = AGES[i];
-    //
-    //        NAMES[i] = NAMES[j];
-    //        COLORS[i] = COLORS[j];
-    //        AGES[i] = AGES[j];
-    //
-    //        NAMES[j] = tempName;
-    //        COLORS[j] = tempColor;
-    //        AGES[j] = tempAge;
-    //    }
+    public boolean[] getIsCatBlack(String[] colors) {
+        boolean[] isBlack = new boolean[colors.length];
+        for (int i = 0; i < colors.length; i++) {
+            if (colors[i].equalsIgnoreCase("black")){
+                isBlack[i] = true;
+            }
+        }
+        return isBlack;
+    }
+
+    public void countCatsByColor(String[] colors) {
+        Arrays.sort(colors);
+        int count = 1;
+        for (int i = 1; i < colors.length; i++) {
+            if (!colors[i].equals(colors[i - 1])) {
+                log.info("Color: " + colors[i - 1] + ", Count: " + count);
+                count = 1;
+            } else {
+                count++;
+            }
+        }
+        log.info("Color: " + colors[colors.length - 1] + ", Count: " + count);
+    }
 
     public String[] reverseCats(String[] names) {
         if (names != null) {

@@ -6,6 +6,8 @@ import com.stack.structure.array.provider.CatArgumentsFeedRedAt11Provider;
 import com.stack.structure.array.provider.CatArgumentsNamesProvider;
 import com.stack.structure.array.provider.CatArgumentsProvider;
 import com.stack.structure.array.provider.CatArgumentsProviderNamesOfEvenCats;
+import com.stack.structure.array.provider.CatColorArgumentsProvider;
+import com.stack.structure.array.provider.CatFeedingArgumentsProvider;
 import com.stack.structure.array.provider.CatNamesProvider;
 import com.stack.structure.array.provider.CatSortArgumentsProvider;
 import org.junit.jupiter.api.Assertions;
@@ -39,6 +41,18 @@ class CatTest {
             "black", "red", "white", "gray",
             "red", "gray", "black", "white"};
     private static final int[] AGES = {2, 4, 1, 3, 2, 4, 5, 1};
+
+    @Test
+    void countCatsByColor() {
+        cat.countCatsByColor(COLORS);
+    }
+
+    @ParameterizedTest(name = "Test {index}: colors={0}, expected={1}")
+    @ArgumentsSource(CatColorArgumentsProvider.class)
+    void testGetIsCatBlack(String[] colors, boolean[] expected) {
+        boolean[] actual = cat.getIsCatBlack(colors);
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
     @Test
     void testGetCurrentHour() {
@@ -160,6 +174,19 @@ class CatTest {
         System.out.println(Arrays.toString(expectedSortedNames));
         System.out.println(Arrays.toString(colors));
         assertArrayEquals(expectedSortedNames, sortedNames);
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(CatFeedingArgumentsProvider.class)
+    void feedGrayCatsAt11Test(String[] names, String[] colors, double[] hours, String[] expectedMessages) {
+        String[] actualMessages = cat.feedGrayCatsAt11(names, colors, hours);
+        assertArrayEquals(expectedMessages, actualMessages);
+    }
+
+
+    @Test
+    void printEvenBoxes(){
+        cat.printEvenBoxes(NAMES, COLORS, AGES);
     }
 
     public  static void printBooleanTable(boolean[][] array) {
