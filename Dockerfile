@@ -1,23 +1,18 @@
-# Kafka image
+FROM python:3.9
 
-FROM confluentinc/cp-kafka:latest
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
 
-ENV KAFKA_BROKER_ID=1
-ENV KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-ENV KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:29092
-ENV KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-ENV KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+RUN apt-get update && apt-get install -y ffmpeg
 
-EXPOSE 29092
+WORKDIR /app
 
-CMD ["/etc/confluent/docker/run"]
+COPY /rover/src/app/py/mp3/ /app
 
-# ZooKeeper image
-FROM zookeeper:latest
+RUN pip install --no-cache-dir -r requirements.txt
 
-ENV ZOOKEEPER_CLIENT_PORT=2181
-ENV ZOOKEEPER_TICK_TIME=2000
+COPY . .
 
-EXPOSE 2181
+EXPOSE 5000
 
-CMD ["zkServer.sh", "start-foreground"]
+CMD ["python", "app.py"]
