@@ -1,4 +1,4 @@
-package com.stack.model;
+package com.stack.model.company;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

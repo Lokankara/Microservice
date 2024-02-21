@@ -17,8 +17,8 @@ public class Cat {
         List<String> result = new ArrayList<>();
         for (String cat : cats) {
             for (char letter : letters) {
-                if ((cat.charAt(0) ^ letter) == 0 && cat.startsWith(String.valueOf(
-                        letter))) {
+                if ((cat.charAt(0) ^ letter) == 0
+                        && cat.startsWith(String.valueOf(letter))) {
                     result.add(cat);
                     break;
                 }
@@ -179,17 +179,39 @@ public class Cat {
     }
 
     public void countCatsByColor(String[] colors) {
-        Arrays.sort(colors);
+
+        String[] sortedColors = Arrays.copyOf(colors, colors.length);
+        Arrays.sort(sortedColors);
+
+        int[] counters = getCounters(sortedColors);
+
+        int max = 0;
+        int index = 0;
+        for (int i = 0; i < counters.length; i++) {
+            if (max < counters[i]){
+                max = counters[i];
+                index = i;
+            }
+            if(counters[i]!=0){
+                log.info("Color: {}, count: {}", sortedColors[i], counters[i]);
+            }
+        }
+        log.info("Maximum identical {} cats: {}", sortedColors[index], counters[index]);
+    }
+
+    private static int[] getCounters(String[] sortedColors) {
+        int[] counters = new int[sortedColors.length];
         int count = 1;
-        for (int i = 1; i < colors.length; i++) {
-            if (!colors[i].equals(colors[i - 1])) {
-                log.info("Color: " + colors[i - 1] + ", Count: " + count);
+        for (int i = 1; i < sortedColors.length; i++) {
+            if (!sortedColors[i].equalsIgnoreCase(sortedColors[i - 1])) {
+                counters[i - 1] = count;
                 count = 1;
             } else {
                 count++;
             }
         }
-        log.info("Color: " + colors[colors.length - 1] + ", Count: " + count);
+        counters[sortedColors.length - 1] = count;
+        return counters;
     }
 
     public String[] reverseCats(String[] names) {

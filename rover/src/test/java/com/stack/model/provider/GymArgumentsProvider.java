@@ -1,5 +1,8 @@
-package com.stack.model.gym;
+package com.stack.model.provider;
 
+import com.stack.model.gym.Jock;
+import com.stack.model.gym.Role;
+import com.stack.model.gym.Sled;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;

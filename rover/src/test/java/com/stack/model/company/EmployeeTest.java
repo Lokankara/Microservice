@@ -1,5 +1,6 @@
 package com.stack.model.company;
 
+import com.stack.model.provider.EmployeeArgumentsProvider;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
@@ -22,6 +23,6 @@ class EmployeeTest {
     @ParameterizedTest(name = "{0} hashCode equals {1} hashCode")
     @ArgumentsSource(EmployeeArgumentsProvider.class)
     void testHashCode(Employee a, Employee b, boolean expected) {
-        assertEquals(a.hashCode()==b.hashCode(), expected);
+        assertEquals(a.hashCode() == b.hashCode(), expected);
     }
 }

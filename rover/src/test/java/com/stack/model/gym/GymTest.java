@@ -1,5 +1,6 @@
 package com.stack.model.gym;
 
+import com.stack.model.provider.GymArgumentsProvider;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;

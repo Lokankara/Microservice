@@ -1,5 +1,7 @@
-package com.stack.model;
+package com.stack.model.provider;
 
+import com.stack.model.company.Address;
+import com.stack.model.company.Apartment;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;

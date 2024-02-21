@@ -1,5 +1,6 @@
 package com.stack.model.company;
 
+import com.stack.model.provider.PersonArgumentsProvider;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 

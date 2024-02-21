@@ -39,7 +39,7 @@ class CatTest {
             "Jerry", "SnowBall", "Pussy", "Tabby"};
     private static final String[] COLORS = {
             "black", "red", "white", "gray",
-            "red", "gray", "black", "white"};
+            "red", "gray", "black", "red"};
     private static final int[] AGES = {2, 4, 1, 3, 2, 4, 5, 1};
 
     @Test

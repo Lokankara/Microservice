@@ -1,4 +1,4 @@
-package com.stack.model.company;
+package com.stack.model.provider;
 
 import com.stack.model.company.Employee;
 import com.stack.model.company.Gender;

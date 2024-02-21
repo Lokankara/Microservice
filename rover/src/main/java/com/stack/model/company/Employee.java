@@ -1,5 +1,6 @@
 package com.stack.model.company;
 
+import com.stack.model.time.Month;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,16 +11,24 @@ import java.util.Objects;
 public class Employee
         extends Entity {
 
+    private double salaryPerDay;
+
+    double getSalary(Month[] monthArray){
+        double amount = 0;
+        for (Month month : monthArray) {
+            amount += month.workingDays() * salaryPerDay;
+        }
+        return amount;
+    }
+
     public Employee(
             String name,
             int age,
             Gender gender,
             double salary) {
         super(name, age, gender);
-        this.salary = salary;
+        this.salaryPerDay = salary;
     }
-
-    private double salary;
 
     public boolean isSameName(Employee employee) {
         return this.name.equals(employee.name);
@@ -31,17 +40,17 @@ public class Employee
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Employee employee = (Employee) o;
-        return Double.compare(salary, employee.salary) == 0;
+        return Double.compare(salaryPerDay, employee.salaryPerDay) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), salary);
+        return Objects.hash(super.hashCode(), salaryPerDay);
     }
 
     @Override
     public String toString() {
         return "Employee{salary=%s, name='%s', age=%d, gender=%s}"
-                .formatted(salary, name, age, gender);
+                .formatted(salaryPerDay, name, age, gender);
     }
 }

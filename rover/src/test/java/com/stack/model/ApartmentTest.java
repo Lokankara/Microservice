@@ -1,5 +1,7 @@
 package com.stack.model;
 
+import com.stack.model.company.Apartment;
+import com.stack.model.provider.ApartmentArgumentsProvider;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 

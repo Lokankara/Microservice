@@ -52,7 +52,6 @@ class ShapeTest {
         assertArrayEquals(expected, actual);
     }
 
-
     @Test
     void testOffsetPyramidSize10() {
         String[][] expected = {
