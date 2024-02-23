@@ -1,6 +1,6 @@
 package com.stack.model.company;
 
-public class Person extends Entity {
+public class Person extends Human {
 
     public Person(
             String name,
@@ -9,15 +9,16 @@ public class Person extends Entity {
         super(name, age, gender);
     }
 
+    @Override
     public String getName() {
-        return gender == Gender.MAN
-               ? "Mr. %s".formatted(name)
-               : "Mrs. %s".formatted(name);
+        return getGender() == Gender.MALE
+               ? "Mr. %s".formatted(super.getName())
+               : "Mrs. %s".formatted(super.getName());
     }
 
     @Override
     public String toString() {
         return "Person{name='%s', age=%d, gender=%s}"
-                .formatted(name, age, gender);
+                .formatted(getName(), getAge(), getGender());
     }
 }

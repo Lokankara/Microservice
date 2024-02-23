@@ -2,6 +2,7 @@ package com.stack.model.company;
 
 import com.stack.model.provider.MonthArgumentsProvider;
 import com.stack.model.time.Date;
+import com.stack.model.time.Day;
 import com.stack.model.time.Month;
 import com.stack.model.time.MonthUtils;
 import org.junit.jupiter.api.Test;
@@ -30,14 +31,14 @@ class MonthTest {
     @ParameterizedTest
     @ArgumentsSource(MonthArgumentsProvider.class)
     void testGetNumberOfWorkingDaysWithSalary(MonthUtils utils, int year) {
-        int salary = 25;
+        int salary = 50;
         int actualWorkingDays = utils.getWorkingDays(year);
         int days = utils.getDays(year);
         Month month = new Month(utils.getName(), days, actualWorkingDays);
-        Employee employee = new Employee("Bob", 40, Gender.MAN, salary);
+        Employee employee = new Employee(40, "Bob", Gender.MALE, salary);
         Month[] months = { month };
         assertEquals(month.days(), days);
-        assertEquals(employee.getSalary(months), salary * actualWorkingDays);
+        assertEquals(employee.getSalary(months), salary);
     }
 
     @Test
@@ -46,5 +47,15 @@ class MonthTest {
         Date date = new Date(25, MonthUtils.FEBRUARY, 2025);
         Date plussed = date.plusDays(days);
         assertEquals(plussed.day(), date.day() + days);
+    }
+
+    @Test
+    void testGetDaysOfMonth() {
+        Day[] days = MonthUtils.JANUARY.getDaysOfMonth(2021);
+        assertEquals(31, days.length);
+        days = MonthUtils.FEBRUARY.getDaysOfMonth(2021);
+        assertEquals(28, days.length);
+        days = MonthUtils.FEBRUARY.getDaysOfMonth(2020);
+        assertEquals(29, days.length);
     }
 }

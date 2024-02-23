@@ -1,56 +1,62 @@
 package com.stack.model.company;
 
 import com.stack.model.time.Month;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Objects;
+import lombok.ToString;
 
 @Getter
 @Setter
-public class Employee
-        extends Entity {
+@ToString
+@EqualsAndHashCode(callSuper = false)
+public class Employee extends Human {
 
     private double salaryPerDay;
+    private double baseSalary;
 
-    double getSalary(Month[] monthArray){
-        double amount = 0;
-        for (Month month : monthArray) {
-            amount += month.workingDays() * salaryPerDay;
-        }
-        return amount;
+    public Employee(
+            int age,
+            String name,
+            Gender gender,
+            double baseSalary) {
+        super(name, age, gender);
+        this.baseSalary = baseSalary;
     }
 
     public Employee(
-            String name,
             int age,
+            String name,
             Gender gender,
-            double salary) {
+            double baseSalary,
+            double salaryPerDay) {
         super(name, age, gender);
-        this.salaryPerDay = salary;
+        this.baseSalary = baseSalary;
+        this.salaryPerDay = salaryPerDay;
+    }
+
+    public Employee() {
+        super("Employee", 0, Gender.OTHER);
+    }
+
+    public double getSalary() {
+        return baseSalary;
+    }
+
+    double getSalary(Month[] monthArray) {
+        double amount = 0;
+        if (monthArray == null) {
+            return amount;
+        }
+        for (Month month : monthArray) {
+            if (month != null) {
+                amount += month.workingDays() * salaryPerDay;
+            }
+        }
+        return amount + getSalary() * monthArray.length;
     }
 
     public boolean isSameName(Employee employee) {
-        return this.name.equals(employee.name);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Employee employee = (Employee) o;
-        return Double.compare(salaryPerDay, employee.salaryPerDay) == 0;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), salaryPerDay);
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{salary=%s, name='%s', age=%d, gender=%s}"
-                .formatted(salaryPerDay, name, age, gender);
+        return this.getName().equals(employee.getName());
     }
 }

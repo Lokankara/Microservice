@@ -15,25 +15,25 @@ public class CatArgumentsProvider implements ArgumentsProvider {
                         new String[]{"Grey", "Tom", "Red", "Lucky", "Jerry", "SnowBall", "Pussy", "Tabby"},
                         new String[]{"black", "white", "white", "red", "gray", "gray", "black", "white"},
                         new int[]{2, 4, 1, 3, 2, 4, 5, 1},
-                        true
+                        true, 0
+                ),
+                Arguments.of(
+                        new String[]{"Grey", "Tom", "Red", "Lucky", "Jerry", "SnowBall", "Pussy", "Tabby"},
+                        new String[]{"black", "white", "white", "red", "gray", "gray", "black", "white"},
+                        new int[]{2, 4, 1, 3, 2, 4, 5, 1},
+                        true, 1
                 ),
                 Arguments.of(
                         new String[]{"Grey", "Tom", "Red", "Lucky", "Jerry", "Pussy", "Tabby"},
                         new String[]{"black", "white", "white", "red", "gray", "gray", "black", "white"},
                         new int[]{2, 4, 1, 3, 2, 4, 5, 1},
-                        false
+                        false, 2
                 ),
                 Arguments.of(
                         new String[]{"Grey", "Tom", "Red", "Lucky", "Jerry", "SnowBall", "Pussy", "Tabby"},
                         new String[]{"black", "white", "white", "red", "gray", "gray", "black", "white"},
                         new int[]{2, 4, 1, 3, 2, 4, 1},
-                        false
-                ),
-                Arguments.of(
-                        new String[]{"Grey", "Tom", "Red", "Lucky", "Jerry", "SnowBall", "Pussy", "Tabby"},
-                        new String[]{"black", "white", "white", "red", "gray", "gray", "black", "white"},
-                        new int[]{2, 4, 1, 3, 2, 4, 5, 1},
-                        true
+                        false, 3
                 )
         );
     }

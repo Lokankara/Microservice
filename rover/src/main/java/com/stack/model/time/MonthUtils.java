@@ -22,7 +22,7 @@ public enum MonthUtils {
     NOVEMBER("November"),
     DECEMBER("December");
 
-    public static final MonthUtils[] ENUMS = MonthUtils.values();
+    public static final MonthUtils[] MONTHS = MonthUtils.values();
     private final String name;
 
     private boolean leapYear(int year) {
@@ -37,11 +37,19 @@ public enum MonthUtils {
         };
     }
 
+    public Day[] getDaysOfMonth(int year) {
+        int days = getDays(year);
+        Day[] daysArray = new Day[days];
+        for (int i = 0; i < days; i++) {
+            daysArray[i] =  new Day(i + 1, this.ordinal() + 1, year);
+        }
+        return daysArray;
+    }
+
     public int getWorkingDays(int year) {
         int workingDays = 0;
         for (int i = 0; i < getDays(year); i++) {
-            LocalDate currentDate = LocalDate.of(
-                    year, this.ordinal() + 1, 1).plusDays(i);
+            LocalDate currentDate = LocalDate.of(year, this.ordinal() + 1, 1).plusDays(i);
             if (currentDate.getDayOfWeek() != DayOfWeek.SATURDAY
                     && currentDate.getDayOfWeek() != DayOfWeek.SUNDAY) {
                 workingDays++;

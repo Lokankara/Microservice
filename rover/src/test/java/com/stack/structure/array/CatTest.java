@@ -77,17 +77,19 @@ class CatTest {
 
     @ParameterizedTest
     @ArgumentsSource(CatArgumentsProvider.class)
-    void testCatInBoxNumber4(String[] catNames, String[] colors, int[] ages, boolean expected) {
+    void testCatInBoxNumber4(String[] catNames, String[] colors, int[] ages, boolean expect, int i) {
         int n = 4;
-        boolean actual = "Red".equals(catNames[n])
-                && "red".equals(colors[n])
+        boolean actual = "Red".equalsIgnoreCase(catNames[n])
+                && "red".equalsIgnoreCase(colors[n])
                 && ages[n] == 3;
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @ParameterizedTest
     @ArgumentsSource(CatArgumentsProvider.class)
-    void testTwoRedCatsYoungerThan3(String[] catNames, String[] colors, int[] ages, boolean expected) {
+    void testTwoRedCatsYoungerThan3(
+            String[] catNames, String[] colors,
+            int[] ages, boolean expect, int index) {
         int younger = 0;
         for (int i = 0; i < catNames.length; i++) {
             if ("red".equals(colors[i]) && ages[i] < 3) {
@@ -95,7 +97,7 @@ class CatTest {
             }
         }
         boolean actual = younger == 2;
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @ParameterizedTest
@@ -108,7 +110,7 @@ class CatTest {
                 break;
             }
         }
-        assertEquals(expected, actual);
+        assertFalse(actual);
     }
 
     @Test

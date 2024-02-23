@@ -13,18 +13,18 @@ class ManagerTest {
 
     @ParameterizedTest
     @ArgumentsSource(ManagerArgumentsProvider.class)
-    void testGetSalary(String name, int age, Gender gender, int salaryPerDay, int numberOfSubordinates, int year, double expectedSalary) {
-        Manager manager = new Manager(name, age, gender, salaryPerDay, numberOfSubordinates);
-        Month[] months = map(MonthUtils.ENUMS, year);
+    void testGetSalary(String name, int age, Gender gender, int perDay, int subordinates, int year, double expected) {
+        Manager manager = new Manager(age, name, gender, 10000, perDay, subordinates);
+        Month[] months = map(MonthUtils.MONTHS, year);
         double actualSalary = manager.getSalary(months);
-        assertEquals(expectedSalary, actualSalary, "Salary calculation should be correct");
+        assertEquals(expected, actualSalary, "Salary calculation should be correct");
     }
 
     @Test
     void testGetSalary() {
-        Manager manager = new Manager("Jack", 35, Gender.MAN, 200, 5);
+        Manager manager = new Manager(35, "Jack", Gender.MALE,  1000, 200);
         int year = 2001;
-        double expected = 13650.0;
+        double expected = 19000;
         MonthUtils[] utils = {MonthUtils.JANUARY, MonthUtils.FEBRUARY, MonthUtils.MARCH};
         Month[] months = map(utils, year);
         double actualSalary = manager.getSalary(months);

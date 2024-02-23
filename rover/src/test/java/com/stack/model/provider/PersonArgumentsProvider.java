@@ -12,8 +12,8 @@ public class PersonArgumentsProvider
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) throws Exception {
         return Stream.of(
-                Arguments.of(30, Gender.MAN, "John", "Mr. John", "Person{name='John', age=30, gender=MAN}"),
-                Arguments.of(25, Gender.WOMAN, "Alice", "Mrs. Alice", "Person{name='Alice', age=25, gender=WOMAN}")
+                Arguments.of(30, Gender.MALE, "John", "Mr. John", "Person{name='Mr. John', age=30, gender=MALE}"),
+                Arguments.of(25, Gender.FEMALE, "Alice", "Mrs. Alice", "Person{name='Mrs. Alice', age=25, gender=FEMALE}")
         );
     }
 }

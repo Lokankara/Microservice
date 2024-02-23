@@ -14,19 +14,19 @@ public class SalaryArgumentsProvider
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) throws Exception {
         Employee[] developers = {
-                new Employee("John", 30, Gender.MAN, 5000),
-                new Employee("Alice", 25, Gender.WOMAN, 6000),
-                new Employee("Bob", 40, Gender.MAN, 7000)
+                new Employee( 30, "John", Gender.MALE, 5000),
+                new Employee( 25, "Alice", Gender.FEMALE, 6000),
+                new Employee( 40, "Bob", Gender.MALE, 7000)
         };
 
         Employee[] testers = {
-                new Employee("Emma", 35, Gender.WOMAN, 5500),
-                new Employee("Tom", 28, Gender.MAN, 4500)
+                new Employee( 35, "Emma", Gender.FEMALE, 5500),
+                new Employee( 28, "Tom", Gender.MALE, 4500)
         };
 
         return Stream.of(
-                Arguments.of(developers, 18000.0),
-                Arguments.of(testers, 10000.0)
+                Arguments.of(developers, 216000.0),
+                Arguments.of(testers, 120000.0)
         );
     }
 }

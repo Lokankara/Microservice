@@ -28,8 +28,8 @@ class TesterTest {
 
     @Test
     void testPrintCommonElement() {
-        int[] array1 = {2, 3, 4, 5};
-        int[] array2 = {2, -3, 0, 5};
+        int[] array1 = {2, 2, 3, 4, 5};
+        int[] array2 = {2, -3, 0, 5, 5, 5};
         int[] array = {2, 5};
         tester.printCommonElements(array1, array2);
         List<String> messages = loggerExtension.getFormattedMessages();

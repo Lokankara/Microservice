@@ -1,7 +1,7 @@
 package com.stack.model.company;
 
 public enum Gender {
-    MAN,
-    WOMAN,
+    MALE,
+    FEMALE,
     OTHER
 }

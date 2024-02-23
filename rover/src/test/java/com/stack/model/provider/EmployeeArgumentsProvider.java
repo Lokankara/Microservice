@@ -12,9 +12,9 @@ public class EmployeeArgumentsProvider
         implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) throws Exception {
-        Employee jack = new Employee("Jack", 30, Gender.MAN, 5000);
-        Employee bob = new Employee("Bob", 35, Gender.MAN, 6000);
-        Employee alice = new Employee("Alice", 25, Gender.WOMAN, 4500);
+        Employee jack = new Employee(30, "Jack", Gender.MALE, 5000);
+        Employee bob = new Employee(35, "Bob", Gender.MALE, 6000);
+        Employee alice = new Employee(25, "Alice", Gender.FEMALE, 4500);
 
         return Stream.of(
                 Arguments.of(jack, jack, true),
