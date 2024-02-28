@@ -4,31 +4,31 @@ public class EmployeeUtils {
     private EmployeeUtils() {
     }
 
-    public static Employee findEmployeeByName(
-            Employee[] employees,
+    public static BaseEmployee findEmployeeByName(
+            BaseEmployee[] employees,
             String name) {
-        for (Employee employee : employees) {
+        for (BaseEmployee employee : employees) {
             if (employee != null && employee.getName().equals(name)) {
                 return employee;
             }
         }
-        return new Employee();
+        return new Employee(0, "", Gender.UNKNOWN);
     }
 
-    public static Employee findEmployeeBySubstring(
-            Employee[] employees,
+    public static BaseEmployee findEmployeeBySubstring(
+            BaseEmployee[] employees,
             String substring) {
-        for (Employee employee : employees) {
+        for (BaseEmployee employee : employees) {
             if (employee != null && employee.getName().contains(substring)) {
                 return employee;
             }
         }
-        return new Employee();
+        return new Employee(0, "", Gender.UNKNOWN);
     }
 
-    public static double calculateTotalSalary(Employee[] employees) {
+    public static double calculateTotalSalary(BaseEmployee[] employees) {
         double amount = 0;
-        for (Employee employee : employees) {
+        for (BaseEmployee employee : employees) {
             if (employee == null) {
                 return 0;
             }
@@ -37,9 +37,9 @@ public class EmployeeUtils {
         return amount;
     }
 
-    public static double findMinimumSalary(Employee[] employees) {
+    public static double findMinimumSalary(BaseEmployee[] employees) {
         double min = Double.MAX_VALUE;
-        for (Employee employee : employees) {
+        for (BaseEmployee employee : employees) {
             if (employee == null) {
                 return 0;
             }
@@ -48,9 +48,9 @@ public class EmployeeUtils {
         return min;
     }
 
-    public static double findMaximumSalary(Employee[] employees) {
+    public static double findMaximumSalary(BaseEmployee[] employees) {
         double max = Double.MIN_VALUE;
-        for (Employee employee : employees) {
+        for (BaseEmployee employee : employees) {
             if (employee == null) {
                 return 0;
             }
@@ -59,13 +59,13 @@ public class EmployeeUtils {
         return max;
     }
 
-    public static int findMinSubordinates(Manager[] managers) {
+    public static int findMinSubordinates(BaseEmployee[] employees) {
         int min = Integer.MAX_VALUE;
-        for (Manager manager : managers) {
-            if (manager == null) {
+        for (BaseEmployee employee : employees) {
+            if (employee == null) {
                 return 0;
             }
-            int subordinates = manager.getSubordinates();
+            int subordinates = employee.getSubordinates();
             if (subordinates < 0) {
                 return 0;
             }
@@ -74,41 +74,41 @@ public class EmployeeUtils {
         return min;
     }
 
-    public static int findMaxSubordinates(Manager[] managers) {
+    public static int findMaxSubordinates(BaseEmployee[] employees) {
         int max = Integer.MIN_VALUE;
-        for (Manager manager : managers) {
-            if (manager == null) {
+        for (BaseEmployee employee : employees) {
+            if (employee == null) {
                 return 0;
             }
-            max = swapMax(manager.getSubordinates(), max);
+            max = swapMax(employee.getSubordinates(), max);
         }
         return max;
     }
 
-    public static double findMaxAllowance(Manager[] managers) {
+    public static double findMaxAllowance(BaseEmployee[] employees) {
         double max = Double.MIN_VALUE;
-        for (Manager manager : managers) {
-            if (manager == null) {
+        for (BaseEmployee employee : employees) {
+            if (employee == null) {
                 return 0;
             }
-            max = swapMax(getAllowance(manager), max);
+            max = swapMax(getAllowance(employee), max);
         }
         return max;
     }
 
-    public static double findMinAllowance(Manager[] managers) {
+    public static double findMinAllowance(BaseEmployee[] employees) {
         double min = Double.MAX_VALUE;
-        for (Manager manager : managers) {
-            if (manager == null) {
+        for (BaseEmployee employee : employees) {
+            if (employee == null) {
                 return 0;
             }
-            min = swapMin(getAllowance(manager), min);
+            min = swapMin(getAllowance(employee), min);
         }
         return min;
     }
 
-    private static double getAllowance(Manager manager) {
-        return manager.getSalary() - manager.getBaseSalary();
+    private static double getAllowance(BaseEmployee employee) {
+        return employee.getSalary() - employee.getBaseSalary();
     }
 
     private static <T extends Comparable<T>> T swapMin(T value, T min) {

@@ -1,7 +1,7 @@
 package com.stack.dao.repository;
 
 import com.stack.dao.entity.Album;
-import com.stack.dao.exception.AlbumException;
+import com.stack.dao.exception.EntityException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -32,7 +32,7 @@ public class AlbumDao
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
-            throw new AlbumException(e.getMessage());
+            throw new EntityException(e.getMessage());
         }
         return albums;
     }
@@ -50,7 +50,7 @@ public class AlbumDao
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
-            throw new AlbumException(e.getMessage());
+            throw new EntityException(e.getMessage());
         }
     }
 
@@ -82,7 +82,7 @@ public class AlbumDao
                 }
             }
         } catch (SQLException ex) {
-            throw new AlbumException(ex.getMessage());
+            throw new EntityException(ex.getMessage());
         }
         return album;
     }
@@ -101,7 +101,7 @@ public class AlbumDao
                    : null;
         } catch (SQLException e) {
             log.error(e.getSQLState());
-            throw new AlbumException(e.getMessage());
+            throw new EntityException(e.getMessage());
         }
     }
 
@@ -115,7 +115,7 @@ public class AlbumDao
             statement.executeUpdate();
         } catch (SQLException e) {
             log.error(e.getMessage());
-            throw new AlbumException(e.getMessage());
+            throw new EntityException(e.getMessage());
         }
     }
 

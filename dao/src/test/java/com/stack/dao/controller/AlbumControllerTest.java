@@ -2,7 +2,7 @@ package com.stack.dao.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stack.dao.entity.Album;
-import com.stack.dao.exception.AlbumException;
+import com.stack.dao.exception.EntityException;
 import com.stack.dao.service.AlbumService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -81,7 +81,7 @@ class AlbumControllerTest {
     @Test
     void testAddAlbumAlbumException() throws Exception {
         Album album = new Album();
-        when(service.save(album)).thenThrow(new AlbumException(
+        when(service.save(album)).thenThrow(new EntityException(
                 "Field 'AlbumId' doesn't have a default value"));
 
         mockMvc.perform(post(urlTemplate)

@@ -1,8 +1,8 @@
 package com.stack.dao.exception;
 
-public class AlbumException
+public class EntityException
         extends RuntimeException {
-    public AlbumException(String message) {
+    public EntityException(String message) {
         super(message);
     }
 }

@@ -1,20 +1,15 @@
 package com.stack.model.company;
 
-import com.stack.model.time.Month;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
 
-import java.math.BigDecimal;
+import java.util.Arrays;
 
 @Getter
-@Setter
-@EqualsAndHashCode(callSuper = false)
-public class Manager
-        extends Employee {
+public final class Manager
+        extends BaseEmployee {
 
-    private int subordinates;
-    private Employee[] employee;
+    private final Employee[] employees;
+    private static final double PERCENT = 0.03;
 
     public Manager(
             int age,
@@ -24,7 +19,7 @@ public class Manager
             double salaryPerDay
             ) {
         super(age, name, gender, baseSalary, salaryPerDay);
-        this.employee = new Employee[subordinates];
+        this.employees = new Employee[0];
     }
 
     public Manager(
@@ -34,32 +29,40 @@ public class Manager
             double baseSalary,
             double salaryPerDay,
             int subordinates) {
-        super(age, name, gender, baseSalary, salaryPerDay);
-        this.subordinates = subordinates;
-        this.employee = subordinates > 0
+        super(age, name, gender, baseSalary, salaryPerDay, subordinates);
+        this.employees = subordinates > 0
                         ? new Employee[subordinates]
                         : new Employee[0];
     }
 
     @Override
     public double getSalary() {
-        return subordinates < 1
+        return getSubordinates() < 1
                ? getBaseSalary()
-               : getBaseSalary() + getBonus(0.03);
-    }
-
-    protected double getBonus(double percent) {
-        return BigDecimal.valueOf(getBaseSalary())
-                         .multiply(new BigDecimal(subordinates).multiply(
-                                 BigDecimal.valueOf(percent)))
-                         .doubleValue();
+               : getBaseSalary() + getBonus(getPercent());
     }
 
     @Override
-    public double getSalary(Month[] monthArray) {
-        double amountSalary = super.getSalary(monthArray);
-        double bonusPercentage = subordinates * 0.01;
-        amountSalary += amountSalary * bonusPercentage;
-        return amountSalary + getSalary() * monthArray.length;
+    public double getPercent() {
+        return PERCENT;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Manager manager = (Manager) o;
+        return Arrays.equals(employees, manager.employees);
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * super.hashCode() + Arrays.hashCode(employees);
     }
 }

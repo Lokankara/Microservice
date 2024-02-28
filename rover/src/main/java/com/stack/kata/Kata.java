@@ -24,8 +24,7 @@ public class Kata {
                                                           .group(2)
                                                           .length() + "d",
                                                   new BigInteger(matcher.group(2)).add(
-                                                          BigInteger.ONE)))
-               : "1";
+                                                          BigInteger.ONE))) : "1";
     }
 
     public static String reverseString(String str) {
@@ -37,9 +36,8 @@ public class Kata {
 
     public static long[] powersOfTwo(int n) {
         long[] result = new long[n + 1];
-        java.util.stream.IntStream.rangeClosed(0, n)
-                                  .forEach(i -> result[i] = (long) Math.pow(2, i));
+        java.util.stream.IntStream.rangeClosed(0, n).forEach(
+                i -> result[i] = (long) Math.pow(2, i));
         return result;
     }
-
 }

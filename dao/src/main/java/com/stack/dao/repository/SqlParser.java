@@ -1,13 +1,15 @@
 package com.stack.dao.repository;
 
 import com.stack.dao.model.SqlQuery;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Component
 public class SqlParser {
-    public static SqlQuery parseSQL(String input) {
+    public SqlQuery parseSql(String input) {
 
         String[] lines = input.split("\\n");
         StringBuilder sb = new StringBuilder();

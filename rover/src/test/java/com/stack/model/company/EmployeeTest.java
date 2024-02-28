@@ -23,6 +23,7 @@ class EmployeeTest {
     @ParameterizedTest(name = "{0} hashCode equals {1} hashCode")
     @ArgumentsSource(EmployeeArgumentsProvider.class)
     void testHashCode(Employee a, Employee b, boolean expected) {
+        System.out.println(expected);
         assertEquals(a.hashCode() == b.hashCode(), expected);
     }
 }

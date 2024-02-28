@@ -21,7 +21,7 @@ class SqlParserTest {
     void testParseQuery() {
         List<String> sqlQueries = readSqlQueriesFromFile("src/main/resources/select.sql");
         for (String sql : sqlQueries) {
-            SqlQuery parser = SqlParser.parseSQL(sql);
+            SqlQuery parser = new SqlParser().parseSql(sql);
             System.out.println(parser);
             assertNotNull(parser);
         }

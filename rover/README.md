@@ -1,9 +1,11 @@
-"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\javac" -encoding UTF-8 Arithmetic.java && "C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java" -Dfile.encoding=UTF-8 Arithmetic
-"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\javac" -encoding UTF-8 Conditions.java && "C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java" -Dfile.encoding=UTF-8 Conditions
-"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\javac" -encoding UTF-8 Loop.java && "C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java" -Dfile.encoding=UTF-8 Loop
-"C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\javac" -encoding UTF-8 MultiDimensionalArrays.java && "C:\Program Files\Eclipse Foundation\jdk-11.0.12.7-hotspot\bin\java" -Dfile.encoding=UTF-8 MultiDimensionalArrays
+[deploy](https://project-ky5m.onrender.com/albums)
 
-SQL:
+[![Java CI with Maven](https://github.com/Lokankara/Micronaut/actions/workflows/maven.yml/badge.svg)](https://github.com/Lokankara/Micronaut/actions/workflows/maven.yml)
+
+### Assignments:
+
+#### SQL:
+
 -- Show the contents of the table of performers (artists)
 -- Show the names of customers from the city of Paris
 -- Show sales for the year 2012, with a sales value of more than 4 dollars.
@@ -32,54 +34,62 @@ Do some analytical work: find out the last name, first name and company of the c
 Write a query that determines the number of tracks where playlist ID > 15.
 Name the columns accordingly to their location.
 The result obtained should be as follows:
+
+```
 ______________________
 | condition | result | 
 | 16        |   15   | 
 | 17        |   26   | 
 | 18        |   1    | 
 ----------------------
+```
 
 Find all invoice IDs where the number of items is greater than or equal to 6 and less than or equal to 9.
 
 P.S. If you have time left, try to:
-1) design a query job for the invoiceline table so that the query contains aggregation functions using grouping;
+1) design a query job for the invoice line table so that the query contains 
+   aggregation functions using grouping;
 2) prepare and execute the query on the basis of item 1
 3) create a query job that selects unique values from the table
 4) Prepare and execute a query based on step 3
 5) Show the states (counties) of countries where the number of customers is not more than 1
 
-Create 3 arrays:
+-- 14.customers in what city are the most profitable to the company? -- based on highest single payment
+-- 16.who is the best customer? --based on single payment
+-- 18.what is the average number of days between the order date and ship date?
+-- 19.sales by year
+-- 22.list of employees  by how much they sold in 2003?
+-- 23.which city has the most number of employees?
+-- 24.which office has the biggest sales?
 
-- array of cat names
-- array of cat color colors
-- array of cat ages
+-- Part #2  -- library_simple database
+-- 1.find all information (query each table separately for book_id = 252)
+-- 2.which books did Van Parks write?
+-- 3.which books where published in 2003?
 
-Perform the tests:
-2.1 If the lengths of all arrays are equal, print "Pass", otherwise print "Fail"
-2.2 If box number 4 contains a ginger-colored cat with the name ginger and age 3 years, then print "Pass", otherwise print "Fail".
-2.3 If there are 2 ginger cats less than 3 years old in the boxes, print "Pass", otherwise print "Fail".
-2.4 If the cats in the boxes with odd indexes are not gray, print "Pass", otherwise print "Fail"
-Feed the cat Carrot-top
-Feed the cat in the box with index 6
-Print data (name, age, color) of cats in even numbered boxes
-Feed gray cats at 11am and leave a message "Cat _____ fed" where" _____" is the cat's name.
-If the cat is not gray, or the time is not 11am, then leave the message "Something went wrong..."
-Print the names and box numbers of all cats under 4 years old
-Print the box number and the result of the "isCatBlack" check for each cat
-Print the data of all cats, then swap the cats in boxes 6 and 2, and print the data of all cats again.
-Count which cats are more (by color)
-Sort the cats by color in the following order: ginger, gray, black.
-Sort the cats in ascending order of the number of cats of the same color.
-Combine the names of the cats in the even numbered boxes into one line.
-Swap all the cats in mirror order (reverse)
-After moving the cats, collect the names of the cats in the even numbered boxes on the same line.
-If the results of 13 and 15 match, print "Fail", otherwise print "Pass"
 
-Fruit Loops, a manufacturer of breakfast cereal, claims that a box contains at least 1500 rings and that the box contains the same number of rings of each color.
-An enthusiastic amateur John counted the number of rings in one of the boxes.
-If the number of rings in the box is less than claimed, and the number of rings of each color does not fall within the 5% margin of error, John can sue the company for defamation.
-Run tests to see
-whether the actual total number of rings matches the expected number of rings,
-match the actual number of rings of each color ( +- 5% error) to the expected number of rings of each color.
-Based on the test results, if suing the company is not possible, print "Pass". If it is possible to sue the company, print "Fail".
-The problem should be solved through 2D array
+Документация API: https://restful-booker.herokuapp.com/apidoc/index.html
+
+1. Воспроизвести все методы, рассмотренные на лекции
+2. С помощью метода PATCH внести некоторые изменения в ранее созданную запись бронирования
+3. Проверить, что изменения применились
+Также вы можете тренироваться на следующих сайтах:
+https://jsonplaceholder.typicode.com
+https://playground.learnqa.ru/api/map 
+
+https://www.codewars.com/kata/559cc2d2b802a5c94700000c
+https://www.codewars.com/kata/563fb342f47611dae800003c
+https://www.codewars.com/kata/58f8b35fda19c0c79400020f
+https://www.codewars.com/kata/55960bbb182094bc4800007b
+https://www.codewars.com/kata/580755730b5a77650500010c
+https://www.codewars.com/kata/555de49a04b7d1c13c00000e
+https://www.codewars.com/kata/55e9529cbdc3b29d8c000016
+https://www.codewars.com/kata/55968ab32cf633c3f8000008
+https://www.codewars.com/kata/64c743cb0a2a00002856ff73
+https://www.codewars.com/kata/559e5b717dd758a3eb00005a
+https://www.codewars.com/kata/55b051fac50a3292a9000025
+https://www.codewars.com/kata/56a946cd7bd95ccab2000055
+https://www.codewars.com/kata/56a3f08aa9a6cc9b75000023
+https://www.codewars.com/kata/567bf4f7ee34510f69000032
+https://www.codewars.com/kata/55ccdf1512938ce3ac000056
+https://www.codewars.com/kata/56a25ba95df27b7743000016

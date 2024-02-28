@@ -1,7 +1,5 @@
 package com.stack.kata;
 
-import java.util.Arrays;
-
 public class Permutation {
 
     public int[] buildArray(int[] nums) {

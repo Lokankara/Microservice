@@ -1,7 +1,7 @@
 package com.stack.dao.service;
 
 import com.stack.dao.entity.Album;
-import com.stack.dao.repository.SQLDao;
+import com.stack.dao.repository.SqlAlbumDao;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +15,9 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 @Service
 @RequiredArgsConstructor
 public class SqlAlbumService
-        implements SqlService<Album> {
+        implements AlbumSqlService  {
 
-    private final SQLDao<Album> dao;
+    private final SqlAlbumDao dao;
 
     @Override
     public ResponseEntity<List<Album>> select(String sql) {

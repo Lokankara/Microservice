@@ -3,10 +3,10 @@ package com.stack.model.company;
 public class Person extends Human {
 
     public Person(
-            String name,
             int age,
+            String name,
             Gender gender) {
-        super(name, age, gender);
+        super(age, name, gender);
     }
 
     @Override

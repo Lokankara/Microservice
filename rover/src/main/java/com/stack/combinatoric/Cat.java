@@ -3,6 +3,7 @@ package com.stack.combinatoric;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -28,7 +29,7 @@ public class Cat {
     }
 
     public int getCurrentHour() {
-        return LocalTime.now().getHour();
+        return LocalTime.now(ZoneId.of("UTC+02:00")).getHour();
     }
 
     public String feed(

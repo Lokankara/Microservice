@@ -2,7 +2,9 @@ package com.stack.dao.controller;
 
 import com.stack.dao.entity.Album;
 import com.stack.dao.model.QueryRequest;
-import com.stack.dao.service.SqlService;
+import com.stack.dao.repository.SqlParser;
+import com.stack.dao.service.AlbumSqlService;
+import com.stack.dao.service.ArtistSqlService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -18,17 +20,21 @@ import static org.mockito.Mockito.when;
 
 class SqlControllerServiceTest {
 
-    SqlService<Album> mockService;
+    private AlbumSqlService mockService;
+    private ArtistSqlService mockArtistService;
+    private final SqlParser parser = new SqlParser();
+    private SqlController controller;
+
 
     @BeforeEach
     public void setup() {
-        mockService = mock(SqlService.class);
+        mockService = mock(AlbumSqlService.class);
+        mockArtistService = mock(ArtistSqlService.class);
+        controller = new SqlController(parser,mockService, mockArtistService);
     }
 
     @Test
     void testGetAlbum() {
-
-        SqlController controller = new SqlController(mockService);
         String sqlQuery = "SELECT * FROM albums";
         List<Album> albums = new ArrayList<>();
         when(mockService.select(sqlQuery)).thenReturn(ResponseEntity.ok(albums));
@@ -40,7 +46,6 @@ class SqlControllerServiceTest {
 
     @Test
     void testAddAlbum() {
-        SqlController controller = new SqlController(mockService);
         String sqlQuery = "INSERT INTO albums (title, artist) VALUES ('Test Album', 'Test Artist')";
         when(mockService.insert(sqlQuery)).thenReturn(ResponseEntity.ok().build());
         ResponseEntity<Void> response = controller.addAlbum(new QueryRequest(sqlQuery));

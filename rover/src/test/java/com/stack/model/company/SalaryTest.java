@@ -10,7 +10,7 @@ class SalaryTest {
 
     @ParameterizedTest(name = "{0}, {1}")
     @ArgumentsSource(SalaryArgumentsProvider.class)
-    void testGetSum(Employee[] employeeArray, double expectedSum) {
+    void testGetSum(BaseEmployee[] employeeArray, double expectedSum) {
         Salary salary = new Salary();
         assertEquals(expectedSum, salary.getSum(employeeArray));
     }

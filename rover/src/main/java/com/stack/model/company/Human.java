@@ -11,8 +11,8 @@ public abstract class Human {
     private final Gender gender;
 
     protected Human(
-            String name,
             int age,
+            String name,
             Gender gender) {
         this.name = name;
         this.age = age;

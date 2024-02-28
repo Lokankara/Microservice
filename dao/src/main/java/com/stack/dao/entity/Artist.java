@@ -1,5 +1,6 @@
 package com.stack.dao.entity;
 
+import com.stack.dao.model.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -15,7 +16,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class Artist {
+public class Artist implements BaseEntity {
     private int artistId;
     private String name;
 }

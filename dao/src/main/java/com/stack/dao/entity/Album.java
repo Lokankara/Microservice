@@ -1,6 +1,7 @@
 package com.stack.dao.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.stack.dao.model.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -18,7 +19,7 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class Album implements Serializable {
+public class Album implements BaseEntity {
     @JsonProperty("albumId")
     private Integer albumId;
     @JsonProperty("title")

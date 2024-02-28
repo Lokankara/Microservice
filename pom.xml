@@ -19,6 +19,7 @@
     <module>ship</module>
     <module>rover</module>
     <module>dao</module>
+    <module>tester</module>
   </modules>
   <dependencies>
     <dependency>
@@ -56,6 +57,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>3.2.2</version>
         <configuration>
           <excludes>
             <exclude>

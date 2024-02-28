@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EmployeeUtilsTest {
 
-    private static final Manager[] managers = {
+    private static final BaseEmployee[] managers = {
             new Manager(35, "Jack", Gender.MALE, 10000, 20, 10),
             new Manager(40, "Alice", Gender.FEMALE, 10000, 20,  0),
             new Manager(40, "Kate", Gender.FEMALE, 10000, 20,  1),
@@ -63,58 +63,58 @@ class EmployeeUtilsTest {
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindEmployeeByName(Employee[] managers) {
+    void testFindEmployeeByName(BaseEmployee[] managers) {
         assertEquals("Jack", EmployeeUtils.findEmployeeByName(managers, "Jack").getName());
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindEmployeeBySubstring(Employee[] managers) {
+    void testFindEmployeeBySubstring(BaseEmployee[] managers) {
         String[] arr = {"Jack", "Jill", "Joan", "John"};
         assertEquals("Jack", EmployeeUtils.findEmployeeBySubstring(managers, "J").getName());
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testCalculateTotalSalaryBudget(Employee[] managers, int i) {
+    void testCalculateTotalSalaryBudget(BaseEmployee[] employees, int i) {
         int[] salaries = {43300, 50800};
-        assertEquals(salaries[i], EmployeeUtils.calculateTotalSalary(managers));
+        assertEquals(salaries[i], EmployeeUtils.calculateTotalSalary(employees));
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindMinimumSalary(Employee[] managers) {
-        assertEquals(10000, EmployeeUtils.findMinimumSalary(managers));
+    void testFindMinimumSalary(BaseEmployee[] employees) {
+        assertEquals(10000, EmployeeUtils.findMinimumSalary(employees));
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindMaximumSalary(Employee[] managers, int i) {
+    void testFindMaximumSalary(BaseEmployee[] employees, int i) {
         int[] salaries = {13000, 19000};
-        assertEquals(salaries[i], EmployeeUtils.findMaximumSalary(managers));
+        assertEquals(salaries[i], EmployeeUtils.findMaximumSalary(employees));
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindMinimumSubordinates(Employee[] managers) {
-        assertEquals(0, EmployeeUtils.findMinSubordinates(managers));
+    void testFindMinimumSubordinates(BaseEmployee[] employees) {
+        assertEquals(0, EmployeeUtils.findMinSubordinates(employees));
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindMaximumSubordinates(Employee[] managers) {
-        assertEquals(10, EmployeeUtils.findMaxSubordinates(managers));
+    void testFindMaximumSubordinates(BaseEmployee[] employees) {
+        assertEquals(10, EmployeeUtils.findMaxSubordinates(employees));
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindMaxAllowance(Employee[] managers, int i, double salary, int allowance) {
-        assertEquals(allowance, EmployeeUtils.findMaxAllowance(managers));
+    void testFindMaxAllowance(BaseEmployee[] employees, int i, double salary, int allowance) {
+        assertEquals(allowance, EmployeeUtils.findMaxAllowance(employees));
     }
 
     @ParameterizedTest
     @ArgumentsSource(EmployeeUtilsArgumentsProvider.class)
-    void testFindMinAllowance(Employee[] managers) {
-        assertEquals(0, EmployeeUtils.findMinAllowance(managers));
+    void testFindMinAllowance(BaseEmployee[] employees) {
+        assertEquals(0, EmployeeUtils.findMinAllowance(employees));
     }
 }

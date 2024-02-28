@@ -14,31 +14,20 @@ class ManagerTest {
     @ParameterizedTest
     @ArgumentsSource(ManagerArgumentsProvider.class)
     void testGetSalary(String name, int age, Gender gender, int perDay, int subordinates, int year, double expected) {
-        Manager manager = new Manager(age, name, gender, 10000, perDay, subordinates);
-        Month[] months = map(MonthUtils.MONTHS, year);
+        Manager manager = new Manager(age, name, gender, 1000, perDay, subordinates);
+        Month[] months = MonthUtils.map(MonthUtils.MONTHS, year);
         double actualSalary = manager.getSalary(months);
         assertEquals(expected, actualSalary, "Salary calculation should be correct");
     }
 
     @Test
     void testGetSalary() {
-        Manager manager = new Manager(35, "Jack", Gender.MALE,  1000, 200);
+        Manager manager = new Manager(42, "Jack", Gender.MALE,  1000, 10, 1);
         int year = 2001;
-        double expected = 19000;
-        MonthUtils[] utils = {MonthUtils.JANUARY, MonthUtils.FEBRUARY, MonthUtils.MARCH};
-        Month[] months = map(utils, year);
+        double expected = 2510;
+        MonthUtils[] utils = {MonthUtils.JANUARY, MonthUtils.FEBRUARY};
+        Month[] months = MonthUtils.map(utils, year);
         double actualSalary = manager.getSalary(months);
         assertEquals(expected, actualSalary, "Salary calculation should be correct");
-    }
-
-    private Month[] map(MonthUtils[] monthUtils, int year) {
-        int size = monthUtils.length;
-        Month[] months = new Month[size];
-        for (int i = 0; i < size; i++) {
-            months[i] = new Month(monthUtils[i].getName(),
-                                  monthUtils[i].getDays(year),
-                                  monthUtils[i].getWorkingDays(year));
-        }
-        return months;
     }
 }

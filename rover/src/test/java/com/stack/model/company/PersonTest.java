@@ -13,7 +13,7 @@ class PersonTest {
     @ParameterizedTest(name = "age:{0}, gender:{1}, name:{2}")
     @ArgumentsSource(PersonArgumentsProvider.class)
     void testGetName(int age, Gender gender, String name, String expectedName, String string) {
-        Person person = new Person(name, age, gender);
+        Person person = new Person(age, name, gender);
         assertNotNull(person);
         assertEquals(expectedName, person.getName());
         assertEquals(string, person.toString());
@@ -22,11 +22,11 @@ class PersonTest {
     @ParameterizedTest(name = "age:{0}, gender:{1}, name:{2}")
     @ArgumentsSource(PersonArgumentsProvider.class)
     void testEqualsHashCode(int age, Gender gender, String name, String expectedName, String string) {
-        Person person = new Person(name, age, gender);
-        Person same = new Person(name, age, gender);
-        Person jane = new Person("Jane", age, gender);
-        Person older = new Person(name, age + 1, gender);
-        Person woman = new Person(name, age, Gender.OTHER);
+        Person person = new Person(age, name, gender);
+        Person same = new Person(age, name, gender);
+        Person jane = new Person(age, "Jane", gender);
+        Person older = new Person(age + 1, name, gender);
+        Person woman = new Person(age, name, Gender.UNKNOWN);
 
         assertEquals(expectedName, person.getName());
         assertEquals(string, person.toString());

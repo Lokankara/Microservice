@@ -1,5 +1,8 @@
 package com.stack.model.license;
 
+import lombok.Getter;
+
+@Getter
 public enum State {
     ALABAMA("AL"),
     ALASKA("AK"),
@@ -58,7 +61,4 @@ public enum State {
         this.abbreviation = abbreviation;
     }
 
-    public String getAbbreviation() {
-        return abbreviation;
-    }
 }
