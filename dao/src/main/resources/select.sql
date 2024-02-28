@@ -34,9 +34,6 @@ SELECT quantityOrdered, priceEach, quantityOrdered * priceEach AS total
 FROM orderdetails
 ORDER BY total DESC;
 
-SELECT MAX(amount), MIN(amount), AVG(amount), COUNT(*), SUM(amount)
-FROM payments;
-
 -- Show payments in descending order
 SELECT *
 FROM payments
@@ -58,17 +55,9 @@ SELECT productline, textDescription
 FROM productlines
 WHERE productline like '______';
 
--- Show product name for vendor 'Unimax Art Galleries'
-SELECT count(DISTINCT productVendor)
-FROM products;
-
 SELECT productName, productDescription, productVendor
 FROM products
 WHERE productVendor like '%Art Galleries';
-
--- what is the customer number for the highest amount of payment
-SELECT checkNumber, MAX(amount)
-FROM payments;
 
 SELECT checkNumber, amount
 FROM payments

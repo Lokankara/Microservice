@@ -6,41 +6,71 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @ToString
 @EqualsAndHashCode(callSuper = false)
-public class Employee extends Human {
+public abstract class Employee
+        extends Human {
 
     private double salaryPerDay;
     private double baseSalary;
+    private int subordinates;
+    private double percent;
 
-    public Employee(
+    protected Employee(
+            int age,
+            String name,
+            Gender gender) {
+        super(age, name, gender);
+    }
+
+    protected Employee(
             int age,
             String name,
             Gender gender,
             double baseSalary) {
-        super(name, age, gender);
+        super(age, name, gender);
         this.baseSalary = baseSalary;
     }
 
-    public Employee(
+    protected Employee(
             int age,
             String name,
             Gender gender,
             double baseSalary,
             double salaryPerDay) {
-        super(name, age, gender);
+        super(age, name, gender);
         this.baseSalary = baseSalary;
         this.salaryPerDay = salaryPerDay;
     }
 
-    public Employee() {
-        super("Employee", 0, Gender.OTHER);
+    protected Employee(
+            int age,
+            String name,
+            Gender gender,
+            double baseSalary,
+            double salaryPerDay,
+            int subordinates) {
+        super(age, name, gender);
+        this.salaryPerDay = salaryPerDay;
+        this.baseSalary = baseSalary;
+        this.subordinates = subordinates;
     }
 
-    public double getSalary() {
-        return baseSalary;
+    abstract double getSalary();
+
+    protected double getPercent() {
+        return percent;
+    }
+
+    protected double getBonus(double percent) {
+        return BigDecimal.valueOf(getBaseSalary())
+                         .multiply(new BigDecimal(getSubordinates()).multiply(
+                                 BigDecimal.valueOf(percent)))
+                         .doubleValue();
     }
 
     double getSalary(Month[] monthArray) {
@@ -53,10 +83,15 @@ public class Employee extends Human {
                 amount += month.workingDays() * salaryPerDay;
             }
         }
-        return amount + getSalary() * monthArray.length;
+        amount += getSalary() * monthArray.length;
+
+        return subordinates < 1
+               ? amount
+               : amount + getBonus(0.01) * monthArray.length;
     }
 
     public boolean isSameName(Employee employee) {
-        return this.getName().equals(employee.getName());
+        return this.getName()
+                   .equals(employee.getName());
     }
 }

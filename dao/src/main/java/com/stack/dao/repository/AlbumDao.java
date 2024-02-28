@@ -32,6 +32,7 @@ public class AlbumDao
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
+            throw new AlbumException(e.getMessage());
         }
         return albums;
     }
@@ -49,7 +50,7 @@ public class AlbumDao
             }
         } catch (SQLException e) {
             log.error(e.getMessage());
-            return Optional.empty();
+            throw new AlbumException(e.getMessage());
         }
     }
 
@@ -64,9 +65,9 @@ public class AlbumDao
             if (!resultSet.next()) {
                 try (PreparedStatement prepared = connection.prepareStatement(getLastIdSql);
                      ResultSet lastIdRs = prepared.executeQuery()) {
-                    long lastId = 0;
+                    int lastId = 0;
                     if (lastIdRs.next()) {
-                        lastId = lastIdRs.getLong(1);
+                        lastId = lastIdRs.getInt(1);
                     }
                     album.setAlbumId(lastId+1);
                     try (PreparedStatement statement = connection.prepareStatement(insertSql)) {
@@ -100,7 +101,7 @@ public class AlbumDao
                    : null;
         } catch (SQLException e) {
             log.error(e.getSQLState());
-            return null;
+            throw new AlbumException(e.getMessage());
         }
     }
 
@@ -114,15 +115,16 @@ public class AlbumDao
             statement.executeUpdate();
         } catch (SQLException e) {
             log.error(e.getMessage());
+            throw new AlbumException(e.getMessage());
         }
     }
 
     private Album getAlbum(ResultSet resultSet)
             throws SQLException {
         return Album.builder()
-                    .albumId(resultSet.getLong("AlbumId"))
+                    .albumId(resultSet.getInt("AlbumId"))
                     .title(resultSet.getString("Title"))
-                    .artistId(resultSet.getLong("ArtistId"))
+                    .artistId(resultSet.getInt("ArtistId"))
                     .build();
     }
 }

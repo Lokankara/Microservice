@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Getter
 @AllArgsConstructor
-public enum MonthUtils {
+public enum MonthType {
     JANUARY("January"),
     FEBRUARY("February"),
     MARCH("March"),
@@ -22,7 +22,7 @@ public enum MonthUtils {
     NOVEMBER("November"),
     DECEMBER("December");
 
-    public static final MonthUtils[] MONTHS = MonthUtils.values();
+    public static final MonthType[] MONTHS = MonthType.values();
     private final String name;
 
     private boolean leapYear(int year) {

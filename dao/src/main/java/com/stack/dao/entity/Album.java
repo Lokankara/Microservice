@@ -20,9 +20,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Album implements Serializable {
     @JsonProperty("albumId")
-    private Long albumId;
+    private Integer albumId;
     @JsonProperty("title")
     private String title;
     @JsonProperty("artistId")
-    private Long artistId;
+    private Integer artistId;
 }

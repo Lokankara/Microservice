@@ -44,8 +44,8 @@ class AlbumControllerTest {
     public void setup() {
         album = Album.builder()
                      .title("Abbey Road")
-                     .artistId(100L)
-                     .albumId(100500L)
+                     .artistId(100)
+                     .albumId(100500)
                      .build();
     }
 
@@ -93,7 +93,7 @@ class AlbumControllerTest {
     @Test
     void testGetAlbumById()
             throws Exception {
-        long id = 1;
+        int id = 1;
         mockMvc.perform(get(urlTemplate+ "/{id}", id)
                                 .contentType(APPLICATION_JSON))
                .andExpect(status().isOk());
