@@ -1,30 +1,10 @@
 package com.stack.model.company;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+public record Address(
+        String street,
+        String city,
+        String state,
+        String postalCode,
+        String zip) {
 
-@Getter
-@ToString
-@EqualsAndHashCode
-public class Address {
-
-    private String street;
-    private String city;
-    private String state;
-    private String postalCode;
-    private String zip;
-
-    public Address(
-            String street,
-            String city,
-            String state,
-            String postalCode,
-            String zip) {
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.postalCode = postalCode;
-        this.zip = zip;
-    }
 }

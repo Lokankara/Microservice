@@ -24,7 +24,7 @@ class ApartmentTest {
     @ParameterizedTest
     @ArgumentsSource(ApartmentArgumentsProvider.class)
     void testGetOnlyNY(Apartment a, Apartment b, boolean expected, boolean isNY) {
-        assertEquals(isNY, "New York".equals(a.getAddress().getCity()));
+        assertEquals(isNY, "New York".equals(a.getAddress().city()));
     }
 
     @ParameterizedTest

@@ -6,19 +6,14 @@ def get_number():
         except ValueError:
             print("That's not a valid number! Please try again.")
 
-print(f"---------------------------  task 1 ------------------------")
 user_name = input("Enter your username: ")
 print(f"Hello {user_name}!")
-
-print(f"---------------------------  task 2 ------------------------")
 
 a = get_number()
 b = get_number()
 
 c = a + b
 print(f"Sum = {c}")
-
-print(f"---------------------------  task 3 ------------------------")
 
 a = get_number()
 b = get_number()

@@ -5,21 +5,21 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class NumbersTest {
+public class OddEvenNumbersTest {
 
     @Test(dataProvider = "evenNumbers")
     public void testIsEvenEvenNumber(String number, String expected) {
-        assertEquals(Numbers.isEven(number), expected);
+        assertEquals(OddEven.isEven(number), expected);
     }
 
     @Test(dataProvider = "oddNumbers")
     public void testIsEvenOddNumber(String number, String expected) {
-        assertEquals(Numbers.isEven(number), expected);
+        assertEquals(OddEven.isEven(number), expected);
     }
 
     @Test(dataProvider = "testCases")
     public void testIsEvenInvalidInput(String number, String expected) {
-        assertEquals(Numbers.isEven(number), expected);
+        assertEquals(OddEven.isEven(number), expected);
     }
 
     @DataProvider(name = "evenNumbers")

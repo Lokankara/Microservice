@@ -31,9 +31,7 @@ public enum MonthUtils {
 
     public int getDays(int year) {
         return switch (this) {
-            case FEBRUARY -> (leapYear(year)
-                              ? 29
-                              : 28);
+            case FEBRUARY -> (leapYear(year) ? 29 : 28);
             case APRIL, JUNE, SEPTEMBER, NOVEMBER -> 30;
             default -> 31;
         };

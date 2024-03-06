@@ -26,4 +26,6 @@ public class Album implements BaseEntity {
     private String title;
     @JsonProperty("artistId")
     private Integer artistId;
+
+
 }

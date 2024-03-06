@@ -29,20 +29,25 @@ key ="mon"
 if key in d:
     value = d[key]
 
-votes = {}
-for candidate in open("bucket.txt").read().splitlines():
-    if candidate in votes:
-        votes[candidate] += 1
-    else:
-        votes[candidate] = 1
-rating = list(votes.pairs())
-rating.sort(key=lambda p:p[1], reversed=True)
+def count_and_sort_votes(filename):
+    votes = {}
+    with open(filename, 'r') as file:
+        for candidate in file:
+            candidate = candidate.strip()
+            if candidate in votes:
+                votes[candidate] += 1
+            else:
+                votes[candidate] = 1
+    rating = list(votes.items())
+    rating.sort(key=lambda p: p[1], reverse=True)
+    return rating
 
 
 from collections import Counter
+
 votes = Counter(open("bucket.txt").read().splitlines())
-votes.most.common(3)
+most_common_votes = votes.most_common(3)
+print(most_common_votes)
 
 #  geometry_progretion
-# Mersen 2**n -1 is_simple
 

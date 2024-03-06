@@ -67,24 +67,141 @@ P.S. If you have time left, try to:
 -- 2.which books did Van Parks write?
 -- 3.which books where published in 2003?
 
+Show the title and duration in seconds of the shortest song by applying rounding according to the rules of mathematics. Name the column sec.
+Show all invoices with a lower than average cost.
+Show the invoice with a high cost.
+Show the cities where both employees and customers live (use the example from lesson #4).
+Show the customer's first name, last name (number 19), company, and the total amount of their orders. Name the column sum.
+Show how many times the tracks of the composer of the band Queen were bought.  The number of purchases should be counted for each track. Output the name, track ID and the number of purchased tracks of the composer of the band Queen. Name the column total.
+Count the number of tracks in each album. Output the album name and the number of tracks.
 
-Документация API: https://restful-booker.herokuapp.com/apidoc/index.html
+1. create database xxxxxx;
+2. right click on that database - Table Data Import Wizard - next - next - next ...*/
+     
+-- ---------------------------------------------------
+-- Homework #6
+-- Part 1  finish queries from classicmodels db: -- 12,13,15,18,19,20,22,23,24 but we'll go over all of them
+-- 1.how many vendors, product lines, and products exist in the database?
+-- 2.what is the average price (buy price, MSRP) per vendor?
+-- 3.what is the average price (buy price, MSRP) per customer?
+-- 4.what product was sold the most?
+-- 5.how much money was made between buyPrice and MSRP?
+-- 6.which vendor sells 1966 Shelby Cobra?
+-- 7.which vendor sells more products?
+-- 8.which product is the most and least expensive?
+-- 9.which product has the most quantityInStock?
+-- 10.list all products that have quantity in stock less than 20
+-- 11.which customer has the highest and lowest credit limit?
+-- 12.rank customers by credit limit
+-- 13.list the most sold product by city
+-- 14.customers in what city are the most profitable to the company?
+-- 15.what is the average number of orders per customer?
+-- 16.who is the best customer?
+-- 17.customers without payment
+-- 18.what is the average number of days between the order date and ship date?
+-- 19.sales by year
+-- 20.how many orders are not shipped?
+-- 21.list all employees by their (full name: first + last) in alpabetical order
+-- 22.list of employees  by how much they sold in 2003?
+-- 23.which city has the most number of employees?
+-- 24.which office has the biggest sales?
+-- Advanched homework: join all tables together 
 
-1. Воспроизвести все методы, рассмотренные на лекции
-2. С помощью метода PATCH внести некоторые изменения в ранее созданную запись бронирования
-3. Проверить, что изменения применились
-Также вы можете тренироваться на следующих сайтах:
+/* Homework - Part #2 
+Find any dataset you want to analyze (csv, xls, etc.) and import the data 
+https://www.dataquest.io/blog/free-datasets-for-projects/
+https://www.kaggle.com/datasets
+https://catalog.data.gov/dataset
+https://data.world
+https://datasf.org/opendata/
+
+
+/*Film Locations in San Francisco
+-- import csv file Film_Locations_in_San_Francisco.csv from course meterials or from source
+-- https://data.sfgov.org/Culture-and-Recreation/Film-Locations-in-San-Francisco/yitu-d5am
+
+-- in MySQL Workbanch: 
+Create database Film;
+-- right click on Film database - Table Data Import Wizard - Next ...
+select * from film.film_locations_in_san_francisco;
+
+Queries:
+Count distinct movies
+Count of all films by release year
+Count of all films by 'production company'
+Count of all films directed by Woody Allen
+How many movies have/don't have fun facts?
+In how many movies were Keanu Reeves and Robin Williams?
+
+Play with chatGPT. 
+Download the file 
+Chat GPT: Gather statistics about each column, such as counts, unique values, and missing values. 
+-- Answer
+The dataset contains 1,976 entries and 11 columns. 
+Here is a summary of the non-null count for each column:
+Title: 1976 non-null entries
+Release Year: 1976 non-null entries
+Locations: 1922 non-null entries
+Fun Facts: 463 non-null entries
+Production Company: 1974 non-null entries
+Distributor: 1837 non-null entries
+Director: 1976 non-null entries
+Writer: 1971 non-null entries
+Actor 1: 1972 non-null entries
+Actor 2: 1883 non-null entries
+Actor 3: 1504 non-null entries
+*/
+
+-- Homework - Part #3
+-- ------------------- ETL (EXTRACT TRANSFORM LOAD) -------------------
+-- ------------------- Loading the same .csv file via the Command-Line --------------
+-- 1. Create database and table structure (with column names and datatypes) for CSV data load
+-- look up the data type of existing columns if imported table exists
+SELECT  column_name, column_type 
+FROM INFORMATION_SCHEMA.columns
+WHERE TABLE_SCHEMA = 'film';
+
+-- create new database and empty table
+DROP DATABASE IF EXISTS film2;
+CREATE DATABASE film2;
+CREATE TABLE film2.film_locations_in_san_francisco (
+`Title`	text,
+`Release Year`	int(11),
+`Locations`	text,
+`Fun Facts`	text,
+`Production Company`	text,
+`Distributor`	text,
+`Director`	text,
+`Writer`	text,
+`Actor 1`	text,
+`Actor 2`	text,
+`Actor 3`	text);
+-- select * from film2.film_locations_in_san_francisco;
+
+-- 2. Set Client and Server ON - to Enable local data load on MySQL Client and Server
+-- Instructions for Windows in file: 'ETL - Enabling local data load on MySQL Client and Server.docx'
+
+-- 3. Import the CSV file
+-- Windows - Search MySQL - In command prompt paste:
+LOAD DATA LOCAL INFILE 'C:/A_A/A_Tania/SQL/Teaching SQL/film_locations_in_san_francisco.csv'
+ INTO TABLE film2.film_locations_in_san_francisco
+ FIELDS TERMINATED BY ',' 
+ ENCLOSED BY '"' 
+ LINES TERMINATED BY '\n' 
+ IGNORE 1 ROWS
+ (`Title`,`Release Year`,`Locations`,`Fun Facts`,`Production Company`,`Distributor`,
+ `Director`,`Writer`,`Actor 1`,`Actor 2`,`Actor 3`);
+
+-- see 1976 records loaded  
+  select * from film2.film_locations_in_san_francisco;
+
+#### Python
+
+1. Use the PATCH method to make some changes to a previously created reservation record
+2. Verify that the changes have been applied. You can also practice on the following sites:
 https://jsonplaceholder.typicode.com
 https://playground.learnqa.ru/api/map 
-
-https://www.codewars.com/kata/559cc2d2b802a5c94700000c
-https://www.codewars.com/kata/563fb342f47611dae800003c
-https://www.codewars.com/kata/58f8b35fda19c0c79400020f
-https://www.codewars.com/kata/55960bbb182094bc4800007b
-https://www.codewars.com/kata/580755730b5a77650500010c
-https://www.codewars.com/kata/555de49a04b7d1c13c00000e
-https://www.codewars.com/kata/55e9529cbdc3b29d8c000016
-https://www.codewars.com/kata/55968ab32cf633c3f8000008
+    
 https://www.codewars.com/kata/64c743cb0a2a00002856ff73
 https://www.codewars.com/kata/559e5b717dd758a3eb00005a
 https://www.codewars.com/kata/55b051fac50a3292a9000025
@@ -93,3 +210,4 @@ https://www.codewars.com/kata/56a3f08aa9a6cc9b75000023
 https://www.codewars.com/kata/567bf4f7ee34510f69000032
 https://www.codewars.com/kata/55ccdf1512938ce3ac000056
 https://www.codewars.com/kata/56a25ba95df27b7743000016
+https://www.codewars.com/kata/58f8b35fda19c0c79400020f
