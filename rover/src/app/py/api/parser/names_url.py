@@ -2,15 +2,10 @@ from manager_json import save_to_json_file
 import requests
 import json
 
-base_url = "https://raw.githubusercontent.com/aruljohn/popular-baby-names/master/"
+base_url = "https://raw.githubusercontent.com/Lokankara/Micronaut/main/tester/src/test/resources"
 
-merged_data = []
+url = base_url + "/names.json"
+response = requests.get(url)
+data = response.json()
 
-for year in range(1880, 2023):
-    url = base_url + str(year) + "/girl_boy_names_" + str(year) + ".json"
-    response = requests.get(url)
-    data = response.json()
-    data['year'] = year
-    merged_data.append(data)
-
-save_to_json_file(merged_data, 'all.json')
+save_to_json_file(data, './api/parser/json/names.json')

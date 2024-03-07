@@ -1,0 +1,16 @@
+{
+  "id": 0,
+  "category": {
+    "id": 1,
+    "name": "Jack"
+  },
+  "name": "sailor",
+  "photoUrls": ["string"],
+  "tags": [
+    {
+      "id": 0,
+      "name": "scottish"
+    }
+  ],
+  "status": "available"
+}

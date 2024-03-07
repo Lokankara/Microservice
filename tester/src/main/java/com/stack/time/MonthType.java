@@ -42,4 +42,16 @@ public enum MonthType {
         int year = LocalDate.now().getYear();
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
+    public static String isLeapYear(Object year) {
+        try {
+            int y = Integer.parseInt(year.toString());
+            return y > 0 && y < 3001
+                   ? (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0)
+                     ? "Leap year"
+                     : "No leap year"
+                   : "Error";
+        } catch (NumberFormatException | NullPointerException e) {
+            return "Error";
+        }
+    }
 }

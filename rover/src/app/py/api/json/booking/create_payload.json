@@ -1,0 +1,24 @@
+[
+  {
+    "firstname": "Jack",
+    "lastname": "Black",
+    "totalprice": 200,
+    "depositpaid": true,
+    "bookingdates": {
+      "checkin": "2024-03-01",
+      "checkout": "2024-03-05"
+    },
+    "additionalneeds": "Breakfast"
+  },
+  {
+    "firstname": "Sam",
+    "lastname": "Red",
+    "totalprice": 150,
+    "depositpaid": false,
+    "bookingdates": {
+      "checkin": "2024-02-01",
+      "checkout": "2024-03-02"
+    },
+    "additionalneeds": "Dinner"
+  }
+]
