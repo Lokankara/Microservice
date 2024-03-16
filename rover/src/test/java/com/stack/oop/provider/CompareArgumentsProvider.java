@@ -20,8 +20,13 @@ public class CompareArgumentsProvider
                          Arguments.of(3.5, 2.7, 1),
                          Arguments.of(10L, 5L, 1),
                          Arguments.of(5.6f, 3.2f, 1),
-                         Arguments.of((char) 15, (char) 15, 0),
                          Arguments.of((short) 51251, (short) 123123131, 1),
+                         Arguments.of((byte) -11, (byte) -1, -1),
+                         Arguments.of((short) 5121251, (short) 1231, 1),
+                         Arguments.of((short) -1251, (short) -1231, -1),
+                         Arguments.of((short) 51, (short) 131, -1),
+                         Arguments.of((byte) 127, (byte) 126, 1),
+                         Arguments.of((byte) 255, (byte) 256, -1),
                          Arguments.of((byte) 280, (byte) -280, 1));
     }
 }

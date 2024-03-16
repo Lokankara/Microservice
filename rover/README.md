@@ -6,10 +6,6 @@
 
 #### SQL:
 
--- Show the contents of the table of performers (artists)
--- Show the names of customers from the city of Paris
--- Show sales for the year 2012, with a sales value of more than 4 dollars.
--- Show the date of the sale, the address of the sale, the city to which the sale was made and the purchase price of 16.86. Assign names to the columns InvoiceDate - Date_Sale, BillingAddress - Sale Address, and BillingCity - Sale City.
 -- Show the names of company employees hired in 2004 who reside in the town of Lethbridge
 -- Show the Canadian cities to which sales were made in August 2009.
 -- Show the Names of the employees hired in May. Solve in 2 ways:
@@ -120,11 +116,6 @@ https://datasf.org/opendata/
 -- import csv file Film_Locations_in_San_Francisco.csv from course meterials or from source
 -- https://data.sfgov.org/Culture-and-Recreation/Film-Locations-in-San-Francisco/yitu-d5am
 
--- in MySQL Workbanch: 
-Create database Film;
--- right click on Film database - Table Data Import Wizard - Next ...
-select * from film.film_locations_in_san_francisco;
-
 Queries:
 Count distinct movies
 Count of all films by release year
@@ -133,9 +124,8 @@ Count of all films directed by Woody Allen
 How many movies have/don't have fun facts?
 In how many movies were Keanu Reeves and Robin Williams?
 
-Play with chatGPT. 
 Download the file 
-Chat GPT: Gather statistics about each column, such as counts, unique values, and missing values. 
+Gather statistics about each column, such as counts, unique values, and missing values. 
 -- Answer
 The dataset contains 1,976 entries and 11 columns. 
 Here is a summary of the non-null count for each column:
@@ -164,25 +154,13 @@ WHERE TABLE_SCHEMA = 'film';
 -- create new database and empty table
 DROP DATABASE IF EXISTS film2;
 CREATE DATABASE film2;
-CREATE TABLE film2.film_locations_in_san_francisco (
-`Title`	text,
-`Release Year`	int(11),
-`Locations`	text,
-`Fun Facts`	text,
-`Production Company`	text,
-`Distributor`	text,
-`Director`	text,
-`Writer`	text,
-`Actor 1`	text,
-`Actor 2`	text,
-`Actor 3`	text);
--- select * from film2.film_locations_in_san_francisco;
 
 -- 2. Set Client and Server ON - to Enable local data load on MySQL Client and Server
 -- Instructions for Windows in file: 'ETL - Enabling local data load on MySQL Client and Server.docx'
 
 -- 3. Import the CSV file
 -- Windows - Search MySQL - In command prompt paste:
+
 LOAD DATA LOCAL INFILE 'C:/A_A/A_Tania/SQL/Teaching SQL/film_locations_in_san_francisco.csv'
  INTO TABLE film2.film_locations_in_san_francisco
  FIELDS TERMINATED BY ',' 
@@ -201,9 +179,21 @@ LOAD DATA LOCAL INFILE 'C:/A_A/A_Tania/SQL/Teaching SQL/film_locations_in_san_fr
 2. Verify that the changes have been applied. You can also practice on the following sites:
 https://jsonplaceholder.typicode.com
 https://playground.learnqa.ru/api/map 
-    
-https://www.codewars.com/kata/64c743cb0a2a00002856ff73
-https://www.codewars.com/kata/559e5b717dd758a3eb00005a
+
+https://www.codewars.com/kata/59252121fb1f93fc8200013a/train/python
+https://www.codewars.com/kata/58663693b359c4a6560001d6
+https://www.codewars.com/kata/54b724efac3d5402db00065e
+https://www.codewars.com/kata/58feb7ac627d2fdadf000111
+https://www.codewars.com/kata/534d0a229345375d520006a0
+https://www.codewars.com/kata/6071ef9cbe6ec400228d9531
+https://www.codewars.com/kata/51fd6bc82bc150b28e0000ce
+https://www.codewars.com/kata/599cf86d01a4108584000064
+https://www.codewars.com/kata/56c30eaef85696bf35000ccf
+https://www.codewars.com/kata/588453ea56daa4af920000ca
+https://www.codewars.com/kata/55ee3ebff71e82a30000006a
+https://www.codewars.com/kata/55b54be931e9ce28bc0000d6
+https://www.codewars.com/kata/586538146b56991861000293
+https://www.codewars.com/kata/52efefcbcdf57161d4000091    
 https://www.codewars.com/kata/55b051fac50a3292a9000025
 https://www.codewars.com/kata/56a946cd7bd95ccab2000055
 https://www.codewars.com/kata/56a3f08aa9a6cc9b75000023
@@ -211,3 +201,34 @@ https://www.codewars.com/kata/567bf4f7ee34510f69000032
 https://www.codewars.com/kata/55ccdf1512938ce3ac000056
 https://www.codewars.com/kata/56a25ba95df27b7743000016
 https://www.codewars.com/kata/58f8b35fda19c0c79400020f
+https://www.codewars.com/kata/62c93765cef6f10030dfa92b
+https://www.codewars.com/kata/642b375dca15841d3aaf1ede
+https://www.codewars.com/kata/56d19b2ac05aed1a20000430
+https://www.codewars.com/kata/586beb5ba44cfc44ed0006c3
+https://www.codewars.com/kata/53d32bea2f2a21f666000256
+https://www.codewars.com/kata/5966f6343c0702d1dc00004c
+https://www.codewars.com/kata/559cc2d2b802a5c94700000c
+https://www.codewars.com/kata/563fb342f47611dae800003c
+https://www.codewars.com/kata/58f8b35fda19c0c79400020f
+https://www.codewars.com/kata/580755730b5a77650500010c
+https://www.codewars.com/kata/55e9529cbdc3b29d8c000016
+https://www.codewars.com/kata/55968ab32cf633c3f8000008
+https://www.codewars.com/kata/64c743cb0a2a00002856ff73
+https://www.codewars.com/kata/5834fec22fb0ba7d080000e8
+https://www.codewars.com/kata/56453a12fcee9a6c4700009c
+https://www.codewars.com/kata/56fc55cd1f5a93d68a001d4e
+https://www.codewars.com/kata/5862f663b4e9d6f12b00003b
+https://www.codewars.com/kata/57faf7275c991027af000679
+https://www.codewars.com/kata/57faf12b21c84b5ba30001b0
+https://www.codewars.com/kata/56bcaedfcf6b7f2125001118
+https://www.codewars.com/kata/56bc1acf66a2abc891000561
+https://www.codewars.com/kata/526c7363236867513f0005ca
+https://www.codewars.com/kata/53dbd5315a3c69eed20002dd
+https://www.codewars.com/kata/55b051fac50a3292a9000025
+https://www.codewars.com/kata/5697fb83f41965761f000052
+https://www.codewars.com/kata/57ee4a67108d3fd9eb0000e7
+https://www.codewars.com/kata/56069d0c4af7f633910000d3
+https://www.codewars.com/kata/514a6336889283a3d2000001
+https://www.codewars.com/kata/55ed875819ae85ca8b00005c
+	
+

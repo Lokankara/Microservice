@@ -20,6 +20,7 @@
     <module>rover</module>
     <module>dao</module>
     <module>tester</module>
+    <module>selenium</module>
   </modules>
   <dependencies>
     <dependency>

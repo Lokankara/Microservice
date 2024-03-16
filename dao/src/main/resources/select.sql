@@ -63,3 +63,32 @@ SELECT checkNumber, amount
 FROM payments
 ORDER BY amount DESC
 LIMIT 5;
+
+-- Show the contents of the table of performers (artists)
+SELECT *
+FROM Artist;
+
+-- Show the names of customers from the city of Paris
+SELECT Customer.CustomerId, FirstName, LastName, Country
+FROM Customer
+WHERE Customer.City = 'Paris';
+
+-- Show sales for the year 2022, with a sales value of more than 4 dollars.
+SELECT *
+FROM Invoice
+WHERE InvoiceDate BETWEEN '2022-01-01' AND '2022-12-31'
+  AND Total > 4;
+
+SELECT *
+FROM Invoice
+WHERE YEAR(InvoiceDate) > 2022
+  AND Total > 4;
+
+
+-- Show the date of the sale, the address of the sale, the city to which the sale was made and the purchase price of 16.86.
+SELECT i.InvoiceDate    as Date_Sale,
+       i.BillingAddress as Sale_Address,
+       i.BillingCity    as Sale_City
+FROM Invoice as i
+WHERE Total = 16.86;
+

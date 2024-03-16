@@ -40,8 +40,15 @@ class WrapperTest {
 
     @ParameterizedTest
     @ArgumentsSource(CompareArgumentsProvider.class)
-     <T extends Comparable<T>> void testCompare(T a, T b, int expected){
+    <T extends Comparable<T>> void testCompare(T a, T b, int expected){
         int actual = wrapper.compare(a, b);
+        assertEquals(Integer.signum(expected), Integer.signum(actual));
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(CompareArgumentsProvider.class)
+    void testCompareBy(Number a, Number b, int expected){
+        int actual = wrapper.compareBy(a, b);
         assertEquals(Integer.signum(expected), Integer.signum(actual));
     }
 }

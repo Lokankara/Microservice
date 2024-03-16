@@ -35,4 +35,27 @@ public class Wrapper {
     public <T extends Comparable<T>> int compare(T a, T b) {
         return a.compareTo(b);
     }
+
+    public int compareBy(Number a, Number b){
+
+        if(a instanceof Integer){
+            return Integer.compare(a.intValue(), b.intValue());
+        }
+        if(a instanceof Double){
+            return Double.compare(a.doubleValue(), b.doubleValue());
+        }
+        if(a instanceof Short){
+            return Short.compare(a.shortValue(), b.shortValue());
+        }
+        if(a instanceof Byte){
+            return Byte.compare(a.byteValue(), b.byteValue());
+        }
+        if(a instanceof Long){
+            return Long.compare(a.longValue(), b.longValue());
+        }
+        if(a instanceof Float){
+            return Float.compare(a.floatValue(), b.floatValue());
+        }
+        return Integer.MIN_VALUE;
+    }
 }
