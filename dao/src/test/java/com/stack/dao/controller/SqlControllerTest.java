@@ -1,7 +1,7 @@
 package com.stack.dao.controller;
 
 import com.stack.dao.entity.Album;
-import com.stack.dao.service.SqlService;
+import com.stack.dao.service.AlbumSqlService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -33,7 +33,7 @@ class SqlControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private SqlService<Album> mockService;
+    private AlbumSqlService mockService;
 
     @BeforeEach
     public void setup() {

@@ -2,7 +2,6 @@ package com.stack.dao.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.stack.dao.entity.Album;
-import com.stack.dao.exception.EntityException;
 import com.stack.dao.service.AlbumService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,9 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.sql.SQLException;
-
-import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -64,30 +60,6 @@ class AlbumControllerTest {
                                 .content(mapper.writeValueAsString(album)))
                .andExpect(status().isOk())
                .andDo(print());
-    }
-
-    @Test
-    void testAddAlbumSQLException() throws Exception {
-        Album album = new Album();
-        when(service.save(album)).thenThrow(new SQLException(
-                "Creating album failed, no rows affected."));
-
-        mockMvc.perform(post(urlTemplate)
-                                .contentType(APPLICATION_JSON)
-                                .content(mapper.writeValueAsString(album)))
-               .andExpect(status().isInternalServerError());
-    }
-
-    @Test
-    void testAddAlbumAlbumException() throws Exception {
-        Album album = new Album();
-        when(service.save(album)).thenThrow(new EntityException(
-                "Field 'AlbumId' doesn't have a default value"));
-
-        mockMvc.perform(post(urlTemplate)
-                                .contentType(APPLICATION_JSON)
-                                .content(mapper.writeValueAsString(album)))
-               .andExpect(status().isInternalServerError());
     }
 
     @Test

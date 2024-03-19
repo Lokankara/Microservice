@@ -1,20 +1,20 @@
 package com.stack.e2e;
 
+import com.stack.e2e.model.StepExecution;
 import org.openqa.selenium.WebElement;
 
 class StepFactory {
-    static String performStep(WebElement element, StepExecution step, String sentence) {
-        switch (step) {
-            case CLICK:
+    static String execute(WebElement element, StepExecution step, String sentence) {
+        return switch (step) {
+            case CLICK -> {
                 element.click();
-                return null;
-            case SEND:
+                yield null;
+            }
+            case SEND -> {
                 element.sendKeys(sentence);
-                return null;
-            case ATTRIBUTE:
-                return element.getAttribute("value");
-            default:
-                return null;
-        }
+                yield null;
+            }
+            case ATTRIBUTE -> element.getAttribute("value");
+        };
     }
 }

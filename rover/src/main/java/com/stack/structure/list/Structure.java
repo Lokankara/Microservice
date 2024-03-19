@@ -15,4 +15,32 @@ public class Structure {
         Collections.fill(myInt, -100);
     }
 
+    public List<String> removeColorsWithLetter(char letter, List<String> colors) {
+        List<String> result = new ArrayList<>();
+        for (String color : colors) {
+            if (!color.contains(String.valueOf(letter))) {
+                result.add(color);
+            }
+        }
+        return result;
+    }
+
+    public List<Integer> fillListFrom100To1000() {
+        List<Integer> numbers = new ArrayList<>();
+        int value = 100;
+        while (value < 1001) {
+            numbers.add(value++);
+        }
+        return numbers;
+    }
+
+    public List<Integer> removeEvenNumbers(List<Integer> numbers) {
+        List<Integer> result = new ArrayList<>();
+        for (int num : numbers) {
+            if (num % 2 != 0) {
+                result.add(num);
+            }
+        }
+        return result;
+    }
 }

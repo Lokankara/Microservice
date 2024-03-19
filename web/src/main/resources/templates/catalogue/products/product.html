@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[[${product.title}]]</title>
+</head>
+<body>
+<a data-th-href="@{/catalogue/products/list}">+ Add Good</a>
+<h1 data-th-text="${product.title}"></h1>
+<ul>
+  <li data-th-text="${product.id}">#</li>
+  <li data-th-text="${product.title}">Name</li>
+  <li data-th-text="${product.details}">Description</li>
+</ul>
+</body>
+</html>
