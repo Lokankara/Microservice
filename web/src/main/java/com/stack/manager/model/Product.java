@@ -12,22 +12,27 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 public final class Product {
+
     private int id;
-    private final String title;
-    private final String details;
+    private String url;
+    private Double price;
+    private String title;
+    private String details;
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (Product) obj;
-        return this.id == that.id
-                && Objects.equals(this.title, that.title)
-                && Objects.equals(this.details, that.details);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id
+                && Double.compare(price, product.price) == 0
+                && Objects.equals(url, product.url)
+                && Objects.equals(title, product.title)
+                && Objects.equals(details, product.details);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, details);
+        return Objects.hash(id, url, price, title, details);
     }
 }

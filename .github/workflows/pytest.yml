@@ -2,9 +2,9 @@ name: Python application test with pytest
 
 on:
   push:
-    branches: [ main ]
+    branches: [ python ]
   pull_request:
-    branches: [ main ]
+    branches: [ python ]
 
 jobs:
   build:

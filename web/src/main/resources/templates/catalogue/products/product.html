@@ -5,12 +5,21 @@
   <title>[[${product.title}]]</title>
 </head>
 <body>
-<a data-th-href="@{/catalogue/products/list}">+ Add Good</a>
+<a data-th-href="@{/catalogue/products/list}">&larr; List Products</a>
 <h1 data-th-text="${product.title}"></h1>
 <ul>
-  <li data-th-text="${product.id}">#</li>
-  <li data-th-text="${product.title}">Name</li>
-  <li data-th-text="${product.details}">Description</li>
+  <li><strong>Id</strong>: <span data-th-text="${product.id}"></span></li>
+  <li><strong>Name</strong>: <span data-th-text="${product.title}"></span>
+  <li><strong>Price</strong>: <span data-th-text="${product.price}"></span>
+  <li><strong>Image</strong>: <span data-th-text="${product.url}"></span>
+  </li>
+  <li><strong>Desc</strong>: <span data-th-text="${product.details}"></span>
+  </li>
 </ul>
+<a data-th-href="@{/catalogue/products/{productId}/edit(productId=${product.id})}">Edit</a>
+<form method="post"
+      data-th-action="@{/catalogue/products/{productId}/delete(productId=${product.id})}">
+  <button type="submit">Remove</button>
+</form>
 </body>
 </html>

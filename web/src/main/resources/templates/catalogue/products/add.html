@@ -2,28 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Add</title>
+  <title>New Product</title>
 </head>
 <body>
-<a data-th-href="@{/catalogue/products/create}">+ Add Good</a>
-<h1>List Goods</h1>
-<table>
-  <thead>
-  <tr>
-    <th>#</th>
-    <th>Goods</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr data-th-each="product : ${products}">
-    <td data-th-text="${product.id}"></td>
-    <td>
-      <a data-th-href="@{/catalogue/products/{productId} (productId=${product.id})}"
-         data-th-text="${product.title}"></a>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<a data-th-href="@{/catalogue/products/list}">&larr; List Product</a>
+<h1>New Product</h1>
+<div data-th-if="${errors}">
+  <h2>Error</h2>
+  <ul>
+    <li data-th-each="error: ${errors}" data-th-text="${error}"></li>
+  </ul>
+</div>
+<form method="post" data-th-action="@{/catalogue/products/create}">
+  <label>
+    Title:<br>
+    <input type="text" name="title" data-th-value="${payload?.title}">
+  </label><br>
+  <label>
+    Desc:<br>
+    <textarea name="details" data-th-text="${payload?.details}"></textarea>
+  </label><br>
+  <button type="submit">Create</button>
+</form>
 </body>
-
 </html>

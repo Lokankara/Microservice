@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CustomerRestApp {
+public class RestApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(CustomerRestApp.class, args);
+        SpringApplication.run(RestApp.class, args);
     }
 }
