@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class DefaultProductService
+public class InMemoryProductService
         implements ProductService {
 
     private final ProductDao dao;

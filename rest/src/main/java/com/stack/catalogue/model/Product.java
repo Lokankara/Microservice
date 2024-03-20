@@ -25,12 +25,19 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "url")
+    @Size(max = 512)
+    private String url;
+
+    @Column(name = "price")
+    private Double price;
+
     @Column(name = "title")
     @NotNull
     @Size(min = 3, max = 50)
     private String title;
 
     @Column(name = "details")
-    @Size(max = 1000)
+    @Size(max = 1024)
     private String details;
 }

@@ -1,6 +1,10 @@
 package com.stack.catalogue.service;
 
+import com.stack.catalogue.model.PostProductPayload;
 import com.stack.catalogue.model.Product;
+import com.stack.catalogue.model.ProductResponseDto;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Optional;
 
@@ -8,16 +12,11 @@ public interface ProductService {
 
     Iterable<Product> findAllProducts(String filter);
 
-    Product createProduct(
-            String title,
-            String details);
+    ResponseEntity<ProductResponseDto> createProduct(PostProductPayload payload, UriComponentsBuilder builder);
 
-    Optional<Product> findProduct(int productId);
+    Optional<Product> findProductById(int productId);
 
-    void updateProduct(
-            Integer id,
-            String title,
-            String details);
+    ProductResponseDto updateProduct(Integer id, PostProductPayload payload);
 
     void deleteProduct(Integer id);
 }

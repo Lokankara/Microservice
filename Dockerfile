@@ -3,8 +3,8 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-slim
-COPY --from=build /dao/target/dao-1.0.jar dao.jar
+COPY --from=build /rest/target/rest-1.0-exec.jar rest.jar
 
-EXPOSE 8080
+EXPOSE 8081
 
-ENTRYPOINT ["java", "-jar", "dao.jar"]
+ENTRYPOINT ["java", "-jar", "rest.jar"]

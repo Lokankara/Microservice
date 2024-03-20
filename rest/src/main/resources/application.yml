@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: catalogue-rest
+  config:
+    import: 'optional:configserver:'
+  cloud:
+    config:
+      uri: http://config:config-password@localhost:8888
+
+  datasource:
+    url: jdbc:postgresql://oregon-postgres.render.com/selenium
+    username: admin
+    password: xsy0WYIZQm8W2qgTQH0FK5lJaln4ZJwk
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    locations: classpath:db/migration
+    enabled: true
+    baselineOnMigrate: true
+    schemas:
+      - catalogue
+
+logging:
+  level:
+    root=DEBUG:
+
+server:
+  port: 8081
+
