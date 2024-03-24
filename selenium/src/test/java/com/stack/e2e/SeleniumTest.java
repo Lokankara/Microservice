@@ -1,7 +1,8 @@
 package com.stack.e2e;
 
-import com.stack.e2e.model.StepExecution;
-import com.stack.e2e.model.StepTuple;
+import com.stack.model.StepExecution;
+import com.stack.model.StepTuple;
+import com.stack.structure.StructureMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,8 +15,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -24,15 +23,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import static com.stack.e2e.StepFactory.execute;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class SeleniumTest {
-    private static final String url = "https://capitalizemytitle.com/";
-    public static final String sentence = "my mother told me.";
     private WebDriver driver;
+    public static final String sentence = "my mother told me.";
+    private static final String url = "https://capitalizemytitle.com/";
 
     public static final String data = "Это мой Текст из русских слов и слова dot";
 
@@ -41,10 +37,11 @@ public class SeleniumTest {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().window().maximize();
     }
+
     @AfterClass
     public void tearDown() {
-
         driver.quit();
     }
 
@@ -52,7 +49,6 @@ public class SeleniumTest {
     public void testCapitalize() {
         String expectedResult = "My mother told me.";
         driver.get(url);
-        driver.manage().window().maximize();
 
 //        By mainInput = By.xpath("//textarea[@id='main_input']");
 //        mainInput = By.cssSelector("textarea#main_input");
@@ -64,21 +60,20 @@ public class SeleniumTest {
 
         Queue<StepTuple> tuples = new LinkedList<>();
 
-        tuples.add(new StepTuple(mainInput, StepExecution.CLICK));
-        tuples.add(new StepTuple(mainInput, StepExecution.SEND));
-        tuples.add(new StepTuple(sentenceInput, StepExecution.CLICK));
-        tuples.add(new StepTuple(selector, StepExecution.CLICK));
-        tuples.add(new StepTuple(mainInput, StepExecution.ATTRIBUTE));
+        tuples.add(new StepTuple(driver.findElement(mainInput), StepExecution.CLICK, ""));
+        tuples.add(new StepTuple(driver.findElement(mainInput), StepExecution.SEND, sentence));
+        tuples.add(new StepTuple(driver.findElement(sentenceInput), StepExecution.CLICK, ""));
+        tuples.add(new StepTuple(driver.findElement(selector), StepExecution.CLICK, ""));
+        tuples.add(new StepTuple(driver.findElement(mainInput), StepExecution.ATTRIBUTE, "value"));
         String actual = Strings.capitalizeSentence(sentence);
         Assert.assertEquals(actual, expectedResult);
 
         String result;
 
         while (!tuples.isEmpty()) {
-            StepTuple tuple = tuples.poll();
-            result = execute(driver.findElement(tuple.by()), tuple.step(), actual);
+            result = StepExecution.execute(tuples.poll());
             if (result != null) {
-                assertThat(result, is(expectedResult));
+                Assert.assertEquals(result, (expectedResult));
             }
         }
     }
@@ -86,9 +81,6 @@ public class SeleniumTest {
     @Test
     public void testNeironica() {
         driver.get("https://training.neironica.com/login");
-        driver.manage()
-              .window()
-              .maximize();
 
         WebElement email = driver.findElement(By.id("email"));
         email.sendKeys("email@email.com");
@@ -102,9 +94,7 @@ public class SeleniumTest {
     public void testJackets()
             throws InterruptedException {
         driver.get("https://magento.softwaretestingboard.com");
-        driver.manage()
-              .window()
-              .maximize();
+
         By xpath = By.xpath("//span[text()='Women']");
         WebElement element = driver.findElement(xpath);
         Actions actions = new Actions(driver);
@@ -133,9 +123,6 @@ public class SeleniumTest {
     @Test
     public void testBottles() {
         driver.get("https://www.99-bottles-of-beer.net");
-        driver.manage()
-              .window()
-              .maximize();
 
 //        By lyric = By.xpath("//ul[@id='submenu']//a[@href='lyrics.html']");
 
@@ -156,16 +143,11 @@ public class SeleniumTest {
         }
 
         assertEquals(100, pValues.size());
-        System.out.println(pValues);
     }
 
     @Test
-    @Ignore
     public void testCount() {
         driver.get("https://involta.ru/tools/length-chars/");
-        driver.manage()
-              .window()
-              .maximize();
 
         String expected = String.valueOf(30);
 
@@ -182,44 +164,10 @@ public class SeleniumTest {
         WebElement spanElement = driver.findElement(selector);
         String value = spanElement.getText();
 
-        int actualCount = countCyrillicCharacters(data);
+        int actualCount = StructureMap.countCyrillicCharacters(data);
 
         Assert.assertEquals(expected, value);
         Assert.assertEquals(String.valueOf(actualCount), value);
         Assert.assertEquals(expected, String.valueOf(actualCount));
-    }
-
-    @Test(dataProvider = "textData")
-    public void testCountCyrillicCharacters(String data, int actual) {
-        int actualCount = countCyrillicCharacters(data);
-        Assert.assertEquals(actualCount, actual);
-    }
-
-    public static int countCyrillicCharacters(String text) {
-        if (text == null){
-            return -1;
-        }
-
-        int count = 0;
-        for (int i = 0; i < text.length(); i++) {
-            char ch = text.charAt(i);
-            if (ch >= 1040 && ch <= 1103) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    @DataProvider(name = "textData")
-    public Object[][] textData() {
-        return new Object[][] {
-                {null, -1},
-                {"", 0},
-                {"Как дела?", 7},
-                {"1234567890", 0},
-                {"Привет, мир!", 9},
-                {"Тестирование", 12},
-                {"Hello, world!", 0}
-        };
     }
 }

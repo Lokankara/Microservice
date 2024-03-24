@@ -1,6 +1,6 @@
-package com.stack.manager.dao;
+package com.stack.catalogue.dao;
 
-import com.stack.manager.model.Product;
+import com.stack.catalogue.model.Product;
 
 import java.util.List;
 import java.util.Optional;

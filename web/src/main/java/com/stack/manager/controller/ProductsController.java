@@ -1,8 +1,8 @@
 package com.stack.manager.controller;
 
+import com.stack.manager.client.ProductClient;
 import com.stack.manager.model.Product;
 import com.stack.manager.model.PostProductPayload;
-import com.stack.manager.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("catalogue/products")
 public class ProductsController {
 
-    private final ProductService service;
+    private final ProductClient client;
 
     @GetMapping(value = "list")
     public String getProductsList(Model model){
-        model.addAttribute("products", this.service.findAll());
+        model.addAttribute("products", this.client.findAll());
         return "catalogue/products/list";
     }
 
@@ -45,7 +45,7 @@ public class ProductsController {
                                             .toList());
             return "catalogue/products/add";
         } else {
-            Product product = this.service.create(payload);
+            Product product = this.client.create(payload);
             return "redirect:/catalogue/products/%d".formatted(product.getId());
         }
     }

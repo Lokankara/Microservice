@@ -13,12 +13,19 @@ spring:
     password: xsy0WYIZQm8W2qgTQH0FK5lJaln4ZJwk
     driver-class-name: org.postgresql.Driver
 
-  flyway:
-    locations: classpath:db/migration
-    enabled: true
-    baselineOnMigrate: true
-    schemas:
-      - catalogue
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/migration/V1__create_product_table.sql
+      data-locations: classpath:db/migration/V2__insert_product_data.sql
+
+#  flyway:
+#    schemas:
+#      - public
+#      - catalogue
+#    locations: classpath:db/migration
+#    enabled: true
+#    baselineOnMigrate: true
 
 logging:
   level:

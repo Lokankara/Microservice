@@ -1,5 +1,6 @@
 package com.stack.catalogue.service;
 
+import com.stack.catalogue.model.BaseDto;
 import com.stack.catalogue.model.PostProductPayload;
 import com.stack.catalogue.model.Product;
 import com.stack.catalogue.model.ProductResponseDto;
@@ -12,11 +13,33 @@ public interface ProductService {
 
     Iterable<Product> findAllProducts(String filter);
 
-    ResponseEntity<ProductResponseDto> createProduct(PostProductPayload payload, UriComponentsBuilder builder);
+    ResponseEntity<BaseDto> createProduct(
+            PostProductPayload payload, UriComponentsBuilder builder);
 
     Optional<Product> findProductById(int productId);
 
     ProductResponseDto updateProduct(Integer id, PostProductPayload payload);
 
     void deleteProduct(Integer id);
+
+    default ProductResponseDto productToDto(
+            Product product) {
+        return ProductResponseDto.builder()
+                                 .id(product.getId())
+                                 .title(product.getTitle())
+                                 .price(product.getPrice())
+                                 .details(product.getDetails())
+                                 .url(product.getUrl())
+                                 .build();
+    }
+
+    default Product toEntity(
+            PostProductPayload payload) {
+        return new Product(
+                null,
+                payload.url(),
+                payload.price(),
+                payload.title(),
+                payload.details());
+    }
 }

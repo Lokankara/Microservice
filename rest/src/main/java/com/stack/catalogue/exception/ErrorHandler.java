@@ -8,9 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.NoSuchElementException;
@@ -28,9 +30,22 @@ public class ErrorHandler {
 
     @ExceptionHandler(NoSuchElementException.class)
     public ResponseEntity<BaseDto> handleNoSuchElementException(
-            BindException exception, Locale locale){
-        return errorRequest(locale, messageSource, exception.getAllErrors(), HttpStatus.NOT_FOUND);
+            NoSuchElementException exception, Locale locale){
+        List<ObjectError> errors = Collections.singletonList(
+                new ObjectError("NoSuchElementException",
+                                messageSource.getMessage(exception.getMessage(), null, locale)));
+        return errorRequest(locale, messageSource, errors, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<BaseDto> handleMethodNotAllowedException(
+            HttpRequestMethodNotSupportedException exception, Locale locale){
+        String errorMessage = exception.getMessage();
+        List<ObjectError> errors = Collections.singletonList(
+                new ObjectError("HttpRequestMethodNotSupportedException", errorMessage));
+        return errorRequest(locale, messageSource, errors, HttpStatus.METHOD_NOT_ALLOWED);
+    }
+
 
     private ResponseEntity<BaseDto> errorRequest(
             Locale locale,
@@ -40,14 +55,13 @@ public class ErrorHandler {
         return ResponseEntity.badRequest().body(
                 ProblemResponseDto.forStatusAndDetail(
                 httpStatus, getMessage(locale, messageSource), allErrors));
-
     }
 
     private static String getMessage(
             Locale currentLocale,
             MessageSource messageSource) {
         return messageSource.getMessage(
-                "errors.403.title", new Object[0],
-                "errors.403.title", currentLocale);
+                "errors.405.title", new Object[0],
+                "errors.404.title", currentLocale);
     }
 }

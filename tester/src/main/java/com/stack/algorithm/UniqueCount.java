@@ -13,8 +13,10 @@ public class UniqueCount {
             return -1;
         }
         Set<Character> uniqueLetters = new HashSet<>();
-        for (int i = 0; i < word.length(); i++) {
-            uniqueLetters.add(word.charAt(i));
+        for (char ch : word.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                uniqueLetters.add(ch);
+            }
         }
         return uniqueLetters.size();
     }

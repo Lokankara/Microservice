@@ -1,6 +1,7 @@
 package com.stack.catalogue.service;
 
 import com.stack.catalogue.dao.ProductRepository;
+import com.stack.catalogue.model.BaseDto;
 import com.stack.catalogue.model.PostProductPayload;
 import com.stack.catalogue.model.Product;
 import com.stack.catalogue.model.ProductResponseDto;
@@ -18,23 +19,23 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class JpaProductService implements ProductService {
 
-    private final ProductRepository productRepository;
+    private final ProductRepository repository;
 
     @Override
     public Iterable<Product> findAllProducts(String filter) {
         if (filter != null && !filter.isBlank()) {
-            return this.productRepository.findAllByTitleLikeIgnoreCase("%" + filter + "%");
+            return this.repository.findAllByTitleLikeIgnoreCase("%%%s%%".formatted(filter));
         } else {
-            return this.productRepository.findAll();
+            return this.repository.findAll();
         }
     }
 
     @Override
     @Transactional
-    public ResponseEntity<ProductResponseDto> createProduct(
+    public ResponseEntity<BaseDto> createProduct(
             PostProductPayload payload,
             UriComponentsBuilder builder) {
-        ProductResponseDto dto = productToDto(this.productRepository.save(toEntity(payload)));
+        ProductResponseDto dto = productToDto(this.repository.save(toEntity(payload)));
         return ResponseEntity.created(builder.replacePath("/catalogue-api/products/{productId}")
                        .build(Map.of("productId", dto.getId()))).body(dto);
     }
@@ -43,7 +44,7 @@ public class JpaProductService implements ProductService {
 
     @Override
     public Optional<Product> findProductById(int productId) {
-        return this.productRepository.findById(productId);
+        return this.repository.findById(productId);
     }
 
     @Override
@@ -51,31 +52,17 @@ public class JpaProductService implements ProductService {
     public ProductResponseDto updateProduct(
             Integer id,
             PostProductPayload payload) {
-        return productToDto(this.productRepository.findById(id)
-                                          .map(product -> {
+        return productToDto(this.repository.findById(id)
+                                           .map(product -> {
                                               product.setTitle(payload.title());
                                               product.setDetails(payload.details());
                                               return product;
                                           }).orElseThrow(NoSuchElementException::new));
     }
 
-    private ProductResponseDto productToDto(Product product) {
-        return ProductResponseDto.builder()
-                                 .id(product.getId())
-                                 .title(product.getTitle())
-                                 .price(product.getPrice())
-                                 .details(product.getDetails())
-                                 .url(product.getUrl())
-                                 .build();
-    }
-
-    private Product toEntity(PostProductPayload payload) {
-        return new Product(null, payload.url(), payload.price(), payload.title(), payload.details());
-    }
-
     @Override
     @Transactional
     public void deleteProduct(Integer id) {
-        this.productRepository.deleteById(id);
+        this.repository.deleteById(id);
     }
 }

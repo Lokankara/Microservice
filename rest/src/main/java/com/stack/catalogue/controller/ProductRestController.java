@@ -5,7 +5,7 @@ import com.stack.catalogue.model.PostProductPayload;
 import com.stack.catalogue.model.Product;
 import com.stack.catalogue.service.ProductService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
@@ -21,11 +21,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("catalogue-api/products/{productId:\\d+}")
 public class ProductRestController {
 
     private final ProductService service;
+
+    public ProductRestController(
+            @Qualifier("jpaProductService")
+            ProductService service) {
+        this.service = service;
+    }
 
     @ModelAttribute("product")
     public Product product(

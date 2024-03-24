@@ -1,9 +1,9 @@
 package com.stack.manager.controller;
 
+import com.stack.manager.client.ProductClient;
 import com.stack.manager.exception.BadRequestException;
 import com.stack.manager.model.PostProductPayload;
 import com.stack.manager.model.Product;
-import com.stack.manager.service.ProductService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,12 +23,12 @@ import java.util.NoSuchElementException;
 @RequestMapping(("catalogue/products/{productId:\\d+}"))
 public class ProductController {
 
-    private final ProductService service;
+    private final ProductClient productRestClient;
 
     @ModelAttribute("product")
     public Product product(@PathVariable("productId") int productId) {
-        return this.service.findById(productId)
-                           .orElseThrow(() -> new NoSuchElementException(
+        return this.productRestClient.findById(productId)
+                                     .orElseThrow(() -> new NoSuchElementException(
                                           "catalogue.errors.product.not_found"));
     }
 
@@ -50,7 +50,7 @@ public class ProductController {
             Model model
             ) {
         try {
-            this.service.updateProduct(product.getId(), payload);
+            this.productRestClient.updateProduct(product.getId(), payload);
             return "redirect:/catalogue/products/%d".formatted(product.getId());
         } catch (BadRequestException exception) {
             response.setStatus(HttpStatus.BAD_REQUEST.value());
@@ -62,7 +62,7 @@ public class ProductController {
 
     @PostMapping("delete")
     public String deleteProduct(@ModelAttribute("product") Product product) {
-        this.service.deleteProduct(product.getId());
+        this.productRestClient.deleteProduct(product.getId());
         return "redirect:/catalogue/products/list";
     }
 }

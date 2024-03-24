@@ -5,7 +5,7 @@ import com.stack.catalogue.model.PostProductPayload;
 import com.stack.catalogue.model.Product;
 import com.stack.catalogue.service.ProductService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
@@ -18,11 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("catalogue-api/products")
 public class ProductsRestController {
 
     private final ProductService service;
+
+    public ProductsRestController(
+            @Qualifier("jpaProductService")
+            ProductService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public Iterable<Product> findAllProducts() {
@@ -30,7 +35,7 @@ public class ProductsRestController {
     }
 
     @PostMapping
-    public ResponseEntity<? extends BaseDto> createProduct(
+    public ResponseEntity<BaseDto> createProduct(
             @Valid @RequestBody PostProductPayload payload,
             UriComponentsBuilder builder,
             BindingResult bindingResult)

@@ -12,12 +12,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
+@Entity
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
 @Table(schema = "catalogue", name = "product")
 public class Product {
 
@@ -25,19 +27,19 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "url")
     @Size(max = 512)
+    @Column(name = "url")
     private String url;
 
     @Column(name = "price")
     private Double price;
 
-    @Column(name = "title")
     @NotNull
+    @Column(name = "title")
     @Size(min = 3, max = 50)
     private String title;
 
-    @Column(name = "details")
     @Size(max = 1024)
+    @Column(name = "details")
     private String details;
 }

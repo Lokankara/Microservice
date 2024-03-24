@@ -1,5 +1,6 @@
 package com.stack.algorithm;
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -14,7 +15,7 @@ public class UniqueCountTest {
                 {"hello", 4},
                 {"banana", 3},
                 {"programming", 8},
-                {"unique", 6}
+                {"unique", 5}
         };
     }
 
@@ -55,5 +56,38 @@ public class UniqueCountTest {
     public void testCountUniqueLettersInvalidWords(String word, int expected) {
         int actual = UniqueCount.countUniqueLetters(word);
         assertEquals(actual, expected);
+    }
+
+
+    @DataProvider(name = "happyPathTestData")
+    public Object[][] happyPathTestData() {
+        return new Object[][] {
+                {"абракадабра", 5},
+                {"АбРакадабра", 7},
+                {"aбpакадабра", 7},
+                {"1ая", 2},
+                {"пол-литра", 7},
+                {" ", 0}
+        };
+    }
+
+    @DataProvider(name = "negativeTestData")
+    public Object[][] negativeTestData() {
+        return new Object[][] {
+                {null, -1},
+                {"", 0}
+        };
+    }
+
+    @Test(dataProvider = "happyPathTestData")
+    public void testCountUniqueLettersHappyPath(String word, int expectedResult) {
+        int actualResult = UniqueCount.countUniqueLetters(word);
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test(dataProvider = "negativeTestData")
+    public void testCountUniqueLettersNegative(String word, int expectedResult) {
+        int actualResult = UniqueCount.countUniqueLetters(word);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }

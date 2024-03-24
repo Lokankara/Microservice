@@ -230,5 +230,32 @@ https://www.codewars.com/kata/57ee4a67108d3fd9eb0000e7
 https://www.codewars.com/kata/56069d0c4af7f633910000d3
 https://www.codewars.com/kata/514a6336889283a3d2000001
 https://www.codewars.com/kata/55ed875819ae85ca8b00005c
+https://www.codewars.com/kata/59f70440bee845599c000085
+https://www.codewars.com/kata/585d7d5adb20cf33cb000235
+https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3
+https://www.codewars.com/kata/628df6b29070907ecb3c2d83
+https://www.codewars.com/kata/5a86073fb17101e453000258
+https://www.codewars.com/kata/57fafb6d2b5314c839000195
+https://www.codewars.com/kata/586560a639c5ab3a260000f3
+https://www.codewars.com/kata/59269e371a640c0e98000085
+https://www.codewars.com/kata/590c4c342ad5cd6a8700005c
+https://www.codewars.com/kata/5442e4fc7fc447653a0000d5
+https://www.codewars.com/kata/58bf67eb68d8469e3c000041
+https://www.codewars.com/kata/58c20c8d61aefc518f0000fd
+https://www.codewars.com/kata/6344701cd748a12b99c0dbc4
+https://www.codewars.com/kata/55f347cfb44b879e1e00000d
+https://www.codewars.com/kata/5637b03c6be7e01d99000046
+https://www.codewars.com/kata/56a24b309f3671608b00003a
+https://www.codewars.com/kata/552e45cc30b0dbd01100001a
+https://www.codewars.com/kata/56a24b4d9f3671584d000039
+https://www.codewars.com/kata/563a8656d52a79f06c00001f
+https://www.codewars.com/kata/56d31aaefd3a52902a000d66
+https://www.codewars.com/kata/52fba66badcd10859f00097e
+https://www.codewars.com/kata/55d410c492e6ed767000004f
+https://www.codewars.com/kata/585a36b445376cbc22000072
+https://www.codewars.com/kata/51f2b4448cadf20ed0000386
+https://www.codewars.com/kata/55f91a98db47502cfc00001b
+https://www.codewars.com/kata/62cb487e43b37a5829ab5752
+
 	
 

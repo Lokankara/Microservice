@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>[[${product.title}]]</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
 </head>
 <body>
 <a data-th-href="@{/catalogue/products/list}">&larr; List Products</a>
 <h1 data-th-text="${product.title}"></h1>
-<ul>
-  <li><strong>Id</strong>: <span data-th-text="${product.id}"></span></li>
-  <li><strong>Name</strong>: <span data-th-text="${product.title}"></span>
-  <li><strong>Price</strong>: <span data-th-text="${product.price}"></span>
-  <li><strong>Image</strong>: <span data-th-text="${product.url}"></span>
-  </li>
-  <li><strong>Desc</strong>: <span data-th-text="${product.details}"></span>
-  </li>
-</ul>
+<div class="wrapper" id="wrapper"></div>
 <a data-th-href="@{/catalogue/products/{productId}/edit(productId=${product.id})}">Edit</a>
 <form method="post"
       data-th-action="@{/catalogue/products/{productId}/delete(productId=${product.id})}">
   <button type="submit">Remove</button>
 </form>
+<script th:src="@{/js/cards.js}"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const product = /*[[${product}]]*/ null;  // Initialize with null
+    /*]]>*/
+    product.sizes = [6, 7, 8, 9, 10];
+    product.image = product.url
+    console.log(product);
+
+    const wrapper = document.getElementById("wrapper");
+    if (product) {
+        const card = createCard(product);
+        wrapper.appendChild(card);
+    } else {
+        console.log("Product is null or undefined");
+    }
+</script>
 </body>
 </html>
