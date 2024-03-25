@@ -7,11 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -33,6 +36,7 @@ public class ScenarioTest {
     public void setUp() {
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
+        driver.manage().window().maximize();
     }
 
     @AfterClass
@@ -41,8 +45,24 @@ public class ScenarioTest {
     }
 
     @Test
+    public void testLogin() throws InterruptedException {
+
+        driver.get(url);
+
+        driver.findElement(By.cssSelector(".menu-button")).click();
+        driver.findElement(By.linkText("login")).click();
+        driver.findElement(By.name("username")).sendKeys("alice");
+        driver.findElement(By.name("password")).sendKeys("alice");
+        driver.findElement(By.id("submit-button")).click();
+        Thread.sleep(5000);
+
+        String text = driver.findElement(By.id("user-span")).getText();
+        Assert.assertEquals(text, "Alice  |");
+    }
+
+    @Test
     public void testGiftShopFilterHolidayByDay() {
-        driver.manage().window().maximize();
+
         driver.get(url);
 
         int expected = 2;

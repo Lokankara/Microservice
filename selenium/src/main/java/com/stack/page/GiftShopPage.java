@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -14,8 +13,7 @@ import static com.stack.model.StepLocator.dropId;
 import static com.stack.model.StepLocator.listId;
 import static com.stack.model.StepLocator.searchPlaceholder;
 
-public class GiftShopPage {
-    private final WebDriver driver;
+public class GiftShopPage extends BasePage {
 
     @FindBy(xpath = searchPlaceholder)
     private WebElement searchInput;
@@ -27,8 +25,7 @@ public class GiftShopPage {
     private WebElement holiday;
 
     public GiftShopPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     public void clickDropdown() {
@@ -40,7 +37,7 @@ public class GiftShopPage {
     }
 
     public List<WebElement> getCertificates() {
-        WebElement list = driver.findElement(By.id(listId));
+        WebElement list = super.driver.findElement(By.id(listId));
         return list.findElements(By.xpath(certificateCard));
     }
 
