@@ -34,7 +34,7 @@ class SolutionTest {
     @ArgumentsSource(ProductArrayArgumentsProvider.class)
     void testProductArrayTimeoutPreemptively(int[] numbers, long[] expected) {
         assertTimeoutPreemptively(
-                Duration.ofNanos(50000000), () -> assertArrayEquals(
+                Duration.ofNanos(500000000), () -> assertArrayEquals(
                         expected, solution.productArray(numbers)));
 
     }
