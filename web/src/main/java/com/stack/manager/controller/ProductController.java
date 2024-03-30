@@ -26,10 +26,12 @@ public class ProductController {
     private final ProductClient productRestClient;
 
     @ModelAttribute("product")
-    public Product product(@PathVariable("productId") int productId) {
-        return this.productRestClient.findById(productId)
-                                     .orElseThrow(() -> new NoSuchElementException(
-                                          "catalogue.errors.product.not_found"));
+    public Product product(
+            @PathVariable("productId") int productId) {
+        return this.productRestClient
+                .findById(productId)
+                .orElseThrow(() -> new NoSuchElementException(
+                        "catalogue.errors.product.not_found"));
     }
 
     @GetMapping
@@ -47,8 +49,7 @@ public class ProductController {
             @ModelAttribute(name = "product", binding = false) Product product,
             @Valid PostProductPayload payload,
             HttpServletResponse response,
-            Model model
-            ) {
+            Model model) {
         try {
             this.productRestClient.updateProduct(product.getId(), payload);
             return "redirect:/catalogue/products/%d".formatted(product.getId());

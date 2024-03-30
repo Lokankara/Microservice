@@ -31,6 +31,7 @@ public class Product {
     @Column(name = "url")
     private String url;
 
+    @NotNull
     @Column(name = "price")
     private Double price;
 
@@ -42,4 +43,13 @@ public class Product {
     @Size(max = 1024)
     @Column(name = "details")
     private String details;
+
+    public Product(
+            Integer id,
+            String title,
+            String details) {
+        this.id = id;
+        this.title = title;
+        this.details = details;
+    }
 }

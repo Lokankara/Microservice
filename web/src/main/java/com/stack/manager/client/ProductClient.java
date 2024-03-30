@@ -13,7 +13,7 @@ public interface ProductClient {
 
     void updateProduct(int id, PostProductPayload payload);
 
-    List<Product> findAll();
+    List<Product> findAll(String filter, int offset, int size);
 
     Product create(PostProductPayload payload);
 }

@@ -14,6 +14,12 @@
   <li><a href="#" data-hover="Remove">Remove</a></li>
 </ul>
 
+<form method="get" data-th-action="@{/catalogue/products/list}">
+  <label>Filter: <input type="text" name="filter" data-th-value="${filter}">
+    <button type="submit">Search</button>
+  </label>
+</form>
+
 <div class="wrapper" id="wrapper"></div>
 <!--<div class="main" data-th-each="product : ${products}"></div>-->
 

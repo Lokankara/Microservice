@@ -69,10 +69,14 @@ public class ProductRestClient
     }
 
     @Override
-    public List<Product> findAll() {
-        return this.restClient
+    public List<Product> findAll(String filter, int offset, int size) {
+        return restClient
                 .get()
-                .uri(BASE_URL)
+                .uri(uriBuilder -> uriBuilder.path(BASE_URL)
+                                             .queryParam("filter", filter)
+                                             .queryParam("offset", offset)
+                                             .queryParam("size", size)
+                                             .build())
                 .retrieve().body(PRODUCTS_TYPE_REFERENCE);
     }
 

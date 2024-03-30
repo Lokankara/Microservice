@@ -13,6 +13,9 @@ spring:
     password: xsy0WYIZQm8W2qgTQH0FK5lJaln4ZJwk
     driver-class-name: org.postgresql.Driver
 
+  jpa:
+    show-sql: true
+
   sql:
     init:
       mode: always
@@ -29,7 +32,8 @@ spring:
 
 logging:
   level:
-    root=DEBUG:
+    root: DEBUG
+    sql: info
 
 server:
   port: 8081

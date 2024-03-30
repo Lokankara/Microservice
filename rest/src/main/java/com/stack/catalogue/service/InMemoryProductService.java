@@ -22,7 +22,9 @@ public class InMemoryProductService
     private final ProductDao dao;
 
     @Override
-    public List<Product> findAllProducts(String filter) {
+    public List<Product> findAllProducts(String filter,
+                                         int page,
+                                         int size) {
         return dao.findAll();
     }
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -30,8 +31,11 @@ public class ProductsRestController {
     }
 
     @GetMapping
-    public Iterable<Product> findAllProducts() {
-        return service.findAllProducts("");
+    public Iterable<Product> findAllProducts(
+            @RequestParam(name = "filter", required = false) String filter,
+            @RequestParam(name = "page", defaultValue = "0") int page,
+            @RequestParam(name = "size", defaultValue = "25") int size) {
+        return service.findAllProducts(filter, page, size);
     }
 
     @PostMapping

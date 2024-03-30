@@ -6,6 +6,8 @@ import com.stack.catalogue.model.PostProductPayload;
 import com.stack.catalogue.model.Product;
 import com.stack.catalogue.model.ProductResponseDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,11 +24,12 @@ public class JpaProductService implements ProductService {
     private final ProductRepository repository;
 
     @Override
-    public Iterable<Product> findAllProducts(String filter) {
-        if (filter != null && !filter.isBlank()) {
-            return this.repository.findAllByTitleLikeIgnoreCase("%%%s%%".formatted(filter));
+    public Iterable<Product> findAllProducts(String filter, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        if (filter != null && !filter.isEmpty()) {
+            return repository.findByTitleContaining(filter, pageable).getContent();
         } else {
-            return this.repository.findAll();
+            return repository.findAll(pageable).getContent();
         }
     }
 

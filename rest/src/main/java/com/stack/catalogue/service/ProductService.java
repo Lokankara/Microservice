@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    Iterable<Product> findAllProducts(String filter);
+    Iterable<Product> findAllProducts(String filter, int page, int size);
 
     ResponseEntity<BaseDto> createProduct(
             PostProductPayload payload, UriComponentsBuilder builder);
