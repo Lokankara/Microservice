@@ -1,8 +1,8 @@
-package com.stack.polimorphism;
+package com.stack.inheritance;
 
 import com.stack.geometry.Circle;
 import com.stack.geometry.Figure;
-import com.stack.geometry.MyUtils;
+import com.stack.geometry.Helper;
 import com.stack.geometry.Rectangle;
 import com.stack.geometry.Shape;
 import org.junit.jupiter.api.Test;
@@ -15,19 +15,19 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class MyUtilsTest {
+class HelperTest {
 
     @ParameterizedTest
     @ArgumentsSource(MaxAreasArgumentsProvider.class)
     void testMaxAreas(List<Shape> shapes, int expectedSize) {
-        List<Shape> maxAreas = new MyUtils().maxAreas(shapes);
+        List<Shape> maxAreas = new Helper().maxAreas(shapes);
         assertEquals(expectedSize, maxAreas.size());
     }
 
     @ParameterizedTest
     @ArgumentsSource(PerimeterProvider.class)
     void testSumPerimeter(List<? extends Figure> figures, double expectedSum) {
-        double sum = new MyUtils().sumPerimeter(figures);
+        double sum = new Helper().sumPerimeter(figures);
         assertEquals(expectedSum, sum);
     }
 
@@ -40,7 +40,7 @@ class MyUtilsTest {
                 new Rectangle(1.0, Math.PI)
         );
 
-        List<Shape> maxAreaShapes = new MyUtils().maxAreas(shapes);
+        List<Shape> maxAreaShapes = new Helper().maxAreas(shapes);
         assertEquals(4, maxAreaShapes.size());
         assertTrue(maxAreaShapes.get(0) instanceof Circle || maxAreaShapes.get(0) instanceof Rectangle);
         assertTrue(maxAreaShapes.get(1) instanceof Circle || maxAreaShapes.get(1) instanceof Rectangle);

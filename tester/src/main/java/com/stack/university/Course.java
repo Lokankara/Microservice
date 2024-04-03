@@ -1,4 +1,4 @@
-package com.stack.model.university;
+package com.stack.university;
 
 import java.util.List;
 

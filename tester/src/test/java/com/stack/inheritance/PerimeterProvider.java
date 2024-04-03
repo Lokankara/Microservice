@@ -1,4 +1,4 @@
-package com.stack.polimorphism;
+package com.stack.inheritance;
 
 import com.stack.geometry.Rectangle;
 import com.stack.geometry.Square;

@@ -1,9 +1,12 @@
 package com.stack.inheritance;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ImmutableType {
     public void work(String text){
-        System.out.println(text);
+        log.info(text);
         text = text + "String";
-        System.out.println(text);
+        log.info(text);
     }
 }

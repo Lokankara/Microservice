@@ -1,10 +1,13 @@
 package com.stack.inheritance;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class RefType {
 
     public void work(StringBuilder sb){
-        System.out.println(sb);
+        log.info(sb.toString());
         sb.append("RefType");
-        System.out.println(sb);
+        log.info(sb.toString());
     }
 }

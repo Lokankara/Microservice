@@ -1,4 +1,4 @@
-package com.stack.model.university;
+package com.stack.university;
 
 import lombok.Getter;
 import lombok.Setter;

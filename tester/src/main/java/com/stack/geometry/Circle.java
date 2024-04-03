@@ -1,5 +1,8 @@
 package com.stack.geometry;
 
+import lombok.Getter;
+
+@Getter
 public class Circle
         extends Shape {
     private double radius;
@@ -18,10 +21,6 @@ public class Circle
 
     public Circle() {
         super("Circle");
-    }
-
-    public double getRadius() {
-        return radius;
     }
 
     public double getArea() {

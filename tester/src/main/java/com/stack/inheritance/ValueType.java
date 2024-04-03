@@ -1,10 +1,13 @@
 package com.stack.inheritance;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ValueType {
 
     public void work(int i){
-        System.out.println(i);
+        log.info(String.valueOf(i));
         i++;
-        System.out.println(i);
+        log.info(String.valueOf(i));
     }
 }
