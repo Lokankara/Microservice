@@ -1,4 +1,4 @@
-package com.stack.company.service;
+package com.stack.company.validator;
 
 public class EmailValidator {
 
@@ -36,7 +36,7 @@ public class EmailValidator {
     private static void validateUsername(final String username) {
 
         if (!username.matches(USERNAME_PATTERN)) {
-            throw new EmailArgumentException("Invalid username: " + username);
+            throw new EmailArgumentException("Invalid username:" + username);
         }
 
         if (username.length() > 9 && !username.matches(".*[a-zA-Z].*")) {
@@ -49,11 +49,11 @@ public class EmailValidator {
 
         if (domain.isEmpty() || domain.length() > 255) {
             throw new EmailArgumentException(
-                    "Invalid length of domain: ", domain);
+                    "Invalid length of domain:", domain);
         }
 
         if (!domain.matches(DOMAIN_PATTERN)) {
-            throw new EmailArgumentException("Invalid domain: ", domain);
+            throw new EmailArgumentException("Invalid domain:", domain);
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.stack.company.service;
+package com.stack.company.validator;
 
 public class EmailArgumentException
         extends RuntimeException {

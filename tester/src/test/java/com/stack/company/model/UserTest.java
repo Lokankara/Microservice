@@ -1,5 +1,5 @@
 package com.stack.company.model;
-import com.stack.company.service.EmailArgumentException;
+import com.stack.company.validator.EmailArgumentException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

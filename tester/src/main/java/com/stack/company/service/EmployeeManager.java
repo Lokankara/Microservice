@@ -5,11 +5,9 @@ import com.stack.company.model.Employee;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class EmployeeManager {
-
-    private final EmployeeRepository employeeRepository;
-
+public class EmployeeManager implements EmployeeService {
     private final BankService bankService;
+    private final EmployeeRepository employeeRepository;
 
     public EmployeeManager(
             EmployeeRepository employeeRepository,

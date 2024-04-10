@@ -1,9 +1,10 @@
 package com.stack.streams;
 
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 
-public class Digits {
+public class Functions {
 
     public double findAverage(List<Integer> numbers) {
         return numbers.stream()
@@ -21,11 +22,12 @@ public class Digits {
     public int sumOfOddNumbers(List<Integer> numbers) {
         return numbers.stream()
                       .filter(num -> num % 2 != 0)
-                      .mapToInt(Integer::intValue)
+                      .mapToInt(i -> i)
                       .sum();
     }
 
-    public List<String> sortReverse(List<String> strings) {
+    public List<String> sortStringsReverse(
+            List<String> strings) {
         return strings.stream()
                       .sorted(Comparator.reverseOrder())
                       .toList();
@@ -57,10 +59,10 @@ public class Digits {
                       .sum();
     }
 
-    public double findAverage2(List<Integer> numbers) {
+    public IntSummaryStatistics findStatistics(
+            List<Integer> numbers) {
         return numbers.stream()
-                      .mapToDouble(Integer::doubleValue)
-                      .average()
-                      .orElse(0);
+                      .mapToInt(Integer::intValue)
+                      .summaryStatistics();
     }
 }

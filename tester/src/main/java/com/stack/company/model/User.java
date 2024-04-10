@@ -1,6 +1,6 @@
 package com.stack.company.model;
 
-import com.stack.company.service.EmailValidator;
+import com.stack.company.validator.EmailValidator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +15,7 @@ public class User {
     private String email;
 
     public void setEmail(final String email) {
+
         EmailValidator.checkEmail(email);
         this.email = email;
     }

@@ -5,6 +5,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class MaximumArgumentsProvider
@@ -22,7 +23,24 @@ public class MaximumArgumentsProvider
                 Arguments.of(Arrays.asList(100, 200, 300, 400, 500, 600, 700, 800, 900, 1000), 1000),
                 Arguments.of(Arrays.asList(5, 15, 25, 35, 45, 55, 65, 75, 85, 95), 95),
                 Arguments.of(Arrays.asList(-1, -2, -3, -4, -5, -6, -7, -8, -9, -10), -1),
-                Arguments.of(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 9)
+                Arguments.of(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 9),
+                Arguments.of(Arrays.asList(1, 2, 3), 3),
+                Arguments.of(Arrays.asList(-1, 0, 1), 1),
+                Arguments.of(List.of(), 0),
+                Arguments.of(List.of(Integer.MAX_VALUE), Integer.MAX_VALUE),
+                Arguments.of(List.of(Integer.MIN_VALUE), Integer.MIN_VALUE),
+                Arguments.of(Arrays.asList(1, Integer.MAX_VALUE), Integer.MAX_VALUE),
+                Arguments.of(Arrays.asList(-1, Integer.MIN_VALUE), -1),
+                Arguments.of(Arrays.asList(5, 5, 5), 5),
+                Arguments.of(Arrays.asList(10, 20, 30, 40), 40),
+                Arguments.of(Arrays.asList(-10, -20, -30), -10),
+                Arguments.of(Arrays.asList(1, -2, 3, -4), 3),
+                Arguments.of(Arrays.asList(0, 0, 0), 0),
+                Arguments.of(Arrays.asList(Integer.MIN_VALUE, Integer.MAX_VALUE), Integer.MAX_VALUE),
+                Arguments.of(Arrays.asList(100, 50, 25), 100),
+                Arguments.of(Arrays.asList(-5, -10, 15), 15),
+                Arguments.of(Arrays.asList(Integer.MIN_VALUE << 64, Integer.MAX_VALUE >> 64), Integer.MAX_VALUE
+                )
         );
     }
 }

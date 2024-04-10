@@ -23,7 +23,17 @@ public class SecondLargestArgumentsProvider
                 Arguments.of(Arrays.asList(100, 200, 300, 400, 500, 600, 700, 800, 900, 1000), 900),
                 Arguments.of(Arrays.asList(5, 15, 25, 35, 45, 55, 65, 75, 85, 95), 85),
                 Arguments.of(Arrays.asList(-1, -2, -3, -4, -5, -6, -7, -8, -9, -10), -2),
-                Arguments.of(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 8)
+                Arguments.of(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 8),
+                Arguments.of(Arrays.asList(1, 3, 5, 2), 3),
+                Arguments.of(Arrays.asList(4, 2, 6, 1), 4),
+                Arguments.of(Arrays.asList(1, 1, 2), 1),
+                Arguments.of(Arrays.asList(1, 2), 1),
+                Arguments.of(Arrays.asList(-1, 0), -1),
+                Arguments.of(Arrays.asList(Integer.MAX_VALUE, Integer.MIN_VALUE), Integer.MIN_VALUE),
+                Arguments.of(Arrays.asList(1, 2, Integer.MAX_VALUE), 2),
+                Arguments.of(Arrays.asList(Integer.MIN_VALUE, Integer.MAX_VALUE - 1), Integer.MIN_VALUE),
+                Arguments.of(Arrays.asList(2, 2, 2, 3), 2),
+                Arguments.of(Arrays.asList(3, 1, 2, 2), 2)
         );
     }
 }

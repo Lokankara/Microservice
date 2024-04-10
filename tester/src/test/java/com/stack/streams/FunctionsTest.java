@@ -1,6 +1,6 @@
 package com.stack.streams;
 
-import com.stack.streams.providers.Average2ArgumentsProvider;
+import com.stack.streams.providers.StatisticsArgumentsProvider;
 import com.stack.streams.providers.AverageArgumentsProvider;
 import com.stack.streams.providers.MaximumArgumentsProvider;
 import com.stack.streams.providers.MinimumArgumentsProvider;
@@ -17,66 +17,83 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DigitsTest {
+class FunctionsTest {
 
-    private Digits digits;
+    private Functions functions;
 
     @BeforeEach
     public void setup() {
-        digits = new Digits();
+        functions = new Functions();
     }
 
     @ParameterizedTest
     @ArgumentsSource(AverageArgumentsProvider.class)
     void testFindAverage(List<Integer> numbers, double expected) {
-        assertEquals(expected, digits.findAverage(numbers));
+        assertEquals(expected, functions.findAverage(numbers));
     }
 
     @ParameterizedTest
     @ArgumentsSource(UpperCaseArgumentsProvider.class)
     void testConvertToUpperCase(List<String> strings, List<String> expected) {
-        assertEquals(expected, digits.convertToUpperCase(strings));
+        assertEquals(expected, functions.convertToUpperCase(strings));
     }
 
     @ParameterizedTest
     @ArgumentsSource(SumOfOddNumbersArgumentsProvider.class)
     void testSumOfOddNumbers(List<Integer> numbers, int expected) {
-        assertEquals(expected, digits.sumOfOddNumbers(numbers));
+        assertEquals(expected, functions.sumOfOddNumbers(numbers));
     }
 
     @ParameterizedTest
     @ArgumentsSource(SortReverseArgumentsProvider.class)
     void testSortReverse(List<String> strings, List<String> expected) {
-        assertEquals(expected, digits.sortReverse(strings));
+        assertEquals(expected, functions.sortStringsReverse(strings));
     }
 
     @ParameterizedTest
     @ArgumentsSource(SecondLargestArgumentsProvider.class)
     void testFindSecondLargest(List<Integer> numbers, int expected) {
-        assertEquals(expected, digits.findSecondLargest(numbers));
+        assertEquals(expected, functions.findSecondLargest(numbers));
     }
 
     @ParameterizedTest
     @ArgumentsSource(MinimumArgumentsProvider.class)
     void testFindMinimum(List<Integer> numbers, int expected) {
-        assertEquals(expected, digits.findMinimum(numbers));
+        assertEquals(expected, functions.findMinimum(numbers));
     }
 
     @ParameterizedTest
     @ArgumentsSource(MaximumArgumentsProvider.class)
     void testFindMaximum(List<Integer> numbers, int expected) {
-        assertEquals(expected, digits.findMaximum(numbers));
+        assertEquals(expected, functions.findMaximum(numbers));
     }
 
     @ParameterizedTest
     @ArgumentsSource(SumArgumentsProvider.class)
     void testFindSum(List<Integer> numbers, int expected) {
-        assertEquals(expected, digits.findSum(numbers));
+        assertEquals(expected, functions.findSum(numbers));
     }
 
     @ParameterizedTest
-    @ArgumentsSource(Average2ArgumentsProvider.class)
-    void testFindAverage2(List<Integer> numbers, double expected) {
-        assertEquals(expected, digits.findAverage2(numbers));
+    @ArgumentsSource(StatisticsArgumentsProvider.class)
+    void testFindArgMinMax(
+            List<Integer> numbers, double expectedAvg,
+            int expectedMin, int expectedMax) {
+        assertEquals(expectedAvg, functions.findAverage(numbers));
+        assertEquals(expectedMin, functions.findMinimum(numbers));
+        assertEquals(expectedMax, functions.findMaximum(numbers));
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(StatisticsArgumentsProvider.class)
+    void testFindStatistics(
+            List<Integer> numbers, double expectedAvg,
+            int expectedMin, int expectedMax) {
+        double averageActual = functions.findStatistics(numbers).getAverage();
+        int maxActual = functions.findStatistics(numbers).getMax();
+        int minActual = functions.findStatistics(numbers).getMin();
+        assertEquals(expectedAvg, averageActual);
+        assertEquals(expectedMin, minActual);
+        assertEquals(expectedMax, maxActual);
     }
 }

@@ -1,5 +1,6 @@
 package com.stack.company.dao;
 
+import com.stack.company.dao.memory.InMemoryEmployeeRepository;
 import com.stack.company.model.Employee;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,9 +11,9 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class EmployeeRepositoryInMemoryTest {
+class InMemoryEmployeeRepositoryTest {
 
-    private static EmployeeRepositoryInMemory repository;
+    private static InMemoryEmployeeRepository repository;
     private static List<Employee> employees;
     private static Employee e1;
     private static Employee e2;
@@ -23,7 +24,7 @@ class EmployeeRepositoryInMemoryTest {
         e2 = new Employee("2", 1000);
         employees = new ArrayList<>();
         employees.addAll(Arrays.asList(e1, e2));
-        repository = new EmployeeRepositoryInMemory(employees);
+        repository = new InMemoryEmployeeRepository(employees);
     }
 
     @Test

@@ -1,39 +1,35 @@
 # Getting Started
 
-Написать метод, который приниамет на вход массив целых чисел и возвращает среднее значение (average)
+Write a method that takes as input the number of goals scored by a varsity team in each game in 2023. The method returns the average of the goals scored per game.
 
-Написать метод, который принимает на вход массив цен на товар в разных магазинах, и возвращает минимальную цену
+Write a method that takes an array of unique integer values as input and returns an array in which each of the numbers in the input array occurs 2 times
 
-Написать метод, который принимает на вход количество забитых мячей командой “Вымпел” за каждую игру 2023 года. Меод возвращает среднее значение забитых голов за игру
+Write a method that takes an array of non-unique integer values as input and returns an array of unique values.
 
-Написать метод, который принимает на вход массив уникальных целых значений, и возвращает массив, в котором каждое из чисел входящего массива встречается 2 раза
+Write a method that takes a set of digits as input and leaves only the digits 0
 
-Написать метод, который принимает на вход массив неуникальных целых значений и возвращает массив униккальных значений
+Write a method that takes an int integer as input and returns the sum of all digits of that number
 
-Написать метод, который принимает на вход набор цифр и оставляет только цифры 0
+Write a method that takes as input the number of indoor plants and returns the string "To water ___ plants you need ____ ml of water", where instead of ___ is the number of plants and the amount of water to water all plants.
+(100 ml of water is required to water one plant).
 
-Написать метод, который принимает на вход целое число int, и возвращает сумму всех цифр в этом числе
+Write a method that takes an int integer as input and returns an array of numbers in which each digit from the input number is multiplied by 100. If a digit 0 occurs in the input number, the number 10 should be returned instead
 
-Написать метод, который примает на вход количество комнатных растений, и возвращает строку “Для полива ___ растений необходимо ____ мл.воды”, где вместо ___ стоит количество растений и количество воды для полива всех растений
-(для полива одного растения необходимо 100 мл воды)
+Write a method that takes a fractional number as input and returns an integer rounded upwards
 
-Написать метод, который принимает на вход целое число int, и возвращает массив чисел, в котором каждая цифра из входящего числа умножена на 100. Если во входящем числе встретилась цифра 0, то вместо нее необходимо вернуть число 10
+Write a method that takes a double array as input and returns an array of numbers of type int (converts each double number to the type of this int).
 
-Написать метод, который приниамет на вход дробное число, и возвращает целое число, округленное в бОльшую сторону
+Write a method that takes an array of numbers of type double as input and returns an array of numbers after the dot.
+(takes {0.15, 6.7777}, returns {15, 7777})
 
-Написать метод, который принимает на вход массив double. и возвращает массив чисел типа int (переводит каждое число double в тип данный int)
+Write a method that takes 2 arrays of the same length of data type double as input and returns an array of the same length, but it must contain only the maximum values from both arrays. For example, accepts {4.15, 5.567} and {88.0, 99.9999} and returns {88.0, 99.9999}.
 
-Написать метод, который принимает на вход массив чисел double, и возвращает массив чисел после точки
-(принимает {0.15, 6.7777},  возвращает  {15, 7777})
+Write a method that takes an array of positive integers and a number-value of degree as input. The method returns an array in which each number is converted to a degree number
+(e.g., takes {2, 5} and 2, returns {4, 25})
 
-Написать метод, который принимает на вход 2 массива одинаковой длины типа данных double, и возвращает массив такой же длины, но в нем должны быть только максимальные значения из обоих массивов. Например, принимает {4.15, 5.567} и {88.0, 99.9999} и возвращает {88.0, 99.9999}
+Write a method that takes a three-digit integer as input and returns the sum of all digits of that number, e.g., takes the number 456 as input, returns 15
 
-Написать метод, который принимает на вход массив целых положительных чисел и число-значение степени. Метод  возвращает массив, в котором каждое число возведено в число-степень
-(наприммер, принимает {2, 5}  и 2, возвращает {4, 25})
+Write a method that takes an array of positive integers as input and returns an array of even integers only.
 
-Написать метод, который принимает на вход целое трехзначное число и возвращает сумму всех цифр в этом числе, например, входящее число 456, возвращает 15
-
-Написать метод, который принимает на вход массив целфх положительных чисел, и возвращает массив только четных чисел
-
-Написать метод, коорый принимает на вход массив целых чисел (положительных и отрицательных) и возвращает массив количества положительных значений и отрицательных значений. ноль считается положительным значением.
-(приходит {5, 19, -55, 0} возвращает {3, 1})
+Write a method that takes an array of integers (positive and negative) as input and returns an array of the number of positive and negative values. zero is considered a positive value.
+(input is {5, 19, -55, 0}, returns {3, 1})

@@ -1,16 +1,18 @@
-package com.stack.company.dao;
+package com.stack.company.dao.memory;
 
+import com.stack.company.dao.EmployeeRepository;
 import com.stack.company.model.Employee;
 
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Optional;
 
-public class EmployeeRepositoryInMemory implements EmployeeRepository {
+public class InMemoryEmployeeRepository
+        implements EmployeeRepository {
 
     private final List<Employee> employees;
 
-    public EmployeeRepositoryInMemory(List<Employee> employees) {
+    public InMemoryEmployeeRepository(List<Employee> employees) {
         this.employees = employees;
     }
 
