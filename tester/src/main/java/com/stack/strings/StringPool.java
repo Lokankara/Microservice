@@ -134,6 +134,6 @@ public class StringPool {
         final double PI = 3.1415926;
         String format = "%.2f";
         String s = String.format(format, PI);
-        return String.format("%s%s%s" ,s, format, PI);
+        return String.format("%s%s%s", s, format, PI);
     }
 }

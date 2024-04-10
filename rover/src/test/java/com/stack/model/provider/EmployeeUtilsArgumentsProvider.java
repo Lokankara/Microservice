@@ -2,7 +2,6 @@ package com.stack.model.provider;
 
 import com.stack.model.company.BaseEmployee;
 import com.stack.model.company.Director;
-import com.stack.model.company.Employee;
 import com.stack.model.company.Gender;
 import com.stack.model.company.Manager;
 import org.junit.jupiter.api.extension.ExtensionContext;
