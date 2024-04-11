@@ -66,12 +66,12 @@ Configuration is done through environment variables.
 Required:
 - USERNAME: the name to be use for login.
 - PASSWORD: the password to login.
-- FOLDER: the home of the user (can be a volume mounted from another container like in the example).
+- FOLDER: the home of the customer (can be a volume mounted from another container like in the example).
 
 Optionnal:
-- CHROOT: if set to 1, enable chroot of user (prevent access to other folders than its home folder). Be aware, that 
+- CHROOT: if set to 1, enable chroot of customer (prevent access to other folders than its home folder). Be aware, that 
 currently this feature needs additionnal docker capabilities (see below).
-- OWNER_ID: the uid of the user. If not set automatically grabbed from the uid of the owner of the FOLDER.
+- OWNER_ID: the uid of the customer. If not set automatically grabbed from the uid of the owner of the FOLDER.
 
 ### Chroot 
 

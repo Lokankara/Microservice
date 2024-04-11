@@ -10,7 +10,7 @@ import requests
 ##
 ##
 ##from selenium.webdriver.common.keys import Keys
-user_name = "md-user"
+user_name = "md-customer"
 password = "MD@QAPass1"
 u='https://qatesttask.mobi-dev.com/'
 ##webbrowser.open(u)
@@ -23,7 +23,7 @@ print(resp)
 #driver = webdriver.Firefox()
 #driver.get(URL)
 #
-#driver.find_element_by_css_selector("input[type = 'email']").send_keys(user)
+#driver.find_element_by_css_selector("input[type = 'email']").send_keys(customer)
 #driver.find_element_by_css_selector("input[type = 'password']").send_keys(pw)
 #
 #element = driver.find_element_by_id("id_username")
@@ -85,7 +85,7 @@ driver.close
 #
 
 #HOST = 'https://www.olx.ua/'
-#HEADERS = {'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0',
+#HEADERS = {'customer-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0',
 #
 #           'accert': '*/*'}
 #
@@ -95,7 +95,7 @@ driver.close
 ## for i in res: print(i)
 #
 #def get_html(URL, params=None):
-#    return requests.get(URL,auth=('md-user',pwd))
+#    return requests.get(URL,auth=('md-customer',pwd))
 #
 #def get_content(html):
 #    soup = BeautifulSoup(html, 'lxml')
@@ -188,7 +188,7 @@ import webbrowser
 ##emails = ["joe1@company.address", "linda2@company.address", "greg3@company.address", "hanna4@company.address", "oscar5@company.address", "helen6@company.address"]
 webbrowser.open(URL)
 pag.PAUSE = 5
-pag.typewrite('md-user', interval=0.2)
+pag.typewrite('md-customer', interval=0.2)
 ##pag.moveTo(50, 670, 1)
 ##pag.press("f12")
 ##pag.hotkey('ctrl','shift', 'e')
@@ -208,5 +208,5 @@ pag.hotkey('ctrl', 'w')
 pag.press("enter")
 
 
-driver.find_element_by_css_selector("input[type = 'email']").send_keys(user)
+driver.find_element_by_css_selector("input[type = 'email']").send_keys(customer)
 driver.find_element_by_css_selector("input[type = 'password']").send_keys(pw)

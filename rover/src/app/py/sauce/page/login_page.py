@@ -3,7 +3,7 @@ from src.locators import MainLocators
 
 class LoginPage(BasePage):
     locators = LoginLocators()
-    user = UserData()
+    customer = UserData()
 
     # def __init__(self, driver):
     #     super().__init__(driver)

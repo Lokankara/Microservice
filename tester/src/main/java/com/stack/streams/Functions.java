@@ -1,8 +1,12 @@
 package com.stack.streams;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Functions {
 
@@ -64,5 +68,17 @@ public class Functions {
         return numbers.stream()
                       .mapToInt(Integer::intValue)
                       .summaryStatistics();
+    }
+
+    public int[] duplicateArray(int[] input) {
+        return Arrays.stream(input)
+                     .flatMap(num -> IntStream.of(num, num))
+                     .toArray();
+    }
+
+    public List<Integer> filterZero(List<Integer> digits) {
+        return digits.stream()
+                     .filter(digit -> digit == 0)
+                     .toList();
     }
 }

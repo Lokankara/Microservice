@@ -1,20 +1,23 @@
 package com.stack.streams;
 
-import com.stack.streams.providers.StatisticsArgumentsProvider;
 import com.stack.streams.providers.AverageArgumentsProvider;
+import com.stack.streams.providers.DuplicateArrayProvider;
 import com.stack.streams.providers.MaximumArgumentsProvider;
 import com.stack.streams.providers.MinimumArgumentsProvider;
 import com.stack.streams.providers.SecondLargestArgumentsProvider;
 import com.stack.streams.providers.SortReverseArgumentsProvider;
+import com.stack.streams.providers.StatisticsArgumentsProvider;
 import com.stack.streams.providers.SumArgumentsProvider;
 import com.stack.streams.providers.SumOfOddNumbersArgumentsProvider;
 import com.stack.streams.providers.UpperCaseArgumentsProvider;
+import com.stack.streams.providers.ZeroDigitsArgumentsProvider;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FunctionsTest {
@@ -95,5 +98,19 @@ class FunctionsTest {
         assertEquals(expectedAvg, averageActual);
         assertEquals(expectedMin, minActual);
         assertEquals(expectedMax, maxActual);
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(DuplicateArrayProvider.class)
+    void testDuplicateArray(int[] inputArray, int[] expectedArray) {
+        int[] duplicatedArray = functions.duplicateArray(inputArray);
+        assertArrayEquals(expectedArray, duplicatedArray);
+    }
+
+    @ParameterizedTest
+    @ArgumentsSource(ZeroDigitsArgumentsProvider.class)
+    void testFilterZero(List<Integer> inputDigits, List<Integer> expectedFiltered) {
+        List<Integer> filteredSet = functions.filterZero(inputDigits);
+        assertEquals(expectedFiltered, filteredSet);
     }
 }

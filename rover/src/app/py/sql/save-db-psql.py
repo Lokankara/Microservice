@@ -8,7 +8,7 @@ database_url = "postgres://admin:gaVirwBZUgu9BIsZWbcMgTZmLu2E8nY5@dpg-cmr9l9n109
 # Parse the database URL
 url_parts = urlparse(database_url)
 dbname = url_parts.path[1:]
-user = url_parts.username
+customer = url_parts.username
 password = url_parts.password
 host = url_parts.hostname
 port = url_parts.port
@@ -16,7 +16,7 @@ port = url_parts.port
 # Connect to the PostgreSQL database
 conn = psycopg2.connect(
     dbname=dbname,
-    user=user,
+    customer=customer,
     password=password,
     host=host,
     port=port

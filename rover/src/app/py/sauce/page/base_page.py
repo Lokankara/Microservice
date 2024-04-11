@@ -9,15 +9,15 @@ from src.user_data import UserData
 class BasePage:
     timeout = 10
     locators = LoginLocators()
-    user = UserData()
+    customer = UserData()
 
     def __init__(self, browser, url):
         self.driver = browser
         self.url = url
 
     def login(self):
-        self.element_is_visible(self.locators.USER_NAME).send_keys(self.user.standard_user)
-        self.element_is_visible(self.locators.PASSWORD).send_keys(self.user.password)
+        self.element_is_visible(self.locators.USER_NAME).send_keys(self.customer.standard_user)
+        self.element_is_visible(self.locators.PASSWORD).send_keys(self.customer.password)
         self.element_is_clickable(self.locators.LOGIN).click()
 
     def find_element(self, *locator):

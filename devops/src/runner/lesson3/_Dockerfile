@@ -31,4 +31,4 @@ ENTRYPOINT ["/entrypoint"]
 # EXPOSE 223
 # # CMD ["apt-get update -y && apt-get install ftp -y && apt-get install systemd && apt-get install vsftpd -y && apt-get install bind-utils -y && apt-get install net-tools -y && apt-get install network-scripts -y && apt-get install epel-release -y && apt-get install wget -y && apt-get install htop -y"]
 # # CMD ["sshpass -p '*,<R#!$(2udw{Zgz' sftp testuser@207.244.229.74:/opt/testuser/logfile.log"]
-# # RUN bash ftp.sh testuser user
+# # RUN bash ftp.sh testuser customer

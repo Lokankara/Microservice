@@ -2,11 +2,7 @@
 
 Write a method that takes as input the number of goals scored by a varsity team in each game in 2023. The method returns the average of the goals scored per game.
 
-Write a method that takes an array of unique integer values as input and returns an array in which each of the numbers in the input array occurs 2 times
-
 Write a method that takes an array of non-unique integer values as input and returns an array of unique values.
-
-Write a method that takes a set of digits as input and leaves only the digits 0
 
 Write a method that takes an int integer as input and returns the sum of all digits of that number
 
