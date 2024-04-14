@@ -1,10 +1,11 @@
-package com.stack.catalogue.service;
+package com.stack.catalogue.service.jpa;
 
 import com.stack.catalogue.dao.ProductRepository;
-import com.stack.catalogue.model.BaseDto;
-import com.stack.catalogue.model.PostProductPayload;
-import com.stack.catalogue.model.Product;
-import com.stack.catalogue.model.ProductResponseDto;
+import com.stack.catalogue.model.dto.BaseDto;
+import com.stack.catalogue.model.dto.PostProductPayload;
+import com.stack.catalogue.model.entity.Product;
+import com.stack.catalogue.model.dto.ProductResponseDto;
+import com.stack.catalogue.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

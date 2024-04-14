@@ -1,4 +1,4 @@
-package com.stack.catalogue.model;
+package com.stack.catalogue.model.dto;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;

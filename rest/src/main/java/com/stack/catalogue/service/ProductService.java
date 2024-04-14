@@ -1,9 +1,9 @@
 package com.stack.catalogue.service;
 
-import com.stack.catalogue.model.BaseDto;
-import com.stack.catalogue.model.PostProductPayload;
-import com.stack.catalogue.model.Product;
-import com.stack.catalogue.model.ProductResponseDto;
+import com.stack.catalogue.model.dto.BaseDto;
+import com.stack.catalogue.model.dto.PostProductPayload;
+import com.stack.catalogue.model.entity.Product;
+import com.stack.catalogue.model.dto.ProductResponseDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;
 

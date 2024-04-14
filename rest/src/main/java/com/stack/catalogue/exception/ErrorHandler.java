@@ -1,7 +1,7 @@
 package com.stack.catalogue.exception;
 
-import com.stack.catalogue.model.BaseDto;
-import com.stack.catalogue.model.ProblemResponseDto;
+import com.stack.catalogue.model.dto.BaseDto;
+import com.stack.catalogue.model.dto.ProblemResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;

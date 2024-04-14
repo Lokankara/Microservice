@@ -1,10 +1,11 @@
 package com.stack.catalogue.service;
 
 import com.stack.catalogue.dao.ProductRepository;
-import com.stack.catalogue.model.BaseDto;
-import com.stack.catalogue.model.PostProductPayload;
-import com.stack.catalogue.model.Product;
-import com.stack.catalogue.model.ProductResponseDto;
+import com.stack.catalogue.model.dto.BaseDto;
+import com.stack.catalogue.model.dto.PostProductPayload;
+import com.stack.catalogue.model.entity.Product;
+import com.stack.catalogue.model.dto.ProductResponseDto;
+import com.stack.catalogue.service.jpa.JpaProductService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -1,6 +1,6 @@
 package com.stack.catalogue.dao;
 
-import com.stack.catalogue.model.Product;
+import com.stack.catalogue.model.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

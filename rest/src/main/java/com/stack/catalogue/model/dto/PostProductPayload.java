@@ -1,4 +1,4 @@
-package com.stack.catalogue.model;
+package com.stack.catalogue.model.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

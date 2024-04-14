@@ -1,4 +1,4 @@
-package com.stack.catalogue.model;
+package com.stack.catalogue.model.dto;
 
 import lombok.Builder;
 import lombok.Getter;

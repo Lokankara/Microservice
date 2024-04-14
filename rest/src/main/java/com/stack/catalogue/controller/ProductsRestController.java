@@ -1,8 +1,8 @@
 package com.stack.catalogue.controller;
 
-import com.stack.catalogue.model.BaseDto;
-import com.stack.catalogue.model.PostProductPayload;
-import com.stack.catalogue.model.Product;
+import com.stack.catalogue.model.dto.BaseDto;
+import com.stack.catalogue.model.dto.PostProductPayload;
+import com.stack.catalogue.model.entity.Product;
 import com.stack.catalogue.service.ProductService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Qualifier;
