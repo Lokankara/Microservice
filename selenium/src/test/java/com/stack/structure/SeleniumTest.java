@@ -1,7 +1,8 @@
-package com.stack.e2e;
+package com.stack.structure;
 
 import com.stack.model.StepExecution;
 import com.stack.model.StepTuple;
+import com.stack.structure.Strings;
 import com.stack.structure.StructureMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

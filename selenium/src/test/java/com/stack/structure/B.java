@@ -1,11 +1,10 @@
-package com.stack.e2e;
+package com.stack.structure;
 
 import lombok.Getter;
 
 @Getter
-public class A {
-    private final int i = 11;
-
+public class B extends A{
+    private int j = 1;
     public void m1(){
         System.out.println(getClass().getSimpleName());
     }

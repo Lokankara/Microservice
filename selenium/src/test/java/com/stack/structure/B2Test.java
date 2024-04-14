@@ -1,4 +1,4 @@
-package com.stack.e2e;
+package com.stack.structure;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;

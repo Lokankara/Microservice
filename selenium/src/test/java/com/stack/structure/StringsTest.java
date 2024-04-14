@@ -1,6 +1,5 @@
-package com.stack.e2e;
+package com.stack.structure;
 
-import com.stack.structure.StructureMap;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

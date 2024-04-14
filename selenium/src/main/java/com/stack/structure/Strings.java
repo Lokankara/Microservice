@@ -1,4 +1,4 @@
-package com.stack.e2e;
+package com.stack.structure;
 
 public class Strings {
 

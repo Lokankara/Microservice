@@ -1,4 +1,4 @@
-package com.stack.e2e;
+package com.stack.structure;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;

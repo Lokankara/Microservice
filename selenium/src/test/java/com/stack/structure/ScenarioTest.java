@@ -1,4 +1,4 @@
-package com.stack.e2e;
+package com.stack.structure;
 
 import com.stack.model.StepExecution;
 import com.stack.model.StepTuple;

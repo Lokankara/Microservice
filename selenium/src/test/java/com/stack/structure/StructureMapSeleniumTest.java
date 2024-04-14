@@ -1,4 +1,4 @@
-package com.stack.e2e;
+package com.stack.structure;
 
 import com.stack.structure.StructureMap;
 import org.openqa.selenium.By;
@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;

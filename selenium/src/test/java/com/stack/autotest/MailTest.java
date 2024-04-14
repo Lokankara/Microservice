@@ -1,5 +1,6 @@
-package com.stack.automation;
+package com.stack.autotest;
 
+import com.stack.runner.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MailTest extends BaseTest{
+public class MailTest extends BaseTest {
 
     @Test(priority = 2)
     void testCreateGreenNewAccount()

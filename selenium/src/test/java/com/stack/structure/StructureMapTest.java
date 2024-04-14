@@ -1,6 +1,5 @@
 package com.stack.structure;
 
-import com.stack.e2e.WordsProvider;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 

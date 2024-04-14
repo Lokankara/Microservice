@@ -1,7 +1,8 @@
-package com.stack.automation;
+package com.stack.runner;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -14,14 +15,15 @@ public abstract class BaseTest {
 
     @BeforeMethod
     protected void beforeMethod(Method method) {
-        this.driver = new ChromeDriver();
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        ChromeOptions chromeOptions = new ChromeOptions();
+        this.driver = new ChromeDriver(chromeOptions);
         this.driver.manage().window().maximize();
+        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
     }
 
     @AfterMethod
     protected void afterMethod(Method method) {
-//        driver.quit();
+        driver.quit();
     }
 
     protected WebDriver getDriver() {
