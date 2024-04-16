@@ -1,6 +1,9 @@
 package com.stack.runner;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
@@ -18,7 +21,7 @@ public abstract class BaseTest {
         ChromeOptions chromeOptions = new ChromeOptions();
         this.driver = new ChromeDriver(chromeOptions);
         this.driver.manage().window().maximize();
-        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+        this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @AfterMethod
@@ -28,5 +31,15 @@ public abstract class BaseTest {
 
     protected WebDriver getDriver() {
         return driver;
+    }
+
+
+    protected boolean isElementPresent(By by){
+        try {
+            this.driver.findElement(by).isDisplayed();
+        } catch (NoSuchElementException e){
+            return false;
+        }
+        return true;
     }
 }

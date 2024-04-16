@@ -3,8 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators.login_locators import LoginLocators
-from src.user_data import UserData
-
+from src.data import UserData
+import allure
 
 class BasePage:
     timeout = 10
@@ -15,20 +15,27 @@ class BasePage:
         self.driver = browser
         self.url = url
 
+    @allure.step("Login")
     def login(self):
-        self.element_is_visible(self.locators.USER_NAME).send_keys(self.customer.standard_user)
-        self.element_is_visible(self.locators.PASSWORD).send_keys(self.customer.password)
-        self.element_is_clickable(self.locators.LOGIN).click()
+        with allure.step("USER_NAME"):
+            self.element_is_visible(self.locators.USER_NAME).send_keys(self.customer.standard_user)
+        with allure.step("PASSWORD"):
+            self.element_is_visible(self.locators.PASSWORD).send_keys(self.customer.password)
+        with allure.step("LOGIN"):
+            self.element_is_clickable(self.locators.LOGIN).click()
 
     def find_element(self, *locator):
-        return self.browser.find_element(*locator)
+        return self.driver.find_element(*locator)
 
-    def open_url(self, url):
-        self.driver.get(url)
+    @allure.step("open browser")
+    def open(self):
+        self.driver.get(self.url)
 
+    @allure.step("Get Text")
     def get_text(self, locator):
         return self.element_is_visible(locator).text
 
+    @allure.step("Get length")
     def get_length(self, locator):
         return len(self.elements_are_visible(locator))
 
@@ -40,7 +47,7 @@ class BasePage:
         self.driver.find_element(strategy, selector).send_keys(value)
 
     def click_by_element(self, locator):
-        self.driver.find_element(*locator).click()
+        self.element_is_clickable(locator).click()
 
     def element_is_clickable(self, locator, timeout=timeout):
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))

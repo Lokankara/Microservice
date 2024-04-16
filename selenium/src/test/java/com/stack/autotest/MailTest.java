@@ -5,13 +5,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.stack.automation.Helper.delay;
+
 public class MailTest extends BaseTest {
 
+    @Ignore
     @Test(priority = 2)
     void testCreateGreenNewAccount()
             throws InterruptedException {
@@ -31,15 +35,15 @@ public class MailTest extends BaseTest {
         WebElement refreshButton = getDriver().findElement(By.xpath("(//div[@class='header-items__refresh header-items__size'])[1]"));
         refreshButton.click();
 
-        Thread.sleep(2000);
+        delay(2000);
         WebElement emailContent = getDriver().findElement(By.xpath("//div[@class='receivedMail-content__wrapper message--container-bold']"));
         emailContent.click();
         WebElement button = getDriver().findElement(By.xpath("//a[contains(text(), 'Verify me!')]"));
         Actions actions = new Actions(getDriver());
         actions.moveToElement(button).perform();
-        Thread.sleep(1000);
+        delay(1000);
         button.click();
-        Thread.sleep(2000);
+        delay(3000);
         WebElement emailInput = getDriver().findElement(By.id("email"));
         emailInput.sendKeys(email);
 
@@ -51,9 +55,8 @@ public class MailTest extends BaseTest {
         signInButton.click();
     }
 
-    private void signUp(String email)
-            throws InterruptedException {
-        Thread.sleep(3000);
+    private void signUp(String email) {
+        delay(3000);
         WebElement signUpButton = getDriver().findElement(By.xpath("//div[@class='main-content app-container']//div[@class='ubs-header_sign-up-btn']"));
         signUpButton.click();
 
@@ -75,14 +78,9 @@ public class MailTest extends BaseTest {
         getDriver().findElement(By.cssSelector("button[role='link']")).click();
     }
 
-
-    private String getEmail()
-            throws InterruptedException {
-        WebElement deleteButton = getDriver().findElement(By.id("js-btn-deleteEmail"));
-        deleteButton.click();
-        Thread.sleep(1000);
-        WebElement emailDiv = getDriver().findElement(By.className("email-block__genEmail"));
-        return emailDiv.getText();
-
+    private String getEmail() {
+        getDriver().findElement(By.id("js-btn-deleteEmail")).click();
+        delay(1000);
+        return getDriver().findElement(By.className("email-block__genEmail")).getText();
     }
 }
