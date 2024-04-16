@@ -1,15 +1,16 @@
 from selenium.webdriver.common.by import By
 import time 
-from page.login_page import LoginPage
-from src.locators import MainLocators
-from src.data import LOGIN, PASSWORD, MAIN_PAGE, LOGIN_URL
+from src.urls import Urls
+from page.sign_page import SignPage
+from locators.main_locators import MainLocators
+from src.user_data import UserData
 
-def test_login_form(browser):
-    login = LoginPage(browser)
-    login.open(MAIN_PAGE)
-    login.login(LOGIN, PASSWORD)
-    login.click(MainLocators.LOGIN_BUTTON)    
-    assert browser.current_url == "https://www.saucedemo.com/inventory.html"
-
+class TestAuth:
+    def test_login_form(self, browser):
+        login = SignPage(browser, Urls.base_url)
+        login.open()
+        login.login()
+        login.click(LOGIN_BUTTON)    
+        assert browser.current_url == "https://www.saucedemo.com/inventory.html"
 
 # pytest -s -v --setup-show test_auth.py

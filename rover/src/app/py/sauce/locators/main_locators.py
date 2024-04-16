@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+
 class MainLocators:
     USERNAME_FIELD = (By.XPATH, '//input[@data-test="username"]')
     PASSWORD_FIELD = (By.XPATH, '//input[@data-test="password"]')

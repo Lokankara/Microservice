@@ -35,3 +35,5 @@ Clean, install with details
 Clean, install skip Test
 
 `mvn clean install -DskipTests`
+
+`pytest --alluredir=allure_result tests/test_login.py`

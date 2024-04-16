@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 
 from locators.login_locators import LoginLocators
-from src.data import UserData
+from src.user_data import UserData
 import allure
 
 class BasePage:
@@ -22,7 +22,7 @@ class BasePage:
         with allure.step("PASSWORD"):
             self.element_is_visible(self.locators.PASSWORD).send_keys(self.customer.password)
         with allure.step("LOGIN"):
-            self.element_is_clickable(self.locators.LOGIN).click()
+            self.element_is_clickable(self.locators.LOGIN_BUTTON).click()
 
     def find_element(self, *locator):
         return self.driver.find_element(*locator)
