@@ -1,4 +1,4 @@
-from src.locators import LoginLocators
+from locators.main_locators import MainLocators
 from page.login_page import LoginPage
 from src.urls import Urls
 import allure
@@ -6,9 +6,9 @@ import allure
 @allure.epic("Test Login page")
 class TestLogin:
     url = Urls()
-    main_locators = LoginLocators()
+    main_locators = MainLocators()
 
-    @allure.title("test login")
+    @allure.title("test login with Products")
     @allure.description("test check if user redirect to Products after login")
     @allure.severity(allure.severity_level.BLOCKER)
     def test_login(self, browser):
@@ -20,7 +20,7 @@ class TestLogin:
         assert actual_text == expected_text, \
             f"Unexpected text, expected text: {expected_text}, actual text: {actual_text}"
 
-    @allure.title("test login")
+    @allure.title("test login with CARDS")
     @allure.description("test check if user redirect to Products with CARDS after login")
     @allure.severity(allure.severity_level.TRIVIAL)
     def test_login1(self, browser):

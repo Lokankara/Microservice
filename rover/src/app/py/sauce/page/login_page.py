@@ -1,7 +1,7 @@
 from page.base_page import BasePage
-from src.locators import MainLocators
-from src.data import UserData
+from locators.login_locators import LoginLocators
+from src.user_data import UserData
 
 class LoginPage(BasePage):
-    locators = MainLocators()
+    locators = LoginLocators()
     customer = UserData()
