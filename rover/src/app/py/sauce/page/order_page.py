@@ -11,7 +11,7 @@ class OrderPage(BasePage):
     def order_with_valid_credential(self, lst_data):
         self.add_card_to_cart()
         self.fill_field(lst_data[0], lst_data[1], lst_data[2])
-        self.click_to_element(self.order_locators.FINISH_BTN)
+        self.click_by_element(self.order_locators.FINISH_BTN)
         return self.get_text(self.order_locators.SUCCESSFUL_ORDER)
 
     def order_with_wrong_credential(self, lst_data):

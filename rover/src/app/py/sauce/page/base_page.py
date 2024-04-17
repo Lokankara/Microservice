@@ -39,9 +39,6 @@ class BasePage:
     def get_length(self, locator):
         return len(self.elements_are_visible(locator))
 
-    def click_to_element(self, locator):
-        self.element_is_clickable(locator).click()        
-
     def send_keys(self, locator, value):
         strategy, selector = locator
         self.driver.find_element(strategy, selector).send_keys(value)

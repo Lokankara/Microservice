@@ -8,4 +8,3 @@ class SignPage(BasePage):
 
     def enter_password(self, password):
         self.send_keys(LoginLocators.PASSWORD, password)
-

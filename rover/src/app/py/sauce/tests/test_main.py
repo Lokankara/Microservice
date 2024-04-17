@@ -1,9 +1,8 @@
 import time
-
 import pytest
 
-from functions.functions import sort_list
-from pages.main_page import MainPage
+from src.functions import sort_list
+from page.main_page import MainPage
 from src.main_data import MainData
 from src.urls import Urls
 
@@ -11,17 +10,17 @@ class TestMainPage:
     url = Urls()
     main_data = MainData()
 
-    def test_logout(self, driver):
-        page = MainPage(driver, self.url.base_url)
+    def test_logout(self, browser):
+        page = MainPage(browser, self.url.base_url)
         page.open()
         page.login()
         page.logout()
         value = page.check_element_is_displayed()
-        assert driver.current_url == self.url.base_url and value is True
+        assert browser.current_url == self.url.base_url and value is True
 
     @pytest.mark.parametrize("value", main_data.price)
-    def test_select(self, driver, value):
-        page = MainPage(driver, self.url.base_url)
+    def test_select(self, browser, value):
+        page = MainPage(browser, self.url.base_url)
         page.open()
         page.login()
         lst = page.check_filter(value[0])
@@ -33,13 +32,13 @@ class TestMainPage:
         page.open()
         page.login()
         value = page.add_to_cart()
-        assert value.text == expected_value
+        assert value.text == expected_value, f"Количество добавленных товаров не соответствует {expected_value}"
 
-    def test_remove_item_from_cart(self, driver):
-        page = MainPage(driver, self.url.base_url)
+    def test_remove_item_from_cart(self, browser):
+        page = MainPage(browser, self.url.base_url)
         page.open()
         page.login()
         page.add_to_cart()
         page.remove_from_cart()
-        value = page.check_elem_is_not_present()
+        value = page.element_is_not_present()
         assert value is True
