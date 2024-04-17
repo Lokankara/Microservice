@@ -5,15 +5,15 @@ from selenium.webdriver.support.select import Select
 
 from locators.login_locators import LoginLocators
 from locators.main_locators import MainLocators
-from pages.base_page import BasePage
+from page.base_page import BasePage
 
 class MainPage(BasePage):
     main_locators = MainLocators()
     login_locators = LoginLocators()
 
     def logout(self):
-        self.click_to_element(self.main_locators.BURGER_MENU)
-        self.click_to_element(self.main_locators.LOGOUT_BTN)
+        self.click_by_element(self.main_locators.BURGER_MENU)
+        self.click_by_element(self.main_locators.LOGOUT_BTN)
 
     def check_element_is_displayed(self):
         login_form = self.element_is_visible(self.login_locators.LOGIN_FORM)
@@ -30,16 +30,15 @@ class MainPage(BasePage):
 
     def check_filter(self, value):
         self.select(value)
-        lst = self.get_price()
-        return lst
+        return self.get_price()
 
     def add_to_cart(self):
-        self.click_to_element(self.main_locators.SAUCE_LABS_BACKPACK)
+        self.click_by_element(self.main_locators.SAUCE_LABS_BACKPACK)
         value = self.element_is_visible(self.main_locators.COUNT_ITEMS)
         return value
 
     def remove_from_cart(self):
-        self.click_to_element(self.main_locators.REMOVE_SAUCE_LABS_BACKPACK)
+        self.click_by_element(self.main_locators.REMOVE_SAUCE_LABS_BACKPACK)
 
     def check_elem_is_not_present(self):
         return self.element_is_not_present(self.main_locators.COUNT_ITEMS)

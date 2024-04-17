@@ -1,3 +1,5 @@
+from locators.logout_locators import LogoutLocators
+
 class LogoutPage(BasePage):
     def logout(self):
-        self.driver.find_element_by_id("logout-button").click()
+        self.click_by_element(LogoutLocators.LOGOUT_BUTTON)
