@@ -1,26 +1,20 @@
-package com.stack.luma.page;
+package com.stack.luma.selenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class AccountPage {
-
-    @FindBy(xpath = "//div[@data-bind=\"html: $parent.prepareMessageForHtml(message.text)\"]")
-    private WebElement messageDivElement;
+public class AccountPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='box-content']//p")
     private WebElement accountInfoParagraph;
 
+    @FindBy(xpath = "//div[@data-bind=\"html: $parent.prepareMessageForHtml(message.text)\"]")
+    private WebElement messageDivElement;
 
-    public AccountPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
-
-    public String getMessageDivText() {
-        return messageDivElement.getText();
+    protected AccountPage(WebDriver driver) {
+        super(driver);
     }
 
     public String getAccountInfoText() {
@@ -31,11 +25,14 @@ public class AccountPage {
         Assert.assertEquals(actual, expected);
     }
 
+    public void assertParagraphText(String expectedText) {
+        verify(getAccountInfoText(), expectedText);
+    }
+
     public void assertMessageDivText(String expectedText) {
         verify(getMessageDivText(), expectedText);
     }
-
-    public void assertParagraphText(String expectedText) {
-        verify(getAccountInfoText(), expectedText);
+    public String getMessageDivText() {
+        return messageDivElement.getText();
     }
 }

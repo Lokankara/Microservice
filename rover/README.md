@@ -21,7 +21,7 @@ Show the age of the employees, at the time of onboarding. Output last name, firs
 It will be necessary to "google" the solution to this problem on the Internet.
 One of the solutions is here: https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_datediff.   
 Show American customers without a fax machine.
-Show the mailing addresses of customers from the gmail.com domain.
+Show the mailing cities of customers from the gmail.com domain.
 Show in alphabetical order all the unique positions in the company.
 Show the title of the shortest song.
 Show the title and duration in seconds of the shortest song. Column name the sec.
@@ -50,12 +50,12 @@ P.S. If you have time left, try to:
 4) Prepare and execute a query based on step 3
 5) Show the states (counties) of countries where the number of customers is not more than 1
 
--- 14.customers in what city are the most profitable to the company? -- based on highest single payment
+-- 14.customers in what addressBook are the most profitable to the company? -- based on highest single payment
 -- 16.who is the best customer? --based on single payment
 -- 18.what is the average number of days between the order date and ship date?
 -- 19.sales by year
 -- 22.list of employees  by how much they sold in 2003?
--- 23.which city has the most number of employees?
+-- 23.which addressBook has the most number of employees?
 -- 24.which office has the biggest sales?
 
 -- Part #2  -- library_simple database
@@ -89,8 +89,8 @@ Count the number of tracks in each album. Output the album name and the number o
 -- 10.list all products that have quantity in stock less than 20
 -- 11.which customer has the highest and lowest credit limit?
 -- 12.rank customers by credit limit
--- 13.list the most sold product by city
--- 14.customers in what city are the most profitable to the company?
+-- 13.list the most sold product by addressBook
+-- 14.customers in what addressBook are the most profitable to the company?
 -- 15.what is the average number of orders per customer?
 -- 16.who is the best customer?
 -- 17.customers without payment
@@ -99,7 +99,7 @@ Count the number of tracks in each album. Output the album name and the number o
 -- 20.how many orders are not shipped?
 -- 21.list all employees by their (full name: first + last) in alpabetical order
 -- 22.list of employees  by how much they sold in 2003?
--- 23.which city has the most number of employees?
+-- 23.which addressBook has the most number of employees?
 -- 24.which office has the biggest sales?
 -- Advanched homework: join all tables together 
 

@@ -6,7 +6,7 @@ WHERE country LIKE 'Au%';
 -- show First and Last name of customers in Melbourne
 SELECT *
 FROM customers
-WHERE city like 'NY%';
+WHERE addressBook like 'NY%';
 
 -- show all customers with Credit Limit over $200,000
 SELECT *
@@ -68,7 +68,7 @@ LIMIT 5;
 SELECT *
 FROM Artist;
 
--- Show the names of customers from the city of Paris
+-- Show the names of customers from the addressBook of Paris
 SELECT Customer.CustomerId, FirstName, LastName, Country
 FROM Customer
 WHERE Customer.City = 'Paris';
@@ -85,7 +85,7 @@ WHERE YEAR(InvoiceDate) > 2022
   AND Total > 4;
 
 
--- Show the date of the sale, the address of the sale, the city to which the sale was made and the purchase price of 16.86.
+-- Show the date of the sale, the addressBook of the sale, the addressBook to which the sale was made and the purchase price of 16.86.
 SELECT i.InvoiceDate    as Date_Sale,
        i.BillingAddress as Sale_Address,
        i.BillingCity    as Sale_City

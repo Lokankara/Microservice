@@ -1,8 +1,6 @@
-package com.stack.luma;
+package com.stack.luma.selenium;
 
 import com.stack.runner.BaseTest;
-import com.stack.luma.page.AccountPage;
-import com.stack.luma.page.SignUpPage;
 import org.testng.annotations.Test;
 
 import java.util.Random;

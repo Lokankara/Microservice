@@ -5,9 +5,9 @@ class BasicValidator:
     @allure.description("Verify that the email is valid")
     def is_valid_email(self, email):
         """
-        Validate an email address.
+        Validate an email addressBook.
 
-        :param email: The email address to validate.
+        :param email: The email addressBook to validate.
         :return: True if the email is valid, False otherwise.
         """
         email_regex = r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+'

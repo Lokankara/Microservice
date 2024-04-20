@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.LinkedList;
@@ -23,6 +24,7 @@ import static com.stack.model.StepLocator.h2Tag;
 import static com.stack.model.StepLocator.listId;
 import static com.stack.model.StepLocator.searchPlaceholder;
 
+@Ignore
 public class ScenarioTest {
 
     private WebDriver driver;

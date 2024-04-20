@@ -6,7 +6,7 @@ FROM Customer;
 SELECT LastName, FirstName, Phone, Email
 FROM Customer;
 
--- Show the contents of sales. Output the date of the purchase, the city in which the sale was made, and the purchase price.
+-- Show the contents of sales. Output the date of the purchase, the addressBook in which the sale was made, and the purchase price.
 # Name the purchase price as "Amount"
 SELECT InvoiceDate, BillingCity, Total AS Amount
 FROM Invoice;
@@ -26,7 +26,7 @@ SELECT TrackId, Name, UnitPrice
 FROM Track
 WHERE UnitPrice <> 0.99;
 
--- Show the contents of sales. Display the date of the purchase, the city in which the sale was made,
+-- Show the contents of sales. Display the date of the purchase, the addressBook in which the sale was made,
 # and the purchase price greater than $10. Name the purchase price as "Total"
 SELECT InvoiceDate, BillingCity, Total AS Amount
 FROM Invoice

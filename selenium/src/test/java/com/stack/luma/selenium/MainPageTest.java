@@ -1,5 +1,6 @@
-package com.stack.luma.page;
+package com.stack.luma.selenium;
 
+import com.stack.luma.selenium.MainPage;
 import com.stack.runner.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -17,6 +18,7 @@ public class MainPageTest
 
     @Test
     public void testMainPageElements() {
+
         mainPage.checkHref();
         Assert.assertTrue(mainPage.isStoreLogoDisplayed(), "Logo is not displayed");
         Assert.assertTrue(mainPage.isAddToCartButtonPresent(), "Add to cart button is not present");

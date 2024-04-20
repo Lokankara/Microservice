@@ -200,13 +200,13 @@ SELECT customerName,
        RANK() over (ORDER BY creditLimit DESC) AS 'rank'
 FROM customers c;
 
--- 13.list the most sold product by city
-SELECT c.city, p.productName, SUM(od.quantityOrdered) as 'totalSold'
+-- 13.list the most sold product by addressBook
+SELECT c.addressBook, p.productName, SUM(od.quantityOrdered) as 'totalSold'
 FROM orderdetails od
          JOIN orders o ON od.orderNumber = o.orderNumber
          JOIN customers c ON o.customerNumber = c.customerNumber
          JOIN products p ON od.productCode = p.productCode
-GROUP BY c.city, p.productName
+GROUP BY c.addressBook, p.productName
 ORDER BY totalSold DESC;
 
 -- 17.customers without payment
@@ -235,4 +235,4 @@ ORDER BY FULL_NAME;
 SELECT TABLE_NAME, COLUMN_NAME, COLUMN_TYPE, COLUMN_KEY
 FROM INFORMATION_SCHEMA.columns
 WHERE TABLE_SCHEMA = 'freedb_chinook'
-  and COLUMN_NAME like '%city%';
+  and COLUMN_NAME like '%addressBook%';

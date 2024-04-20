@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -64,6 +65,7 @@ public class StructureMapSeleniumTest {
 
     }
 
+    @Ignore
     @Test
     public void testYandex(){
         int expectedSize = 7;

@@ -185,7 +185,7 @@ import webbrowser
 ##pag.moveTo(100, 200, 1)
 ##pag.moveTo(1625, 327)
 
-##emails = ["joe1@company.address", "linda2@company.address", "greg3@company.address", "hanna4@company.address", "oscar5@company.address", "helen6@company.address"]
+##emails = ["joe1@company.addressBook", "linda2@company.addressBook", "greg3@company.addressBook", "hanna4@company.addressBook", "oscar5@company.addressBook", "helen6@company.addressBook"]
 webbrowser.open(URL)
 pag.PAUSE = 5
 pag.typewrite('md-customer', interval=0.2)
