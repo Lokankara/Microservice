@@ -37,10 +37,10 @@ jobs:
           restore-keys: ${{ runner.os }}-maven-
 
       - name: Install Playwright
-        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+        run: cd selenium/ && mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
 
       - name: Maven test
-        run: mvn -e test
+        run: cd selenium/ && mvn -e test
         env:
           BROWSER_OPTIONS: browserType=chromium;screenWidth=1366;screenHeight=768;isHeadless=true;slowMo=0;tracing=true;video=true
           CHROME_OPTIONS: --disable-gpu;--no-sandbox;--disable-dev-shm-usage;--headless;--window-size=1920,1080;--disable-web-security;--allow-running-insecure-content;--ignore-certificate-errors
@@ -62,5 +62,5 @@ jobs:
         if: success() || failure()
         with:
           name: Luma Project Test Report
-          path: target/surefire-reports/TEST-*.xml
+          path: cd selenium/target/surefire-reports/TEST-*.xml
           reporter: java-junit
