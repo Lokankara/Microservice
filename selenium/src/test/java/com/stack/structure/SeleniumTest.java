@@ -30,7 +30,6 @@ public class SeleniumTest {
     private WebDriver driver;
     public static final String sentence = "my mother told me.";
     private static final String url = "https://capitalizemytitle.com/";
-
     public static final String data = "Это мой Текст из русских слов и слова dot";
 
     @BeforeClass

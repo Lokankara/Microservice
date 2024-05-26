@@ -13,7 +13,7 @@ public class AccountPage extends BasePage {
     @FindBy(xpath = "//div[@data-bind=\"html: $parent.prepareMessageForHtml(message.text)\"]")
     private WebElement messageDivElement;
 
-    protected AccountPage(WebDriver driver) {
+    public AccountPage(WebDriver driver) {
         super(driver);
     }
 

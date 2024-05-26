@@ -12,6 +12,7 @@ public class Functions {
 
     public double findAverage(List<Integer> numbers) {
         return numbers.stream()
+                .parallel()
                       .mapToDouble(Integer::doubleValue)
                       .average()
                       .orElse(0);

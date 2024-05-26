@@ -36,4 +36,10 @@ Clean, install skip Test
 
 `mvn clean install -DskipTests`
 
+Run server allure report
+
+`mvn allure serve`
+
+`allure serve allure-results`
+
 `pytest --alluredir=allure_result tests/test_login.py`
