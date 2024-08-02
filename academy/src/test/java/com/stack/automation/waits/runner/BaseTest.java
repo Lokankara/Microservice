@@ -16,6 +16,11 @@ public abstract class BaseTest {
     @BeforeEach
     protected void beforeMethod() {
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--incognito");
+        chromeOptions.addArguments("--ignore-certificate-error");
+        chromeOptions.addArguments("--window-size=1500,900");
+        chromeOptions.addArguments("--disable-cache");
         this.driver = new ChromeDriver(chromeOptions);
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITLY_WAIT_SECONDS));
     }

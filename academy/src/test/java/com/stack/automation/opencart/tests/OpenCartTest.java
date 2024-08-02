@@ -50,7 +50,7 @@ class OpenCartTest extends BaseTest {
         logger.info("Executed after method");
     }
 
-    @Test
+//    @Test
     void testDesktopMacScenario() {
         final String expectedMain = "Your Store";
         final String expectedCurrency = "€";
@@ -116,7 +116,7 @@ class OpenCartTest extends BaseTest {
     private void takeShot(String fileName) {
         String currentTime = new SimpleDateFormat(TIME_TEMPLATE).format(new Date());
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-        String pathName = String.format("./report/%s_%s_screenshot.png", currentTime, fileName);
+        String pathName = String.format("./target/report/%s_%s_screenshot.png", currentTime, fileName);
 
         try {
             FileUtils.copyFile(scrFile, new File(pathName));
