@@ -1,4 +1,9 @@
-# Maven commands
+# MicroService
+
+[![Java CI with Maven](https://github.com/Lokankara/Microservice/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/Lokankara/Microservice/actions/workflows/maven.yml)
+
+
+## Maven commands
 
 Validate the project is correct and all necessary information is available
 

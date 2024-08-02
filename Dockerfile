@@ -3,7 +3,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-slim
-COPY --from=build /rest/target/rest-1.0-exec.jar rest.jar
+COPY --from=build /rest/target/rest-3.2.3-exec.jar rest.jar
 
 EXPOSE 8081
 

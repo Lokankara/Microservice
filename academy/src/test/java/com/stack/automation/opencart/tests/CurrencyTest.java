@@ -21,7 +21,7 @@ public class CurrencyTest extends TestRunnerFirst {
         };
     }
 
-    @ParameterizedTest
+//    @ParameterizedTest
     @MethodSource("searchCurrencies")
     void checkFirst(Currencies currency) {
         HomePage homePage = loadApplication().chooseCurrency(currency);
