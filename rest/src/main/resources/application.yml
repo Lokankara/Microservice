@@ -8,9 +8,9 @@ spring:
       uri: http://config:config-password@localhost:8888
 
   datasource:
-    url: jdbc:postgresql://oregon-postgres.render.com/selenium
-    username: admin
-    password: xsy0WYIZQm8W2qgTQH0FK5lJaln4ZJwk
+    url: jdbc:postgresql://dpg-cqlt6q08fa8c73cgd970-a.oregon-postgres.render.com/greencity
+    username: greencity_user
+    password: BKgSoKwKIczChThhBz4QaKtX9ulhqaDY
     driver-class-name: org.postgresql.Driver
 
   jpa:
