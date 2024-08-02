@@ -60,7 +60,7 @@ public abstract class TestRunnerFirst {
     public static void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         LoggerUtils.logInfo("WebDriver is created");

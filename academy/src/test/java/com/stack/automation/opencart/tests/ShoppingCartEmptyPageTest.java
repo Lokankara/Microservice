@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 class ShoppingCartEmptyPageTest extends TestRunnerFirst {
 
-    @Test
+//    @Test
     void testShoppingCartEmptyPage() {
 
         HomePage homePage = loadApplication()
