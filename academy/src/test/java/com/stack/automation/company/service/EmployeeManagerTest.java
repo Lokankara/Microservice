@@ -4,6 +4,7 @@ import com.stack.automation.company.dao.EmployeeRepository;
 import com.stack.automation.company.dao.memory.InMemoryEmployeeRepository;
 import com.stack.automation.company.model.Employee;
 import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
@@ -14,9 +15,6 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.List;
 
-import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -51,23 +49,22 @@ class EmployeeManagerTest {
     }
 
     @Test
-    void testPayment(){
-        Mockito.when(employeeRepository.findAll()).thenReturn(emptyList());
-        assertThat(employeeManager.payEmployees()).isZero();
+    void testPayment() {
+        Mockito.when(employeeRepository.findAll()).thenReturn(List.of());
+        assertEquals(0, employeeManager.payEmployees());
     }
 
     @Test
-    void testPaymentArePresent(){
-        Mockito.when(employeeRepository.findAll()).thenReturn(asList(new Employee("1", 1000)));
-        assertThat(employeeManager.payEmployees()).isEqualTo(1);
+    void testPaymentArePresent() {
+        Mockito.when(employeeRepository.findAll()).thenReturn(List.of(new Employee("1", 1000)));
+        assertEquals(1, employeeManager.payEmployees());
         Mockito.verify(bankService).pay("1", 1000);
     }
 
     @Test
-    void testPaymentEmployeesWhenSeveralArePresent(){
-        Mockito.when(employeeRepository.findAll()).thenReturn(List.of(new Employee("1", 1000)));
-        Mockito.when(employeeRepository.findAll()).thenReturn(List.of(new Employee("2", 1000)));
-        assertThat(employeeManager.payEmployees()).isEqualTo(1);
+    void testPaymentEmployeesWhenSeveralArePresent() {
+        Mockito.when(employeeRepository.findAll()).thenReturn(List.of(new Employee("1", 1000), new Employee("2", 1000)));
+        assertEquals(2, employeeManager.payEmployees());
         Mockito.verify(bankService).pay("2", 1000);
     }
 
@@ -77,21 +74,20 @@ class EmployeeManagerTest {
                 ArgumentMatchers.anyString(), ArgumentMatchers.anyDouble());
         employeeManager.payEmployees();
 
-        assertThat(repository.findAll().get(0).isPaid()).isFalse();
+        assertFalse(repository.findAll().get(0).isPaid());
     }
 
     @Test
     void employeeIsPaid() {
-        manager.payEmployees();
+        employeeManager.payEmployees();
 
-        assertThat(new Employee("1", 50000).isPaid());
-        assertThat(new Employee("2", 30000).isPaid());
+        assertTrue(new Employee("1", 50000).isPaid());
+        assertTrue(new Employee("2", 30000).isPaid());
     }
 
     @Test
     void shouldReturnEmptyList() {
-
-        assertThat(repository.findAll().size()).isEqualTo(2);
+        assertEquals(2, repository.findAll().size());
     }
 
     @Test
@@ -100,7 +96,6 @@ class EmployeeManagerTest {
         int amount = repository.findAll().size();
         repository.save(new Employee("MA", 45000.0));
 
-        assertThat(repository.findAll().size()).isEqualTo(3);
         assertEquals(amount, repository.findAll().size());
     }
 
@@ -109,8 +104,7 @@ class EmployeeManagerTest {
         repository.save(new Employee("MA", 40000.0));
         repository.save(new Employee("MA", 45000.0));
 
-        assertEquals(50000, repository.findAll().get(0).getSalary());
-
+        assertEquals(50000.0, repository.findAll().get(0).getSalary());
     }
 
     @Test
@@ -120,7 +114,7 @@ class EmployeeManagerTest {
         repository.save(new Employee("AM", 45000.0));
 
         assertNotEquals(amount, repository.findAll().size());
-        assertThat(repository.findAll().size()).isEqualTo(4);
+        assertEquals(amount + 1, repository.findAll().size());
     }
 
     @Test

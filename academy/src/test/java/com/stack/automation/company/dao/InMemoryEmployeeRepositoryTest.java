@@ -2,15 +2,13 @@ package com.stack.automation.company.dao;
 
 import com.stack.automation.company.dao.memory.InMemoryEmployeeRepository;
 import com.stack.automation.company.model.Employee;
-import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 class InMemoryEmployeeRepositoryTest {
 
@@ -29,27 +27,25 @@ class InMemoryEmployeeRepositoryTest {
     }
 
     @Test
-    void testFindAll(){
+    void testFindAll() {
         List<Employee> all = repository.findAll();
-        Assertions.assertThat(all).containsExactly(e1, e2);
+        Assertions.assertEquals(List.of(e1, e2), all);
     }
 
     @Test
-    void testSaveNewEmployee(){
+    void testSaveNewEmployee() {
         Employee employee = new Employee("3", 1000);
         Employee saved = repository.save(employee);
-        assertThat(saved).isNotNull();
-        Assertions.assertThat(employees).contains(saved);
+        Assertions.assertNotNull(saved);
+        Assertions.assertTrue(employees.contains(saved));
     }
 
     @Test
-    void testSaveNewEmployeeExisting(){
+    void testSaveNewEmployeeExisting() {
         Employee employee = new Employee("2", 1000);
         Employee saved = repository.save(employee);
 
-        assertThat(saved).isNotNull();
-//        assertThat(employees).doesNotContain(saved);
-        assertThat(saved.getFirstname()).isEqualTo(employee.getFirstname());
-        assertThat(saved).isNotNull();
+        Assertions.assertNotNull(saved);
+        Assertions.assertEquals(employee.getFirstname(), saved.getFirstname());
     }
 }

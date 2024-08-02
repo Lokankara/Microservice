@@ -1,7 +1,7 @@
 package com.stack.automation.company.service;
 
 import com.stack.automation.company.model.User;
-import com.stack.automation.company.validator.EmailArgumentException;
+import com.stack.automation.exception.EmailArgumentException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

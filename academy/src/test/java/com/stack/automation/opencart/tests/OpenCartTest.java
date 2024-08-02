@@ -113,19 +113,6 @@ class OpenCartTest extends BaseTest {
         presentationSleep(1);
     }
 
-
-    private static final String TIME_TEMPLATE = "yyyy-MM-dd_HH-mm-ss-S";
-    private static boolean isTestSuccessful = false;
-    @AfterEach
-    public void tearDown(TestInfo testInfo) {
-        if (!isTestSuccessful) {
-            presentationSleep(2);
-            takeShot(testInfo.getDisplayName());
-            takePageSource(testInfo.getDisplayName());
-        }
-        logger.info("Executed after method");
-    }
-
     private void takeShot(String fileName) {
         String currentTime = new SimpleDateFormat(TIME_TEMPLATE).format(new Date());
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);

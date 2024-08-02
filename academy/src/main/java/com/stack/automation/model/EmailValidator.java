@@ -1,6 +1,6 @@
 package com.stack.automation.model;
 
-import exception.EmailArgumentException;
+import com.stack.automation.exception.EmailArgumentException;
 
 public class EmailValidator {
 

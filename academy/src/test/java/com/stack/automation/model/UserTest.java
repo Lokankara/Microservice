@@ -1,6 +1,6 @@
 package com.stack.automation.model;
 
-import exception.EmailArgumentException;
+import com.stack.automation.exception.EmailArgumentException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,8 +1,8 @@
 package com.stack.automation.model;
 
-import exception.EmailArgumentException;
-import model.provider.InvalidEmailProvider;
-import model.provider.ValidEmailProvider;
+import com.stack.automation.exception.EmailArgumentException;
+import com.stack.automation.model.provider.InvalidEmailProvider;
+import com.stack.automation.model.provider.ValidEmailProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

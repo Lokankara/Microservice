@@ -1,5 +1,7 @@
 package com.stack.automation.company.validator;
 
+import com.stack.automation.exception.EmailArgumentException;
+
 public class EmailValidator {
 
     private EmailValidator() {
